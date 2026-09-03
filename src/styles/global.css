@@ -1,1 +1,109 @@
 @import "tailwindcss";
+
+/* Disable unwanted View Transition morph animations for instant seamless navigation */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0s !important;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #0a0a0a;
+}
+
+/* Custom Swiper Styles for Services & Pricing Carousel */
+.services-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: #3f3f46;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  display: inline-block;
+  opacity: 0.7;
+}
+
+.services-bullet:hover {
+  opacity: 1;
+  background-color: #71717a;
+}
+
+.services-bullet-active {
+  width: 28px;
+  background: linear-gradient(90deg, #ef4444 0%, #fb2c36 50%, #f59e0b 100%);
+  opacity: 1;
+  border-radius: 9999px;
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.4);
+}
+
+/* Ant Design Custom Tabs Responsive Overrides */
+.custom-pricing-tabs .ant-tabs-nav {
+  margin-bottom: 0 !important;
+}
+
+.custom-pricing-tabs .ant-tabs-nav-wrap {
+  overflow: visible !important;
+}
+
+.custom-pricing-tabs .ant-tabs-tab {
+  padding: 6px 10px !important;
+  margin: 0 2px !important;
+}
+
+@media (min-width: 640px) {
+  .custom-pricing-tabs .ant-tabs-tab {
+    padding: 10px 18px !important;
+    margin: 0 6px !important;
+  }
+}
+
+/* Ant Design Custom FAQ Collapse Overrides */
+.custom-faq-wrapper .ant-collapse {
+  background: transparent !important;
+}
+
+.custom-faq-wrapper .ant-collapse-item {
+  border: 1px solid rgba(38, 38, 38, 0.8) !important;
+  margin-bottom: 12px !important;
+  border-radius: 16px !important;
+  background-color: rgba(23, 23, 23, 0.6) !important;
+  backdrop-filter: blur(8px) !important;
+  transition: all 0.3s ease !important;
+}
+
+.custom-faq-wrapper .ant-collapse-item:hover {
+  border-color: rgba(251, 44, 54, 0.3) !important;
+  background-color: rgba(23, 23, 23, 0.9) !important;
+}
+
+.custom-faq-wrapper .ant-collapse-item-active {
+  border-color: rgba(251, 44, 54, 0.5) !important;
+  background-color: rgba(23, 23, 23, 0.95) !important;
+  box-shadow: 0 4px 20px -2px rgba(251, 44, 54, 0.1) !important;
+}
+
+.custom-faq-wrapper .ant-collapse-header {
+  padding: 16px 20px !important;
+  align-items: center !important;
+}
+
+@media (min-width: 640px) {
+  .custom-faq-wrapper .ant-collapse-header {
+    padding: 20px 24px !important;
+  }
+}
+
+.custom-faq-wrapper .ant-collapse-content {
+  background-color: transparent !important;
+  border-top: 1px solid rgba(38, 38, 38, 0.6) !important;
+}
+
+.custom-faq-wrapper .ant-collapse-content-box {
+  padding: 16px 20px 20px !important;
+}
+
+@media (min-width: 640px) {
+  .custom-faq-wrapper .ant-collapse-content-box {
+    padding: 18px 24px 24px !important;
+  }
+}

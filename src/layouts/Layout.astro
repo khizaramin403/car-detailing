@@ -1,22 +1,55 @@
 ---
-// Layout folder se styles folder ek step bahar (..) hai:
-import '../styles/global.css';
-const { title = "Car Detailing App" } = Astro.props;
+import { ClientRouter } from "astro:transitions";
+import Navbar from "../components/common/Navbar.jsx";
+import Footer from "../components/common/Footer.jsx";
+import "../styles/global.css";
+
+interface Props {
+	title?: string;
+	description?: string;
+	showNav?: boolean;
+	showFooter?: boolean;
+}
+
+const {
+	title = "Dos Bros Auto Detailing | Morris, MN Mobile Car Detailing",
+	description = "Professional mobile auto detailing, interior cleaning, and paint protection in Morris, Minnesota.",
+	showNav = true,
+	showFooter = true,
+} = Astro.props;
 ---
 
-
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
 		<title>{title}</title>
+
+		<!-- Astro ClientRouter for instant SPA-like navigation without full page reload -->
+		<ClientRouter fallback="swap" />
+
+		<!-- Google Fonts for sleek automotive typography -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
-	<body>
-		<slot />
+	<body
+		class="bg-neutral-950 text-neutral-100 min-h-screen flex flex-col font-['Plus_Jakarta_Sans',sans-serif] antialiased selection:bg-red-600 selection:text-white"
+	>
+		{showNav && <Navbar client:load transition:persist="main-navbar" />}
+
+		<main class="flex-1" transition:animate="none">
+			<slot />
+		</main>
+
+		{showFooter && <Footer client:load transition:persist="main-footer" />}
 	</body>
 </html>
-
