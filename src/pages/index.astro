@@ -6,10 +6,12 @@ import ServicesSection from "../components/home/ServicesSection.jsx";
 import PricingSection from "../components/home/PricingSection.jsx";
 import HowItWorksSection from "../components/home/HowItWorksSection.jsx";
 import VehicleTypesSection from "../components/home/VehicleTypesSection.jsx";
+import OptionsComparisonSection from "../components/home/OptionsComparisonSection.jsx";
 import AboutBrothersSection from "../components/home/AboutBrothersSection.jsx";
 import ServiceAreaSection from "../components/home/ServiceAreaSection.jsx";
 import ServiceAreaSection2 from "../components/home/ServiceAreaSection2.jsx";
 import WhyDifferentSection from "../components/home/WhyDifferentSection.jsx";
+import ProjectGallerySection from "../components/home/ProjectGallerySection.jsx";
 import FaqSection from "../components/home/FaqSection.jsx";
 import FinalCtaSection from "../components/home/FinalCtaSection.jsx";
 ---
@@ -25,11 +27,13 @@ import FinalCtaSection from "../components/home/FinalCtaSection.jsx";
 	<ServicesSection client:visible />
 	<PricingSection client:visible />
 	<HowItWorksSection client:visible />
-	<VehicleTypesSection client:visible />
 	<AboutBrothersSection />
-	<ServiceAreaSection />
+	<VehicleTypesSection client:visible />
+	<OptionsComparisonSection client:visible />
+	<ServiceAreaSection client:visible />
 	<!-- <ServiceAreaSection2 client:visible /> -->
 	<WhyDifferentSection client:visible />
+	<ProjectGallerySection client:visible />
 	<FaqSection client:visible />
-	<FinalCtaSection />
+	<FinalCtaSection client:visible />
 </Layout>

@@ -222,14 +222,14 @@ export default function PricingSection() {
             <span>PACKAGES AND PRICING</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white font-['Outfit'] uppercase tracking-tight leading-[1.15]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
             Our Packages and <br />
-            <span className="bg-gradient-to-r from-red-500 via-red-400 to-amber-400 bg-clip-text text-transparent">
-              What They Start At
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
+              what they start at
             </span>
           </h2>
 
-          <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal pt-1">
+          <p className="text-sm sm:text-base text-neutral-400 font-normal leading-relaxed pt-1">
             Most detailers around here make you call before they will tell you anything about price. We think that is annoying. Here is what we charge.
           </p>
 
@@ -557,45 +557,45 @@ export default function PricingSection() {
         </div>
 
         {/* 5. Zero-Click Answer Block & Honest Pricing Guarantee */}
-        <div className="relative rounded-3xl bg-gradient-to-b from-zinc-900 via-zinc-900 to-zinc-950 border border-zinc-800 p-8 sm:p-10 lg:p-12 shadow-2xl overflow-hidden">
+        <div className="relative rounded-3xl bg-gradient-to-b from-zinc-900 via-zinc-900 to-zinc-950 border border-zinc-800 p-6 sm:p-8 lg:p-10 shadow-xl overflow-hidden">
           <div className="absolute top-0 right-0 w-80 h-80 bg-red-600/10 blur-[100px] rounded-full pointer-events-none" />
 
-          <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
+          <div className="relative z-10 max-w-4xl mx-auto text-center space-y-5">
             
             {/* Zero-Click Answer Header Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-950 border border-zinc-800 text-xs font-semibold text-zinc-300">
-              <span className="w-2 h-2 rounded-full bg-red-500" />
-              <span className="font-bold text-white">Zero-click answer block:</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-950 border border-zinc-800 text-xs font-semibold text-zinc-300">
+              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+              <span>Zero-Click Answer</span>
             </div>
 
             {/* Quote Formula Headline */}
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white font-['Outfit'] tracking-tight leading-snug">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white font-['Outfit'] tracking-tight leading-snug">
               How is a quote built? <br className="hidden sm:block" />
-              <span className="bg-gradient-to-r from-red-500 via-red-400 to-amber-400 bg-clip-text text-transparent">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
                 Base package, plus vehicle size, plus any add-ons. That is it.
               </span>
             </h3>
 
             {/* Honest Guarantee Text */}
-            <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal max-w-3xl mx-auto">
+            <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal max-w-3xl mx-auto">
               Here is the honest part. These are starting prices for a vehicle in average condition. Heavy pet hair, deep stains, or years of buildup can move the number. When that happens, Reyes tells you before he starts working, not after he finishes. We are pretty particular about that. Nobody likes a surprise on the invoice.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
               <a
                 href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-sm sm:text-base font-bold text-white uppercase tracking-wider bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 shadow-xl shadow-red-600/30 hover:shadow-red-600/50 hover:-translate-y-0.5 transition-all duration-200 border border-red-500/40"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 shadow-md shadow-red-600/20 hover:-translate-y-0.5 transition-all duration-200 border border-red-500/40"
               >
-                <CalendarOutlined className="text-base" />
+                <CalendarOutlined className="text-sm" />
                 <span>Get My Free Quote</span>
               </a>
 
               <a
                 href="tel:3202873573"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl text-sm sm:text-base font-bold text-zinc-200 uppercase tracking-wider bg-zinc-950 hover:bg-zinc-800 hover:text-white border border-zinc-800 shadow-md hover:-translate-y-0.5 transition-all duration-200"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-medium text-zinc-300 hover:text-white bg-zinc-950 hover:bg-zinc-800 border border-zinc-800 shadow-sm hover:-translate-y-0.5 transition-all duration-200"
               >
-                <PhoneOutlined className="text-red-500 text-base" />
+                <PhoneOutlined className="text-red-500 text-sm" />
                 <span>Call 320-287-3573</span>
               </a>
             </div>

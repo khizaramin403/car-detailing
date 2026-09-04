@@ -86,38 +86,38 @@ export default function HeroSection() {
             </div>
 
             {/* Main Headline with Highlight Gradient */}
-            <h1 className="text-[26px] sm:text-[36px] md:text-[46px] font-black text-white tracking-tight font-['Outfit'] uppercase leading-[1.08]">
-              MOBILE CAR DETAILING <br />
-              <span className="bg-gradient-to-r from-red-500 via-red-400 to-amber-400 bg-clip-text text-transparent drop-shadow-sm">
-                IN MORRIS, MN
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight font-['Outfit'] leading-[1.12]">
+              Mobile Car Detailing <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
+                in Morris, MN
               </span>
             </h1>
 
             {/* Prominent Subtitle */}
-            <p className="text-lg sm:text-xl font-bold text-neutral-100 font-['Outfit'] leading-snug">
+            <p className="text-base sm:text-lg font-medium text-neutral-200 font-['Outfit'] leading-relaxed">
               Two brothers from Morris. We come to you.
             </p>
 
             {/* Detailed Description */}
-            <p className="text-sm sm:text-base text-neutral-300 leading-relaxed font-normal max-w-2xl">
+            <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal max-w-2xl">
               Dos Bros Detailing is a trusted mobile car detailing service based right here in Morris, Minnesota. Reyes and Mariano are two brothers from town, and we bring professional interior and exterior detailing straight to your driveway, your workplace, or your farm site. You never have to drop your vehicle off anywhere. We serve Morris and the surrounding communities.
             </p>
 
             {/* CTA Buttons with Consistent Color Theme */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2.5  p-3.5 rounded-xl text-[12px] font-bold text-white uppercase tracking-wider bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 shadow-xl shadow-red-600/30 hover:shadow-red-600/50 hover:-translate-y-0.5 transition-all duration-200 border border-red-500/40"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 shadow-lg shadow-red-600/20 hover:-translate-y-0.5 transition-all duration-200 border border-red-500/40"
               >
-                <CalendarOutlined className="text-base" />
+                <CalendarOutlined className="text-sm" />
                 <span>Book Your Detailing</span>
               </a>
 
               <a
                 href="tel:3202873573"
-                className="inline-flex items-center justify-center gap-2.5 p-3.5 rounded-xl text-[12px] font-bold text-neutral-200 uppercase tracking-wider bg-neutral-900/90 hover:bg-neutral-800 hover:text-white border border-neutral-700/80 shadow-md hover:-translate-y-0.5 transition-all duration-200 backdrop-blur-md"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-xs sm:text-sm font-medium text-neutral-300 hover:text-white bg-neutral-900/90 hover:bg-neutral-800 border border-neutral-800 shadow-sm hover:-translate-y-0.5 transition-all duration-200 backdrop-blur-md"
               >
-                <PhoneOutlined className="text-red-500 text-base" />
+                <PhoneOutlined className="text-red-500 text-sm" />
                 <span>Call 320-287-3573</span>
               </a>
             </div>
@@ -133,8 +133,8 @@ export default function HeroSection() {
 
               {/* Card Header with Car Icon */}
               <div className="flex items-center gap-2.5 pb-3.5 mb-3 border-b border-neutral-800/80">
-                <CarOutlined className="text-white text-lg sm:text-xl text-red-500" />
-                <h3 className="text-base sm:text-lg font-bold text-white font-['Outfit'] tracking-wide">
+                <CarOutlined className="text-white text-base text-red-500" />
+                <h3 className="text-sm sm:text-base font-semibold text-white font-['Outfit']">
                   Our Services Include:
                 </h3>
               </div>

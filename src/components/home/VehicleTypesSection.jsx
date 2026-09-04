@@ -176,14 +176,14 @@ export default function VehicleTypesSection() {
             <span>VEHICLE TYPES</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white font-['Outfit'] uppercase tracking-tight leading-[1.15]">
-            What We See on <br />
-            <span className="bg-gradient-to-r from-red-500 via-red-400 to-amber-400 bg-clip-text text-transparent">
-              Vehicles Around Morris
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
+            What we see on <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
+              vehicles around Morris
             </span>
           </h2>
 
-          <p className="text-sm sm:text-base text-neutral-300 leading-relaxed font-normal pt-1">
+          <p className="text-sm sm:text-base text-neutral-400 font-normal leading-relaxed pt-1">
             Here is what most people do not realize. A commuter sedan and a farm truck get dirty in completely different ways. Same town, same roads, totally different problem. So we do not treat them the same.
           </p>
         </div>
@@ -279,38 +279,38 @@ export default function VehicleTypesSection() {
           <div className="vehicle-types-pagination flex items-center justify-center gap-2 mt-6" />
         </div>
 
-        {/* Bottom Farm Truck Highlight & Consultation Banner (Services Section Consistent Background) */}
-        <div className="relative rounded-3xl bg-gradient-to-r from-neutral-900 via-neutral-900 to-neutral-950 border border-neutral-800 p-8 sm:p-10 shadow-2xl overflow-hidden">
+        {/* Bottom Farm Truck Highlight & Consultation Banner */}
+        <div className="relative rounded-3xl bg-gradient-to-r from-neutral-900 via-neutral-900 to-neutral-950 border border-neutral-800 p-6 sm:p-8 lg:p-10 shadow-xl overflow-hidden">
           <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-red-600/10 to-transparent pointer-events-none" />
 
-          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
-            <div className="max-w-2xl space-y-2.5">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-xs font-bold text-red-400 uppercase tracking-wider">
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left">
+            <div className="max-w-2xl space-y-2">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-xs font-bold text-red-400">
                 <Tractor className="w-3.5 h-3.5 text-red-500" />
                 <span>Farm & Gravel Specialists</span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white font-['Outfit'] leading-tight">
+              <h3 className="text-lg sm:text-xl font-bold text-white font-['Outfit'] leading-tight">
                 Farm trucks are the ones we get asked about most.
               </h3>
-              <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
+              <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
                 And honestly, they are our favorite ones to do. The before and after on a truck that has been running gravel all summer is something else.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
               <a
                 href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-sm sm:text-base font-bold text-white uppercase tracking-wider bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 shadow-xl shadow-red-600/30 hover:shadow-red-600/50 hover:-translate-y-0.5 transition-all duration-200 border border-red-500/40"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 shadow-md shadow-red-600/20 hover:-translate-y-0.5 transition-all duration-200 border border-red-500/40"
               >
-                <CalendarOutlined className="text-base" />
+                <CalendarOutlined className="text-sm" />
                 <span>Get My Free Quote</span>
               </a>
 
               <a
                 href="tel:3202873573"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl text-sm sm:text-base font-bold text-neutral-200 uppercase tracking-wider bg-neutral-900 hover:bg-neutral-800 hover:text-white border border-neutral-700/80 shadow-md hover:-translate-y-0.5 transition-all duration-200"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-medium text-neutral-300 hover:text-white bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 shadow-sm hover:-translate-y-0.5 transition-all duration-200"
               >
-                <PhoneOutlined className="text-red-500 text-base" />
+                <PhoneOutlined className="text-red-500 text-sm" />
                 <span>Call 320-287-3573</span>
               </a>
             </div>

@@ -177,9 +177,11 @@ export default function WhyDifferentSection() {
   return (
     <section id="why-different" className="relative bg-neutral-950 py-20 sm:py-24 lg:py-28 select-none border-b border-neutral-800/80">
       
-      {/* Background Ambient Glow Accents */}
-      <div className="absolute top-1/4 left-1/3 w-[600px] h-[400px] bg-red-600/5 blur-[150px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[350px] bg-amber-500/5 blur-[140px] rounded-full pointer-events-none" />
+      {/* Background Ambient Glow Accents (isolated in overflow-hidden so sticky column is never broken) */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/3 w-[600px] h-[400px] bg-red-600/5 blur-[150px] rounded-full" />
+        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[350px] bg-amber-500/5 blur-[140px] rounded-full" />
+      </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         
@@ -193,18 +195,18 @@ export default function WhyDifferentSection() {
               <span>LOCAL CONDITIONS</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white font-['Outfit'] uppercase tracking-tight leading-[1.15]">
-              Why Vehicles Around Morris Get Dirty <br />
-              <span className="bg-gradient-to-r from-red-500 via-red-400 to-amber-400 bg-clip-text text-transparent">
-                Differently
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
+              Why vehicles around Morris <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
+                get dirty differently
               </span>
             </h2>
 
-            <div className="space-y-4 text-sm sm:text-base text-neutral-300 leading-relaxed">
+            <div className="space-y-3.5 text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
               <p>
                 Morris sits in Stevens County, surrounded by some of the richest farmland in the country. Three highways run through town. Most of what is around us is gravel. That combination does specific things to a vehicle, and it is not the same as what happens to a car in the Twin Cities.
               </p>
-              <p className="text-neutral-400 font-medium">
+              <p className="text-neutral-300 font-medium">
                 We are not guessing about this. Our own customers wrote it for us before we ever put it on a website.
               </p>
             </div>
@@ -356,48 +358,48 @@ export default function WhyDifferentSection() {
           </div>
         </div>
 
-        {/* 3. Detailing Is Maintenance, Not a Luxury & Consultation Banner (Services Section Structure) */}
-        <div className="relative rounded-3xl bg-gradient-to-r from-neutral-900 via-neutral-900 to-neutral-950 border border-neutral-800 p-8 sm:p-10 shadow-2xl overflow-hidden">
+        {/* 3. Detailing Is Maintenance, Not a Luxury Banner */}
+        <div className="relative rounded-3xl bg-gradient-to-r from-neutral-900 via-neutral-900 to-neutral-950 border border-neutral-800 p-6 sm:p-8 lg:p-10 shadow-xl overflow-hidden">
           <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-red-600/10 to-transparent pointer-events-none" />
 
-          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
-            <div className="max-w-2xl space-y-3">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-xs font-bold text-red-400 uppercase tracking-wider">
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left">
+            <div className="max-w-2xl space-y-2">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-xs font-bold text-red-400">
                 <ShieldAlert className="w-3.5 h-3.5 text-red-500" />
                 <span>Value Protection</span>
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-bold text-white font-['Outfit'] leading-tight">
-                Detailing Is Maintenance, Not a Luxury
+              <h3 className="text-lg sm:text-xl font-bold text-white font-['Outfit'] leading-tight">
+                Detailing is maintenance, not a luxury
               </h3>
 
-              <div className="space-y-2 text-xs sm:text-sm text-neutral-300 leading-relaxed">
+              <div className="space-y-2 text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
                 <p>
                   Here is the thing though. Most people think of detailing as making a car look nice. Looking nice is the visible part. The part that matters is what you are preventing.
                 </p>
                 <p>
                   Conditioning your dash stops it cracking. Pulling salt out of carpet stops the fibers breaking down. Waxing paint stops oxidation. None of that shows up as a dramatic before and after photo. It shows up years later, when you go to sell.
                 </p>
-                <p className="text-white font-semibold pt-0.5">
-                  And that is real money. A clean interior is the first thing a dealer looks at on a trade-in, and it is the first thing a private buyer notices when they open the door. We have had customers detail a vehicle specifically because they were about to list it. That is one of the smarter things you can do with 245 dollars.
+                <p className="text-neutral-200 font-medium pt-0.5">
+                  And that is real money. A clean interior is the first thing a dealer looks at on a trade-in, and it is the first thing a private buyer notices when they open the door. That is one of the smarter things you can do with 245 dollars.
                 </p>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
               <a
                 href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-sm sm:text-base font-bold text-white uppercase tracking-wider bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 shadow-xl shadow-red-600/30 hover:shadow-red-600/50 hover:-translate-y-0.5 transition-all duration-200 border border-red-500/40"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 shadow-md shadow-red-600/20 hover:-translate-y-0.5 transition-all duration-200 border border-red-500/40"
               >
-                <CalendarOutlined className="text-base" />
+                <CalendarOutlined className="text-sm" />
                 <span>Get My Free Quote</span>
               </a>
 
               <a
                 href="tel:3202873573"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl text-sm sm:text-base font-bold text-neutral-200 uppercase tracking-wider bg-neutral-900 hover:bg-neutral-800 hover:text-white border border-neutral-700/80 shadow-md hover:-translate-y-0.5 transition-all duration-200"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-medium text-neutral-300 hover:text-white bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 shadow-sm hover:-translate-y-0.5 transition-all duration-200"
               >
-                <PhoneOutlined className="text-red-500 text-base" />
+                <PhoneOutlined className="text-red-500 text-sm" />
                 <span>Call 320-287-3573</span>
               </a>
             </div>

@@ -1,24 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import FinalCtaSection from '../components/home/FinalCtaSection.jsx';
 ---
 
 <Layout 
-  title="Contact & Bookings | Apex Auto Detailing"
-  description="Book your detailing appointment or request a custom paint correction quote."
+  title="Contact & Bookings | Dos Bros Auto Detailing"
+  description="Book your mobile detailing appointment or request a custom quote in Morris, MN."
   showNav={true}
   showFooter={true}
 >
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-    <div class="max-w-3xl">
-      <span class="text-xs font-bold uppercase tracking-widest text-red-500 bg-red-500/10 px-3 py-1 rounded-md border border-red-500/20">
-        Get In Touch
-      </span>
-      <h1 class="text-4xl sm:text-5xl font-extrabold text-white font-['Outfit'] mt-4 mb-6">
-        Ready for Showroom Perfection?
-      </h1>
-      <p class="text-lg text-neutral-300 leading-relaxed mb-8">
-        Call us directly at <a href="tel:+15558392849" class="text-red-400 font-semibold underline">+1 (555) 839-2849</a> or schedule your mobile or studio appointment today.
-      </p>
-    </div>
-  </div>
+  <FinalCtaSection client:load />
 </Layout>

@@ -14,6 +14,7 @@
   "dependencies": {
     "@ant-design/icons": "^6.3.4",
     "@astrojs/react": "^6.0.5",
+    "@photo-sphere-viewer/core": "^5.15.1",
     "@tailwindcss/vite": "^4.3.3",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.5",
@@ -22,6 +23,7 @@
     "lucide-react": "^1.39.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
+    "react-photo-sphere-viewer": "^6.2.3",
     "swiper": "^14.2.0",
     "tailwindcss": "^4.3.3"
   },

@@ -118,14 +118,14 @@ export default function HowItWorksSection() {
             <span>HOW IT WORKS</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white font-['Outfit'] uppercase tracking-tight leading-[1.15]">
-            How Mobile Detailing <br />
-            <span className="bg-gradient-to-r from-red-500 via-red-400 to-amber-400 bg-clip-text text-transparent">
-              Works
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
+            How mobile detailing <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
+              works
             </span>
           </h2>
 
-          <p className="text-base sm:text-lg text-neutral-300 leading-relaxed font-medium pt-1">
+          <p className="text-sm sm:text-base text-neutral-400 font-normal leading-relaxed pt-1">
             You do not have to go anywhere. That is the whole point.
           </p>
         </div>
@@ -169,7 +169,7 @@ export default function HowItWorksSection() {
         </div>
 
         {/* Reyes's Pro Tip Standout Box */}
-        <div className="relative rounded-3xl bg-gradient-to-r from-neutral-900 via-neutral-900/90 to-neutral-950 border border-neutral-800 p-6 sm:p-8 lg:p-10 mb-14 sm:mb-16 shadow-2xl overflow-hidden backdrop-blur-md">
+        {/* <div className="relative rounded-3xl bg-gradient-to-r from-neutral-900 via-neutral-900/90 to-neutral-950 border border-neutral-800 p-6 sm:p-8 lg:p-10 mb-14 sm:mb-16 shadow-2xl overflow-hidden backdrop-blur-md">
           <div className="absolute -right-6 -bottom-6 text-neutral-800/20 pointer-events-none">
             <Quote className="w-40 h-40" />
           </div>
@@ -189,7 +189,7 @@ export default function HowItWorksSection() {
               </blockquote>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Bottom Time Expectations & Consultation Banner */}
         <div className="relative rounded-3xl  bg-gradient-to-b from-neutral-900 via-neutral-900 to-neutral-950 border border-neutral-800 p-8 sm:p-10 shadow-2xl overflow-hidden text-center">
@@ -204,20 +204,20 @@ export default function HowItWorksSection() {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2 ">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
               <a
                 href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-sm sm:text-base font-bold text-white uppercase tracking-wider bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 shadow-xl shadow-red-600/30 hover:shadow-red-600/50 hover:-translate-y-0.5 transition-all duration-200 border border-red-500/40"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 shadow-md shadow-red-600/20 hover:-translate-y-0.5 transition-all duration-200 border border-red-500/40"
               >
-                <CalendarOutlined className="text-base" />
+                <CalendarOutlined className="text-sm" />
                 <span>Get My Free Quote</span>
               </a>
 
               <a
                 href="tel:3202873573"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl text-sm sm:text-base font-bold text-neutral-200 uppercase tracking-wider bg-neutral-950 hover:bg-neutral-800 hover:text-white border border-neutral-800 shadow-md hover:-translate-y-0.5 transition-all duration-200"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-medium text-neutral-300 hover:text-white bg-neutral-950 hover:bg-neutral-800 border border-neutral-800 shadow-sm hover:-translate-y-0.5 transition-all duration-200"
               >
-                <PhoneOutlined className="text-red-500 text-base" />
+                <PhoneOutlined className="text-red-500 text-sm" />
                 <span>Call 320-287-3573</span>
               </a>
             </div>

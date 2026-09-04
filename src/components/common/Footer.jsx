@@ -1,150 +1,233 @@
 import React from 'react';
 import {
-  CarOutlined,
-  PhoneOutlined,
-  MailOutlined,
-  EnvironmentOutlined,
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  ShieldCheck,
+  Sparkles,
+  ArrowUpRight
+} from 'lucide-react';
+import {
   InstagramOutlined,
   FacebookOutlined,
-  YoutubeOutlined,
-  ClockCircleOutlined,
-  SafetyCertificateOutlined
+  YoutubeOutlined
 } from '@ant-design/icons';
 
 export default function Footer() {
-  return (
-    <footer className="bg-neutral-950 text-neutral-400 border-t border-neutral-800/80 pt-16 pb-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-neutral-900">
+  const currentYear = new Date().getFullYear();
 
-          {/* Column 1: Brand & Bio */}
-          <div className="space-y-4">
-            <a href="/" className="inline-block">
-              <div className="rounded-xl bg-neutral-900/80 p-1 border border-neutral-800 inline-block">
+  const services = [
+    { name: 'Full Interior Revival', href: '/services' },
+    { name: 'Exterior Hand Wash & Seal', href: '/services' },
+    { name: 'Multi-Stage Paint Correction', href: '/services' },
+    { name: 'Ceramic & Graphene Coating', href: '/services' },
+    { name: 'Farm & Heavy Duty Equipment', href: '/services' },
+    { name: 'Odor & Pet Hair Removal', href: '/services' },
+  ];
+
+  const quickLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'About Our Studio', href: '/about' },
+    { name: 'Detailing Services', href: '/services' },
+    { name: 'Pricing & Packages', href: '/prices' },
+    { name: 'Service Areas', href: '/service-areas' },
+    { name: 'Contact & Booking', href: '/contact' },
+  ];
+
+  return (
+    <footer className="relative bg-neutral-950 text-neutral-400 border-t border-neutral-900 overflow-hidden select-none">
+      {/* Subtle top ambient red gradient hairline */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-red-500/30 to-transparent pointer-events-none" />
+
+      {/* Main Footer Content */}
+      <div className="max-w-7xl mx-auto px-4 xs:px-6 sm:px-8 lg:px-10 pt-12 sm:pt-14 md:pt-16 pb-10">
+        <div className="grid grid-cols-2 lg:grid-cols-12 gap-x-5 sm:gap-x-8 gap-y-8 sm:gap-y-10 lg:gap-8 xl:gap-10 pb-12 border-b border-neutral-900/90">
+
+          {/* Column 1: Brand Info & Bio */}
+          <div className="col-span-2 lg:col-span-4 xl:col-span-4 space-y-4">
+            {/* Logo */}
+            <a 
+              href="/" 
+              className="inline-block transition-transform duration-200 hover:opacity-95 focus:outline-none"
+              title="Dos Bros Auto Detailing"
+            >
+              <div className="inline-flex items-center">
                 <img
-                  src="/logo.jpg"
+                  src="/logo.png"
                   alt="Dos Bros Auto Detailing"
-                  className="h-16 w-auto object-contain rounded-lg"
+                  className="h-9 xs:h-10 sm:h-11 w-auto max-w-[220px] xs:max-w-[260px] object-contain"
                   style={{
-                    height: '60px',
+                    height: '42px',
                     width: 'auto',
-                    maxHeight: '64px',
+                    maxHeight: '48px',
                     objectFit: 'contain'
                   }}
                 />
               </div>
             </a>
-            <p className="text-sm text-neutral-400 leading-relaxed">
-              Elevating automotive aesthetics through master craftsmanship, multi-stage paint correction, ceramic coatings, and interior detailing.
+
+            {/* Concise Bio */}
+            <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed max-w-sm">
+              Mobile auto detailing crafted with precision and care. We bring showroom gloss, deep interior rejuvenation, and long-lasting ceramic protection directly to your location.
             </p>
-            <div className="flex items-center space-x-3 pt-2">
+
+
+            {/* Social Links */}
+            <div className="flex items-center gap-2.5 pt-2">
               <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-lg bg-neutral-900 hover:bg-red-600 text-neutral-400 hover:text-white flex items-center justify-center transition-colors border border-neutral-800"
+                aria-label="Follow Dos Bros Detailing on Instagram"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-neutral-900/80 hover:bg-red-600/90 text-neutral-400 hover:text-white flex items-center justify-center transition-all duration-200 border border-neutral-800/80 hover:border-red-500 hover:scale-105"
               >
-                <InstagramOutlined />
+                <InstagramOutlined className="text-sm" />
               </a>
               <a
                 href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-lg bg-neutral-900 hover:bg-red-600 text-neutral-400 hover:text-white flex items-center justify-center transition-colors border border-neutral-800"
+                aria-label="Follow Dos Bros Detailing on Facebook"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-neutral-900/80 hover:bg-red-600/90 text-neutral-400 hover:text-white flex items-center justify-center transition-all duration-200 border border-neutral-800/80 hover:border-red-500 hover:scale-105"
               >
-                <FacebookOutlined />
+                <FacebookOutlined className="text-sm" />
               </a>
               <a
                 href="https://youtube.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-lg bg-neutral-900 hover:bg-red-600 text-neutral-400 hover:text-white flex items-center justify-center transition-colors border border-neutral-800"
+                aria-label="Watch Dos Bros Detailing on YouTube"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-neutral-900/80 hover:bg-red-600/90 text-neutral-400 hover:text-white flex items-center justify-center transition-all duration-200 border border-neutral-800/80 hover:border-red-500 hover:scale-105"
               >
-                <YoutubeOutlined />
+                <YoutubeOutlined className="text-sm" />
               </a>
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
-          <div>
-            <h4 className="text-white font-semibold text-base mb-4 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-red-500"></span>
-              Quick Links
+          {/* Column 2: Quick Links (Side-by-side with Services on mobile) */}
+          <div className="col-span-1 lg:col-span-2 xl:col-span-2 space-y-3 sm:space-y-4">
+            <h4 className="text-white font-semibold text-xs sm:text-sm uppercase tracking-wider font-['Outfit',sans-serif] flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0"></span>
+              Explore
             </h4>
-            <ul className="space-y-2.5 text-sm">
-              <li>
-                <a href="/" className="hover:text-white hover:translate-x-1 inline-block transition-all">Home</a>
-              </li>
-              <li>
-                <a href="/about" className="hover:text-white hover:translate-x-1 inline-block transition-all">About Our Studio</a>
-              </li>
-              <li>
-                <a href="/services" className="hover:text-white hover:translate-x-1 inline-block transition-all">All Detailing Services</a>
-              </li>
-              <li>
-                <a href="/prices" className="hover:text-white hover:translate-x-1 inline-block transition-all">Pricing & Packages</a>
-              </li>
-              <li>
-                <a href="/service-areas" className="hover:text-white hover:translate-x-1 inline-block transition-all">Service Locations</a>
-              </li>
-              <li>
-                <a href="/contact" className="hover:text-white hover:translate-x-1 inline-block transition-all">Contact & Bookings</a>
-              </li>
+            <ul className="space-y-2 text-xs sm:text-sm">
+              {quickLinks.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="text-neutral-400 hover:text-white transition-colors duration-150 inline-flex items-center gap-1 group py-0.5"
+                  >
+                    <span className="group-hover:translate-x-0.5 transition-transform duration-150">
+                      {link.name}
+                    </span>
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Column 3: Premium Services */}
-          <div>
-            <h4 className="text-white font-semibold text-base mb-4 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-red-500"></span>
-              Signature Services
+          {/* Column 3: Services (Side-by-side with Explore on mobile) */}
+          <div className="col-span-1 lg:col-span-3 xl:col-span-3 space-y-3 sm:space-y-4">
+            <h4 className="text-white font-semibold text-xs sm:text-sm uppercase tracking-wider font-['Outfit',sans-serif] flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0"></span>
+              Services
             </h4>
-            <ul className="space-y-2.5 text-sm">
-              <li className="text-neutral-300">Multi-Stage Paint Correction</li>
-              <li className="text-neutral-300">Graphene & Ceramic Coating (3-7 Yr)</li>
-              <li className="text-neutral-300">Deep Interior Steam Restoration</li>
-              <li className="text-neutral-300">Paint Protection Film (PPF)</li>
-              <li className="text-neutral-300">Engine Bay Deep Clean & Dressing</li>
-              <li className="text-neutral-300">Mobile Valet Detailing</li>
+            <ul className="space-y-2 text-xs sm:text-sm">
+              {services.map((item) => (
+                <li key={item.name}>
+                  <a
+                    href={item.href}
+                    className="text-neutral-400 hover:text-neutral-200 transition-colors duration-150 inline-flex items-center gap-1.5 group py-0.5"
+                  >
+                    <span className="w-1 h-1 rounded-full bg-neutral-700 group-hover:bg-red-400 transition-colors shrink-0"></span>
+                    <span className="group-hover:translate-x-0.5 transition-transform duration-150">
+                      {item.name}
+                    </span>
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Column 4: Contact & Hours */}
-          <div className="space-y-3">
-            <h4 className="text-white font-semibold text-base mb-4 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-red-500"></span>
-              Studio Information
+          {/* Column 4: Contact & Hours (Full width below Explore & Services on mobile) */}
+          <div className="col-span-2 lg:col-span-3 xl:col-span-3 space-y-3 sm:space-y-4 pt-2 sm:pt-0">
+            <h4 className="text-white font-semibold text-xs sm:text-sm uppercase tracking-wider font-['Outfit',sans-serif] flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0"></span>
+              Contact & Hours
             </h4>
-            <div className="flex items-start gap-3 text-sm">
-              <EnvironmentOutlined className="text-red-500 mt-1" />
-              <span>742 Evergreen Blvd, Suite 100, Metro City, CA 90210</span>
-            </div>
-            <div className="flex items-center gap-3 text-sm">
-              <PhoneOutlined className="text-red-500" />
-              <a href="tel:+15558392849" className="hover:text-white">+1 (555) 839-2849</a>
-            </div>
-            <div className="flex items-center gap-3 text-sm">
-              <MailOutlined className="text-red-500" />
-              <a href="mailto:info@apexautodetail.com" className="hover:text-white">info@apexautodetail.com</a>
-            </div>
-            <div className="flex items-start gap-3 text-sm pt-2">
-              <ClockCircleOutlined className="text-amber-400 mt-1" />
-              <div>
-                <p className="text-neutral-200">Mon - Sat: 8:00 AM - 7:00 PM</p>
-                <p className="text-neutral-500 text-xs">Sunday: By Appointment Only</p>
+
+            <div className="space-y-2.5 text-xs sm:text-sm">
+              {/* Phone */}
+              <a
+                href="tel:3202873573"
+                className="group flex items-center gap-2.5 p-2 rounded-lg bg-neutral-900/60 hover:bg-neutral-900 border border-neutral-800/80 hover:border-red-500/40 text-neutral-300 hover:text-white transition-all duration-150"
+              >
+                <div className="w-7 h-7 rounded-md bg-red-500/10 text-red-400 flex items-center justify-center shrink-0 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                  <Phone className="w-3.5 h-3.5" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <span className="block text-[10px] text-neutral-500 uppercase tracking-wider">Call or Text</span>
+                  <span className="block text-xs sm:text-sm font-semibold text-white tracking-tight">(320) 287-3573</span>
+                </div>
+              </a>
+
+              {/* Location */}
+              <div className="flex items-start gap-2.5 px-2 py-1 text-neutral-400">
+                <MapPin className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+                <div className="leading-snug">
+                  <span className="text-neutral-300 font-medium block">Morris, MN 56267</span>
+                  <span className="text-[11px] text-neutral-500">Stevens County & Surrounding Cities</span>
+                </div>
               </div>
+
+              {/* Operating Hours */}
+              <div className="flex items-start gap-2.5 px-2 py-1 text-neutral-400">
+                <Clock className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                <div className="leading-snug">
+                  <span className="text-neutral-300 font-medium block">Mon - Sat: 8:00 AM - 7:00 PM</span>
+                  <span className="text-[11px] text-neutral-500">Sunday: By Appointment</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Quick Action Button */}
+            <div className="pt-2">
+              <a
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-lg text-xs sm:text-sm font-medium text-white bg-linear-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 transition-all shadow-sm shadow-red-950/40 hover:shadow-red-900/50"
+              >
+                <span>Book Mobile Detail</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </a>
             </div>
           </div>
 
         </div>
 
-        {/* Bottom copyright & certifications */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
-          <p>© {new Date().getFullYear()} Apex Auto Detailing Studio. All rights reserved.</p>
-          <div className="flex items-center gap-2 text-neutral-400">
-            <SafetyCertificateOutlined className="text-emerald-400 text-base" />
-            <span>Certified IDA & Ceramic Pro Master Applicators</span>
+        {/* Bottom Bar: Copyright, Guarantee & Legal */}
+        <div className="pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left text-xs text-neutral-500">
+          
+          {/* Copyright */}
+          <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
+            <p>© {currentYear} Dos Bros Auto Detailing. All rights reserved.</p>
+            <span className="hidden sm:inline text-neutral-700">•</span>
+            <span className="text-neutral-400">Morris, Minnesota</span>
           </div>
+
+          {/* Trust Guarantees */}
+          <div className="flex items-center flex-wrap justify-center gap-3 sm:gap-4 text-[11px] text-neutral-400">
+            <span className="inline-flex items-center gap-1.5">
+              <ShieldCheck className="w-3.5 h-3.5 text-red-400" />
+              <span>100% Satisfaction Guarantee</span>
+            </span>
+            <span className="text-neutral-700">•</span>
+            <span className="inline-flex items-center gap-1.5">
+              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+              <span>Premium Eco-Safe Products</span>
+            </span>
+          </div>
+
         </div>
       </div>
     </footer>

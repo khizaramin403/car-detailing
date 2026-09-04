@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-  MenuOutlined,
+  AlignRightOutlined,
   CloseOutlined,
   PhoneOutlined,
   CalendarOutlined,
@@ -114,7 +114,7 @@ export default function Navbar() {
                 <img
                   src="/logo.png"
                   alt="Dos Bros Auto Detailing"
-                  className="h-[42px] sm:h-[48px] md:h-[52px] w-auto max-w-[240px] sm:max-w-[290px] object-contain block transition-transform duration-200"
+                  className="h-10.5 sm:h-12 md:h-13 w-auto max-w-60 sm:max-w-72.5 object-contain block transition-transform duration-200"
                   style={{
                     height: '42px',
                     width: 'auto',
@@ -142,7 +142,7 @@ export default function Navbar() {
                   >
                     {link.name}
                     {active && (
-                      <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-gradient-to-r from-red-500 to-amber-500 rounded-full"></span>
+                      <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-linear-to-r from-red-500 to-amber-500 rounded-full"></span>
                     )}
                   </a>
                 );
@@ -153,7 +153,7 @@ export default function Navbar() {
             <div className="hidden sm:flex items-center space-x-3">
               <a
                 href="/contact"
-                className="inline-flex items-center gap-2 p-2.5 rounded-xl text-[12px] font-semibold text-white bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 shadow-lg shadow-red-600/25 hover:shadow-red-600/40 hover:-translate-y-0.5 transition-all duration-200 border border-red-500/30"
+                className="inline-flex items-center gap-2 p-2.5 rounded-xl text-[12px] font-semibold text-white bg-linear-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 shadow-lg shadow-red-600/25 hover:shadow-red-600/40 hover:-translate-y-0.5 transition-all duration-200 border border-red-500/30"
               >
                 <CalendarOutlined />
                 <span>Book Appointment</span>
@@ -165,13 +165,13 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2.5 rounded-xl bg-neutral-900 text-neutral-300 hover:text-white hover:bg-neutral-800 border border-neutral-800 transition-colors focus:outline-none"
+                className="p-2.5 rounded-xl  text-neutral-300   transition-colors focus:outline-none"
                 aria-label="Toggle Navigation Menu"
               >
                 {mobileMenuOpen ? (
                   <CloseOutlined className="text-lg text-red-400" />
                 ) : (
-                  <MenuOutlined className="text-lg" />
+                  <AlignRightOutlined className="text-lg" />
                 )}
               </button>
             </div>
@@ -205,7 +205,7 @@ export default function Navbar() {
               <a
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-red-600 to-red-700 shadow-lg shadow-red-600/30"
+                className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white bg-linear-to-r from-red-600 to-red-700 shadow-lg shadow-red-600/30"
               >
                 <CalendarOutlined />
                 <span>Book Appointment</span>

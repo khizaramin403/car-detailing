@@ -33,14 +33,14 @@ export default function AboutBrothersSection() {
             
             
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white font-['Outfit'] uppercase tracking-tight leading-[1.15]">
-              Two Brothers <br />
-              <span className="bg-gradient-to-r from-red-500 via-red-400 to-amber-400 bg-clip-text text-transparent">
-                From Morris
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
+              Two brothers <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
+                from Morris
               </span>
             </h2>
 
-            <div className="space-y-4 text-sm sm:text-base text-neutral-300 leading-relaxed font-normal">
+            <div className="space-y-3.5 text-xs sm:text-sm text-neutral-300 leading-relaxed font-normal">
               <p>
                 We are Reyes and Mariano. We are brothers, we live in Morris, and we started Dos Bros because we thought people around here deserved better than driving somewhere and giving up a whole day.
               </p>

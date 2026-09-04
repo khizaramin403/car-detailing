@@ -2,6 +2,7 @@
 import { ClientRouter } from "astro:transitions";
 import Navbar from "../components/common/Navbar.jsx";
 import Footer from "../components/common/Footer.jsx";
+import ScrollToTop from "../components/common/ScrollToTop.jsx";
 import "../styles/global.css";
 
 interface Props {
@@ -50,6 +51,8 @@ const {
 			<slot />
 		</main>
 
-		{showFooter && <Footer client:load transition:persist="main-footer" />}
+		{showFooter && <Footer />}
+
+		<ScrollToTop client:load />
 	</body>
 </html>

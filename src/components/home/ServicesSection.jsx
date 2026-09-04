@@ -125,14 +125,14 @@ export default function ServicesSection() {
             <span>SERVICES</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white font-['Outfit'] uppercase tracking-tight leading-[1.15]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
             Our Car Detailing Services <br />
-            <span className="bg-gradient-to-r from-red-500 via-red-400 to-amber-400 bg-clip-text text-transparent">
-              In Morris, MN
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
+              in Morris, MN
             </span>
           </h2>
 
-          <p className="text-sm sm:text-base text-neutral-300 leading-relaxed font-normal pt-2">
+          <p className="text-sm sm:text-base text-neutral-400 font-normal leading-relaxed pt-1">
             Some vehicles need a quick refresh. Others need everything pulled apart and brought back to life. We handle both, and we tell you honestly which one your vehicle actually needs.
           </p>
         </div>
@@ -251,7 +251,7 @@ export default function ServicesSection() {
         {/* Add-ons & Extra Services Sub-Section */}
         <div className="rounded-2xl bg-neutral-900/60 border border-neutral-800/80 p-6 sm:p-8 mb-16 backdrop-blur-md">
           <div className="text-center max-w-xl mx-auto mb-8">
-            <h4 className="text-lg sm:text-xl font-bold text-white font-['Outfit'] uppercase tracking-wide">
+            <h4 className="text-base sm:text-lg font-bold text-white font-['Outfit']">
               Popular Add-Ons & Specialized Upgrades
             </h4>
             <p className="text-xs sm:text-sm text-neutral-400 mt-1">
@@ -268,7 +268,7 @@ export default function ServicesSection() {
                 <div className="w-8 h-8 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center group-hover:scale-105 transition-transform">
                   {addon.icon}
                 </div>
-                <span className="text-xs font-bold text-neutral-200 leading-tight block">
+                <span className="text-xs font-semibold text-neutral-200 leading-tight block">
                   {addon.title}
                 </span>
                 <span className="text-[11px] font-semibold text-red-400 block">
@@ -280,33 +280,33 @@ export default function ServicesSection() {
         </div>
 
         {/* Bottom Consultation & Quote Banner */}
-        <div className="relative rounded-3xl bg-gradient-to-r from-neutral-900 via-neutral-900 to-neutral-950 border border-neutral-800 p-8 sm:p-10 shadow-2xl overflow-hidden">
+        <div className="relative rounded-3xl bg-gradient-to-r from-neutral-900 via-neutral-900 to-neutral-950 border border-neutral-800 p-6 sm:p-8 lg:p-10 shadow-xl overflow-hidden">
           <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-red-600/10 to-transparent pointer-events-none" />
 
-          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
-            <div className="max-w-2xl space-y-2.5">
-              <h3 className="text-xl sm:text-2xl font-bold text-white font-['Outfit'] leading-tight">
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left">
+            <div className="max-w-2xl space-y-2">
+              <h3 className="text-lg sm:text-xl font-bold text-white font-['Outfit'] leading-tight">
                 Not sure which one fits?
               </h3>
-              <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
+              <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
                 Just tell us what your vehicle looks like right now. We will point you at the right package instead of the expensive one.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
               <a
                 href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-sm sm:text-base font-bold text-white uppercase tracking-wider bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 shadow-xl shadow-red-600/30 hover:shadow-red-600/50 hover:-translate-y-0.5 transition-all duration-200 border border-red-500/40"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 shadow-md shadow-red-600/20 hover:-translate-y-0.5 transition-all duration-200 border border-red-500/40"
               >
-                <CalendarOutlined className="text-base" />
+                <CalendarOutlined className="text-sm" />
                 <span>Get My Free Quote</span>
               </a>
 
               <a
                 href="tel:3202873573"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl text-sm sm:text-base font-bold text-neutral-200 uppercase tracking-wider bg-neutral-900 hover:bg-neutral-800 hover:text-white border border-neutral-700/80 shadow-md hover:-translate-y-0.5 transition-all duration-200"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-medium text-neutral-300 hover:text-white bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 shadow-sm hover:-translate-y-0.5 transition-all duration-200"
               >
-                <PhoneOutlined className="text-red-500 text-base" />
+                <PhoneOutlined className="text-red-500 text-sm" />
                 <span>Call 320-287-3573</span>
               </a>
             </div>

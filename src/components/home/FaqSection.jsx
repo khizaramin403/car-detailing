@@ -143,10 +143,10 @@ export default function FaqSection() {
               <span>FAQ</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white font-['Outfit'] uppercase tracking-tight leading-[1.15]">
-              Questions People <br />
-              <span className="bg-gradient-to-r from-red-500 via-red-400 to-amber-400 bg-clip-text text-transparent">
-                Ask Us
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
+              Questions people <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
+                ask us
               </span>
             </h2>
 
@@ -158,7 +158,6 @@ export default function FaqSection() {
           {/* Ant Design Collapse FAQ Accordion */}
           <div className="custom-faq-wrapper mb-14 sm:mb-16">
             <Collapse
-              defaultActiveKey={['1']}
               accordion
               bordered={false}
               expandIconPosition="end"
@@ -174,12 +173,12 @@ export default function FaqSection() {
               items={faqItems.map(item => ({
                 key: item.key,
                 label: (
-                  <span className="font-['Outfit'] text-base sm:text-lg font-bold text-neutral-100 hover:text-white transition-colors">
+                  <span className="font-['Outfit'] text-sm sm:text-base font-semibold text-neutral-100 hover:text-white transition-colors">
                     {item.label}
                   </span>
                 ),
                 children: item.children,
-                className: "mb-3.5 rounded-2xl overflow-hidden border border-neutral-800/90 bg-neutral-900/60 hover:border-neutral-700/80 transition-all backdrop-blur-sm shadow-md"
+                className: "mb-3 rounded-2xl overflow-hidden border border-neutral-800/90 bg-neutral-900/60 hover:border-neutral-700/80 transition-all backdrop-blur-sm shadow-md"
               }))}
             />
           </div>

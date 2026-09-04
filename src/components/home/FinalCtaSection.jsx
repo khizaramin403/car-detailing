@@ -1,82 +1,378 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Form, Input, DatePicker, TimePicker, ConfigProvider, theme } from 'antd';
 import { 
-  CalendarOutlined, 
-  PhoneOutlined 
+  CheckCircleFilled
 } from '@ant-design/icons';
 import { 
   Sparkles, 
+  Phone, 
+  Mail, 
   MapPin, 
-  ShieldCheck 
+  Clock, 
+  ShieldCheck, 
+  Calendar,
+  Send
 } from 'lucide-react';
 
 export default function FinalCtaSection() {
+  const [form] = Form.useForm();
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = (values) => {
+    setIsSubmitting(true);
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+    }, 500);
+  };
+
+  const handleReset = () => {
+    form.resetFields();
+    setIsSubmitted(false);
+  };
+
   return (
-    <section id="final-cta" className="relative bg-neutral-950 py-20 sm:py-24 lg:py-28 overflow-hidden select-none">
-      
-      {/* Background Ambient Glow Accents */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-red-600/10 blur-[160px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-[450px] h-[300px] bg-amber-500/5 blur-[130px] rounded-full pointer-events-none" />
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+    <ConfigProvider
+      theme={{
+        algorithm: theme.darkAlgorithm,
+        token: {
+          colorPrimary: '#ef4444',
+          colorBgContainer: '#0a0a0a',
+          colorBgElevated: '#141414',
+          colorBorder: 'rgba(50, 50, 50, 0.7)',
+          colorText: '#f5f5f5',
+          colorTextPlaceholder: '#52525b',
+          borderRadius: 8,
+          fontFamily: "'Plus Jakarta Sans', sans-serif",
+          controlHeight: 36,
+          fontSize: 12,
+        },
+        components: {
+          Form: {
+            itemMarginBottom: 10,
+            labelFontSize: 11,
+            labelColor: '#a1a1aa',
+            labelHeight: 18,
+          },
+          Input: {
+            colorBgContainer: '#0a0a0a',
+            colorBorder: 'rgba(38, 38, 38, 0.9)',
+            activeBorderColor: '#ef4444',
+            hoverBorderColor: 'rgba(239, 68, 68, 0.5)',
+            activeShadow: '0 0 0 2px rgba(239, 68, 68, 0.12)',
+            colorText: '#ffffff',
+            colorTextPlaceholder: '#52525b',
+            borderRadius: 8,
+            paddingBlock: 6,
+            paddingInline: 10,
+            fontSize: 12,
+          },
+          DatePicker: {
+            colorBgContainer: '#0a0a0a',
+            colorBgElevated: '#141414',
+            colorBorder: 'rgba(38, 38, 38, 0.9)',
+            activeBorderColor: '#ef4444',
+            hoverBorderColor: 'rgba(239, 68, 68, 0.5)',
+            activeShadow: '0 0 0 2px rgba(239, 68, 68, 0.12)',
+            colorText: '#ffffff',
+            colorTextPlaceholder: '#52525b',
+            borderRadius: 8,
+            paddingBlock: 6,
+            paddingInline: 10,
+            fontSize: 12,
+          },
+          TimePicker: {
+            colorBgContainer: '#0a0a0a',
+            colorBgElevated: '#141414',
+            colorBorder: 'rgba(38, 38, 38, 0.9)',
+            activeBorderColor: '#ef4444',
+            hoverBorderColor: 'rgba(239, 68, 68, 0.5)',
+            activeShadow: '0 0 0 2px rgba(239, 68, 68, 0.12)',
+            colorText: '#ffffff',
+            colorTextPlaceholder: '#52525b',
+            borderRadius: 8,
+            paddingBlock: 6,
+            paddingInline: 10,
+            fontSize: 12,
+          }
+        }
+      }}
+    >
+      <section id="contact-booking" className="relative bg-neutral-950 py-10 sm:py-12 lg:py-14 border-t border-neutral-900 overflow-hidden select-none">
         
-        {/* Main Final CTA Card (Centered Layout: Heading Top -> Paragraphs Middle -> Buttons Bottom) */}
-        <div className="relative rounded-3xl bg-gradient-to-b from-neutral-900 via-neutral-900 to-neutral-950 border border-neutral-800 p-8 sm:p-12 lg:p-16 shadow-2xl overflow-hidden text-center">
+        {/* Ambient Subtle Glows */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-[400px] h-[250px] bg-red-600/5 blur-[120px] rounded-full" />
+          <div className="absolute bottom-10 right-10 w-[350px] h-[200px] bg-amber-500/5 blur-[120px] rounded-full" />
+        </div>
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           
-          {/* Subtle Ambient Glow Accents */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-48 bg-red-600/10 blur-3xl rounded-full pointer-events-none" />
-          <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-amber-500/5 blur-3xl rounded-full pointer-events-none" />
-
-          <div className="relative z-10 max-w-3xl mx-auto space-y-6 sm:space-y-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
             
-            {/* Top: Badge & Main Heading */}
-            <div className="space-y-4">
-              {/* <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-950 border border-neutral-800 text-xs font-semibold text-neutral-300">
-                <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                <span>SECTION 14: GET A QUOTE</span>
-              </div> */}
+            {/* ========================================================================= */}
+            {/* LEFT COLUMN: Sleek Minimal Contact Details                                */}
+            {/* ========================================================================= */}
+            <div className="lg:col-span-5 space-y-4">
+              
+              {/* Badge & Title */}
+              <div className="space-y-1.5">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-neutral-900 border border-neutral-800 text-[10px] font-semibold text-neutral-300">
+                  <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+                  <span>BOOKING & INQUIRIES</span>
+                </div>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white font-['Outfit'] uppercase tracking-tight leading-[1.15]">
-                Get Your Free Car Detailing <br className="hidden sm:inline" />
-                <span className="bg-gradient-to-r from-red-500 via-red-400 to-amber-400 bg-clip-text text-transparent">
-                  Quote in Morris
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white font-['Outfit'] tracking-tight leading-snug">
+                  Get your free quote <br className="hidden sm:inline" />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
+                    & lock in your detail
+                  </span>
+                </h2>
+
+                <p className="text-xs text-neutral-400 font-normal leading-relaxed max-w-sm">
+                  Reyes and Mariano bring 100% mobile detailing directly to your driveway, workplace, or farm anywhere in Stevens County.
+                </p>
+              </div>
+
+              {/* Minimal Contact List */}
+              <div className="space-y-2 pt-1">
+                
+                {/* Phone */}
+                <a
+                  href="tel:3202873573"
+                  className="group flex items-center gap-2.5 p-2 rounded-lg bg-neutral-900/40 hover:bg-neutral-900/80 border border-neutral-800/60 hover:border-red-500/40 transition-colors"
+                >
+                  <div className="w-7 h-7 rounded-md bg-red-500/10 text-red-400 flex items-center justify-center shrink-0 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                    <Phone className="w-3.5 h-3.5" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <span className="block text-[9px] text-neutral-500 uppercase tracking-wider">Call or Text</span>
+                    <span className="block text-xs sm:text-sm font-semibold text-white group-hover:text-red-400 transition-colors">
+                      (320) 287-3573
+                    </span>
+                  </div>
+                  <span className="text-[10px] text-neutral-500 hidden xs:inline group-hover:text-neutral-300 transition-colors">
+                    Fast Response →
+                  </span>
+                </a>
+
+                {/* Email */}
+                <a
+                  href="mailto:dosbrosautodetailing@gmail.com"
+                  className="group flex items-center gap-2.5 p-2 rounded-lg bg-neutral-900/40 hover:bg-neutral-900/80 border border-neutral-800/60 hover:border-red-500/40 transition-colors"
+                >
+                  <div className="w-7 h-7 rounded-md bg-red-500/10 text-red-400 flex items-center justify-center shrink-0 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                    <Mail className="w-3.5 h-3.5" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <span className="block text-[9px] text-neutral-500 uppercase tracking-wider">Email Us</span>
+                    <span className="block text-xs font-semibold text-white truncate group-hover:text-red-400 transition-colors">
+                      dosbrosautodetailing@gmail.com
+                    </span>
+                  </div>
+                </a>
+
+                {/* Location */}
+                <div className="flex items-center gap-2.5 p-2 rounded-lg bg-neutral-900/40 border border-neutral-800/60">
+                  <div className="w-7 h-7 rounded-md bg-neutral-800/80 text-neutral-400 flex items-center justify-center shrink-0">
+                    <MapPin className="w-3.5 h-3.5 text-red-400" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <span className="block text-[9px] text-neutral-500 uppercase tracking-wider">Service Hub</span>
+                    <span className="block text-xs font-semibold text-white">
+                      Morris, MN 56267
+                    </span>
+                  </div>
+                </div>
+
+                {/* Hours */}
+                <div className="flex items-center gap-2.5 p-2 rounded-lg bg-neutral-900/40 border border-neutral-800/60">
+                  <div className="w-7 h-7 rounded-md bg-neutral-800/80 text-neutral-400 flex items-center justify-center shrink-0">
+                    <Clock className="w-3.5 h-3.5 text-amber-400" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <span className="block text-[9px] text-neutral-500 uppercase tracking-wider">Operating Hours</span>
+                    <span className="block text-xs font-semibold text-white">
+                      Mon – Sat: 8:00 AM – 7:00 PM
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Minimal Trust Badges */}
+              <div className="flex flex-wrap items-center gap-1.5 pt-0.5 text-[10px] text-neutral-400">
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-neutral-900 border border-neutral-800">
+                  <ShieldCheck className="w-3 h-3 text-emerald-400" />
+                  <span>100% Mobile</span>
                 </span>
-              </h2>
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-neutral-900 border border-neutral-800">
+                  <Sparkles className="w-3 h-3 text-amber-400" />
+                  <span>5.0 Star Rated</span>
+                </span>
+              </div>
+
             </div>
 
-            {/* Middle: Description Paragraphs */}
-            <div className="space-y-3 text-sm sm:text-base lg:text-lg text-neutral-300 leading-relaxed font-normal max-w-2xl mx-auto">
-              <p className="text-white font-medium">
-                We are Reyes and Mariano, two brothers from Morris, and we bring the detailing to you.
-              </p>
-              <p className="text-neutral-400 text-xs sm:text-sm lg:text-base">
-                Tell us what you drive and where you are. We will send you a straight price with no pressure and no runaround. If your vehicle is rough, that is fine. We have seen worse, and that is the fun part.
-              </p>
-            </div>
+            {/* ========================================================================= */}
+            {/* RIGHT COLUMN: Sleek Compact Ant Design Form                               */}
+            {/* ========================================================================= */}
+            <div className="lg:col-span-7">
+              <div className="rounded-xl sm:rounded-2xl bg-neutral-900/50 border border-neutral-800/80 p-4 sm:p-5 lg:p-6 shadow-xl backdrop-blur-md">
+                
+                <div className="border-b border-neutral-800/70 pb-2.5 mb-3.5 flex items-center justify-between">
+                  <div className="flex items-center gap-1.5">
+                    <Calendar className="w-4 h-4 text-red-500" />
+                    <h3 className="text-sm sm:text-base font-bold text-white font-['Outfit']">
+                      Book Detailing Slot
+                    </h3>
+                  </div>
+                  <span className="text-[10px] text-neutral-400 font-medium">Free Estimate</span>
+                </div>
 
-            {/* Bottom: Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-              <a
-                href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-sm sm:text-base font-bold text-white uppercase tracking-wider bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 shadow-xl shadow-red-600/30 hover:shadow-red-600/50 hover:-translate-y-0.5 transition-all duration-200 border border-red-500/40"
-              >
-                <CalendarOutlined className="text-base" />
-                <span>Get My Free Quote</span>
-              </a>
+                {isSubmitted ? (
+                  <div className="py-6 text-center space-y-3">
+                    <div className="w-10 h-10 mx-auto rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                      <CheckCircleFilled className="text-xl" />
+                    </div>
+                    <div className="space-y-1 max-w-sm mx-auto">
+                      <h4 className="text-sm sm:text-base font-bold text-white font-['Outfit']">
+                        Request Received!
+                      </h4>
+                      <p className="text-xs text-neutral-300">
+                        We will contact you shortly to confirm your quote and appointment time.
+                      </p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={handleReset}
+                      className="px-3.5 py-1.5 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-white text-[11px] font-medium transition-colors cursor-pointer"
+                    >
+                      Submit Another
+                    </button>
+                  </div>
+                ) : (
+                  <Form
+                    form={form}
+                    layout="vertical"
+                    onFinish={handleSubmit}
+                    requiredMark={false}
+                    className="space-y-0"
+                  >
+                    {/* Row 1: First Name & Last Name */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                      <Form.Item
+                        label={<span className="text-[11px] text-neutral-400">First Name</span>}
+                        name="firstName"
+                        rules={[{ required: true, message: 'Required' }]}
+                        className="!mb-2.5"
+                      >
+                        <Input placeholder="e.g. John" className="bg-neutral-950/80" />
+                      </Form.Item>
 
-              <a
-                href="tel:3202873573"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl text-sm sm:text-base font-bold text-neutral-200 uppercase tracking-wider bg-neutral-950 hover:bg-neutral-800 hover:text-white border border-neutral-800 shadow-md hover:-translate-y-0.5 transition-all duration-200"
-              >
-                <PhoneOutlined className="text-red-500 text-base" />
-                <span>Call 320-287-3573</span>
-              </a>
+                      <Form.Item
+                        label={<span className="text-[11px] text-neutral-400">Last Name</span>}
+                        name="lastName"
+                        rules={[{ required: true, message: 'Required' }]}
+                        className="!mb-2.5"
+                      >
+                        <Input placeholder="e.g. Doe" className="bg-neutral-950/80" />
+                      </Form.Item>
+                    </div>
+
+                    {/* Row 2: Phone & Email */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                      <Form.Item
+                        label={<span className="text-[11px] text-neutral-400">Phone Number</span>}
+                        name="phone"
+                        rules={[{ required: true, message: 'Required' }]}
+                        className="!mb-2.5"
+                      >
+                        <Input 
+                          placeholder="(320) 000-0000" 
+                          prefix={<Phone className="w-3 h-3 text-neutral-500 mr-0.5" />}
+                          className="bg-neutral-950/80" 
+                        />
+                      </Form.Item>
+
+                      <Form.Item
+                        label={<span className="text-[11px] text-neutral-400">Email Address</span>}
+                        name="email"
+                        rules={[
+                          { required: true, message: 'Required' },
+                          { type: 'email', message: 'Invalid email' }
+                        ]}
+                        className="!mb-2.5"
+                      >
+                        <Input 
+                          placeholder="john@example.com" 
+                          prefix={<Mail className="w-3 h-3 text-neutral-500 mr-0.5" />}
+                          className="bg-neutral-950/80" 
+                        />
+                      </Form.Item>
+                    </div>
+
+                    {/* Row 3: Date & Time */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                      <Form.Item
+                        label={<span className="text-[11px] text-neutral-400">Preferred Date</span>}
+                        name="date"
+                        rules={[{ required: true, message: 'Required' }]}
+                        className="!mb-2.5"
+                      >
+                        <DatePicker className="w-full bg-neutral-950/80" placeholder="Select date" />
+                      </Form.Item>
+
+                      <Form.Item
+                        label={<span className="text-[11px] text-neutral-400">Preferred Time</span>}
+                        name="time"
+                        rules={[{ required: true, message: 'Required' }]}
+                        className="!mb-2.5"
+                      >
+                        <TimePicker use12Hours format="h:mm a" className="w-full bg-neutral-950/80" placeholder="Select time" />
+                      </Form.Item>
+                    </div>
+
+                    {/* Row 4: Vehicle / Notes (Optional, sleek single-line input) */}
+                    <Form.Item
+                      label={<span className="text-[11px] text-neutral-400">Vehicle / Notes <span className="text-neutral-500">(Optional)</span></span>}
+                      name="notes"
+                      className="!mb-3.5"
+                    >
+                      <Input placeholder="Year, Make, Model or package preference..." className="bg-neutral-950/80" />
+                    </Form.Item>
+
+                    {/* Submit Button (Compact & Sleek) */}
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-xs font-semibold text-white bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-600 active:scale-[0.99] shadow-md shadow-red-600/20 transition-all duration-150 cursor-pointer disabled:opacity-60 border border-red-500/30"
+                    >
+                      {isSubmitting ? (
+                        <span>Sending...</span>
+                      ) : (
+                        <>
+                          <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+                          <span>Request Free Quote & Booking</span>
+                          <Send className="w-3 h-3 text-white/80" />
+                        </>
+                      )}
+                    </button>
+
+                    <p className="text-[10px] text-neutral-500 text-center pt-2">
+                      🔒 Zero spam. We only use this to confirm your detail.
+                    </p>
+                  </Form>
+                )}
+
+              </div>
             </div>
 
           </div>
 
         </div>
-
-      </div>
-    </section>
+      </section>
+    </ConfigProvider>
   );
 }

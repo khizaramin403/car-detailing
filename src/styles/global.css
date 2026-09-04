@@ -6,6 +6,11 @@
   animation-duration: 0s !important;
 }
 
+html,
+body {
+  overflow-x: clip;
+}
+
 html {
   scroll-behavior: smooth;
   background-color: #0a0a0a;
@@ -105,5 +110,128 @@ html {
 @media (min-width: 640px) {
   .custom-faq-wrapper .ant-collapse-content-box {
     padding: 18px 24px 24px !important;
+  }
+}
+
+/* 3D Panorama Slider Styles matching sample */
+.panorama-swiper-container {
+  perspective: 1200px;
+  overflow: visible !important;
+  height: 270px !important;
+  contain: layout paint;
+}
+
+@media (min-width: 480px) {
+  .panorama-swiper-container {
+    height: 300px !important;
+  }
+}
+
+@media (min-width: 640px) {
+  .panorama-swiper-container {
+    height: 330px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .panorama-swiper-container {
+    height: 350px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .panorama-swiper-container {
+    height: 360px !important;
+  }
+}
+
+.panorama-swiper-container .swiper-wrapper {
+  height: 100% !important;
+  align-items: center !important;
+}
+
+.panorama-swiper-container .swiper-slide {
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.panorama-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.25);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.panorama-bullet:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.panorama-bullet-active {
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 4px #ef4444;
+}
+
+/* Ant Design Modal Responsive & Zero Padding Overrides */
+.ant-modal {
+  max-width: calc(100vw - 16px) !important;
+  margin: 8px auto !important;
+  padding-bottom: 0 !important;
+}
+
+@media (min-width: 640px) {
+  .ant-modal {
+    max-width: calc(100vw - 32px) !important;
+    margin: 16px auto !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ant-modal {
+    max-width: 1120px !important;
+    margin: 24px auto !important;
+  }
+}
+
+.ant-modal .ant-modal-container,
+.ant-modal-container,
+.ant-modal .ant-modal-content,
+.ant-modal-content {
+  padding: 0 !important;
+  background-color: #0a0a0a !important;
+  border-radius: 16px !important;
+  max-height: calc(100dvh - 20px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+@media (min-width: 640px) {
+  .ant-modal .ant-modal-container,
+  .ant-modal-container,
+  .ant-modal .ant-modal-content,
+  .ant-modal-content {
+    border-radius: 20px !important;
+    max-height: calc(100dvh - 36px) !important;
+  }
+}
+
+.ant-modal-close {
+  top: 10px !important;
+  inset-inline-end: 10px !important;
+  color: #a3a3a3 !important;
+}
+
+@media (min-width: 640px) {
+  .ant-modal-close {
+    top: 16px !important;
+    inset-inline-end: 16px !important;
   }
 }
