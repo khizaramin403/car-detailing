@@ -1,24 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ServiceAreaHeroSection from '../components/service-areas/ServiceAreaHeroSection.jsx';
+import HowTravelWorksSection from '../components/service-areas/HowTravelWorksSection.jsx';
+import ServiceAreaSection from '../components/service-areas/ServiceAreaSection.jsx';
+import WhatWeBringSection from '../components/service-areas/WhatWeBringSection.jsx';
+import ServiceAreaFaqSection from '../components/service-areas/ServiceAreaFaqSection.jsx';
+import ServiceAreaCtaSection from '../components/service-areas/ServiceAreaCtaSection.jsx';
 ---
 
 <Layout 
-  title="Service Areas | Apex Auto Detailing"
-  description="Explore our mobile auto detailing coverage areas and private studio workshop location."
+  title="Where We Detail: Morris, MN & Surrounding Towns | Dos Bros Detailing"
+  description="Dos Bros Detailing is a mobile detailing service based in Morris, Minnesota. We bring detailing to your driveway, workplace, or farm site across Stevens County and west central Minnesota."
   showNav={true}
   showFooter={true}
 >
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-    <div class="max-w-3xl">
-      <span class="text-xs font-bold uppercase tracking-widest text-red-500 bg-red-500/10 px-3 py-1 rounded-md border border-red-500/20">
-        Locations & Coverage
-      </span>
-      <h1 class="text-4xl sm:text-5xl font-extrabold text-white font-['Outfit'] mt-4 mb-6">
-        Mobile Units & Studio Locations.
-      </h1>
-      <p class="text-lg text-neutral-300 leading-relaxed">
-        We offer on-site mobile detailing at your home or office across the metropolitan area, plus temperature-controlled studio bays for multi-day ceramic coatings.
-      </p>
-    </div>
-  </div>
+  <main>
+    <ServiceAreaHeroSection client:load />
+    <HowTravelWorksSection client:visible />
+    <ServiceAreaSection client:visible />
+    <WhatWeBringSection client:visible />
+    <ServiceAreaFaqSection client:visible />
+    <ServiceAreaCtaSection client:visible />
+  </main>
 </Layout>

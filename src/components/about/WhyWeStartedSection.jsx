@@ -8,19 +8,16 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 // Import gallery images
-import g1 from '../../assets/galleryimages/1.webp';
-import g2 from '../../assets/galleryimages/2.webp';
-import g3 from '../../assets/galleryimages/3.webp';
-import g4 from '../../assets/galleryimages/4.webp';
-import g5 from '../../assets/galleryimages/5.webp';
-import g6 from '../../assets/galleryimages/6.webp';
-import g7 from '../../assets/galleryimages/7.webp';
-import g8 from '../../assets/galleryimages/8.webp';
-import g9 from '../../assets/galleryimages/9.webp';
-import g10 from '../../assets/galleryimages/10.webp';
+import g1 from '../../assets/aboutgallery/1.webp';
+import g2 from '../../assets/aboutgallery/2.webp';
+import g3 from '../../assets/aboutgallery/3.webp';
+import g4 from '../../assets/aboutgallery/4.webp';
+import g5 from '../../assets/aboutgallery/5.webp';
+import g6 from '../../assets/aboutgallery/6.webp';
 
-const leftImages = [g1, g2, g3, g4, g5].map((img) => (typeof img === 'object' ? img.src : img));
-const rightImages = [g6, g7, g8, g9, g10].map((img) => (typeof img === 'object' ? img.src : img));
+
+const leftImages = [g1, g2, g3].map((img) => (typeof img === 'object' ? img.src : img));
+const rightImages = [g4, g5, g6].map((img) => (typeof img === 'object' ? img.src : img));
 const allImages = [...leftImages, ...rightImages];
 
 export default function WhyWeStartedSection() {

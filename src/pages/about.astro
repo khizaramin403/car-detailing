@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import AboutHeroSection from "../components/about/AboutHeroSection.jsx";
 import WhoWeAreSection from "../components/about/WhoWeAreSection.jsx";
 import WhyWeStartedSection from "../components/about/WhyWeStartedSection.jsx";
+import WhyMobileSection from "../components/about/WhyMobileSection.jsx";
+import HowWeDoThingsSection from "../components/about/HowWeDoThingsSection.jsx";
 import AboutFaqSection from "../components/about/AboutFaqSection.jsx";
 import AboutCtaBanner from "../components/about/AboutCtaBanner.jsx";
 ---
@@ -16,6 +18,8 @@ import AboutCtaBanner from "../components/about/AboutCtaBanner.jsx";
   <AboutHeroSection client:load />
   <WhoWeAreSection client:visible />
   <WhyWeStartedSection client:visible />
+  <WhyMobileSection client:visible />
+  <HowWeDoThingsSection client:visible />
   <AboutFaqSection client:visible />
   <AboutCtaBanner client:visible />
 </Layout>

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Tabs, ConfigProvider, theme } from 'antd';
 import { 
   CalendarOutlined, 
   ClockCircleOutlined, 
@@ -108,14 +107,14 @@ const addOnsList = [
 function PackageCard({ pkg }) {
   return (
     <div
-      className={`w-full h-full min-h-[380px] rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 backdrop-blur-md ${
+      className={`w-full h-full min-h-[420px] rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 backdrop-blur-md ${
         pkg.featured
           ? 'bg-zinc-900/90 border-2 border-red-500/60 shadow-xl shadow-red-600/10'
           : 'bg-zinc-900/60 border border-zinc-800/90 hover:border-zinc-700 hover:bg-zinc-900/80 shadow-lg'
       }`}
     >
       <div>
-        <div className="flex items-center justify-between gap-2 mb-4">
+        <div className="flex items-center justify-between gap-2 mb-4 min-h-[40px]">
           <div className="w-10 h-10 rounded-xl bg-zinc-950 border border-zinc-800 flex items-center justify-center shrink-0">
             {pkg.icon}
           </div>
@@ -151,7 +150,7 @@ function PackageCard({ pkg }) {
             <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-500 block mb-1">
               Best for:
             </span>
-            <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed min-h-[40px] sm:min-h-[44px]">
               {pkg.bestFor}
             </p>
           </div>
@@ -174,37 +173,7 @@ function PackageCard({ pkg }) {
 }
 
 export default function PricingSection() {
-  const [activeKey, setActiveKey] = useState('express'); // Default: 'express'
-
-  const tabItems = [
-    {
-      key: 'express',
-      label: (
-        <span className="flex items-center gap-1.5 px-1 sm:px-3 py-0.5 text-xs sm:text-base font-bold font-['Outfit']">
-          <Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-red-500 shrink-0" />
-          <span>Express Series</span>
-        </span>
-      ),
-    },
-    {
-      key: 'executive',
-      label: (
-        <span className="flex items-center gap-1.5 px-1 sm:px-3 py-0.5 text-xs sm:text-base font-bold font-['Outfit']">
-          <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400 shrink-0" />
-          <span>Executive Series</span>
-        </span>
-      ),
-    },
-    {
-      key: 'all',
-      label: (
-        <span className="flex items-center gap-1.5 px-1 sm:px-3 py-0.5 text-xs sm:text-base font-bold font-['Outfit']">
-          <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neutral-400 shrink-0" />
-          <span>All Series</span>
-        </span>
-      ),
-    },
-  ];
+  const [activeKey, setActiveKey] = useState('executive'); // Default: 'executive'
 
   return (
     <section id="pricing" className="relative bg-neutral-900/50 py-20 sm:py-24 lg:py-28 border-y border-zinc-800/80 overflow-hidden select-none">
@@ -233,151 +202,63 @@ export default function PricingSection() {
             Most detailers around here make you call before they will tell you anything about price. We think that is annoying. Here is what we charge.
           </p>
 
-          {/* Ant Design Tabs Navigation Component */}
-          <div className="pt-4 sm:pt-6 flex justify-center w-full max-w-full overflow-x-auto">
-            <ConfigProvider
-              theme={{
-                algorithm: theme.darkAlgorithm,
-                token: {
-                  colorPrimary: '#fb2c36',
-                  colorText: '#d4d4d8',
-                  colorBgContainer: '#09090b',
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                },
-                components: {
-                  Tabs: {
-                    itemColor: '#a1a1aa',
-                    itemSelectedColor: '#ffffff',
-                    itemHoverColor: '#fb2c36',
-                    inkBarColor: '#fb2c36',
-                  }
-                }
-              }}
-            >
-              <Tabs
-                activeKey={activeKey}
-                onChange={setActiveKey}
-                items={tabItems}
-                centered
-                className="custom-pricing-tabs"
-              />
-            </ConfigProvider>
+          {/* Sleek Segmented Tabs Navigation (Zero Layout Shift, No Wrap, Smooth Transitions) */}
+          <div className="pt-4 sm:pt-6 flex justify-center w-full max-w-full px-2">
+            <div className="inline-flex items-center p-1 sm:p-1.5 rounded-2xl bg-zinc-900/90 border border-zinc-800/90 backdrop-blur-md shadow-xl gap-1 sm:gap-2 max-w-full overflow-x-auto no-scrollbar">
+              <button
+                type="button"
+                onClick={() => setActiveKey('express')}
+                className={`whitespace-nowrap px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold font-['Outfit'] transition-colors duration-150 cursor-pointer border select-none focus:outline-none ${
+                  activeKey === 'express'
+                    ? 'bg-gradient-to-r from-red-600 to-red-700 text-white shadow-md shadow-red-600/25 border-red-500/40'
+                    : 'text-zinc-400 hover:text-white hover:bg-zinc-800/60 border-transparent'
+                }`}
+              >
+                Express Series
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setActiveKey('executive')}
+                className={`whitespace-nowrap px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold font-['Outfit'] transition-colors duration-150 cursor-pointer border select-none focus:outline-none ${
+                  activeKey === 'executive'
+                    ? 'bg-gradient-to-r from-red-600 to-red-700 text-white shadow-md shadow-red-600/25 border-red-500/40'
+                    : 'text-zinc-400 hover:text-white hover:bg-zinc-800/60 border-transparent'
+                }`}
+              >
+                Executive Series
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setActiveKey('all')}
+                className={`whitespace-nowrap px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold font-['Outfit'] transition-colors duration-150 cursor-pointer border select-none focus:outline-none ${
+                  activeKey === 'all'
+                    ? 'bg-gradient-to-r from-red-600 to-red-700 text-white shadow-md shadow-red-600/25 border-red-500/40'
+                    : 'text-zinc-400 hover:text-white hover:bg-zinc-800/60 border-transparent'
+                }`}
+              >
+                All Series
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* 1. Tab Content: Express Series */}
-        {activeKey === 'express' && (
-          <div className="mb-16 sm:mb-20">
-            <div className="text-center mb-8">
-              <span className="text-xs font-bold uppercase tracking-wider text-red-400 block mb-1">
-                Maintenance Tier
-              </span>
-              <p className="text-xs sm:text-sm text-zinc-400">
-                Routine maintenance to keep a vehicle looking its best.
-              </p>
-            </div>
-
-            {/* Mobile View: Swiper Carousel */}
-            <div className="block md:hidden">
-              <Swiper
-                modules={[Autoplay, Pagination]}
-                loop={true}
-                speed={600}
-                autoplay={{ delay: 3500, disableOnInteraction: false, pauseOnMouseEnter: true }}
-                pagination={{
-                  clickable: true,
-                  el: '.pricing-express-pagination',
-                  bulletClass: 'services-bullet',
-                  bulletActiveClass: 'services-bullet-active',
-                }}
-                spaceBetween={16}
-                slidesPerView={1}
-                className="!pb-0"
-              >
-                {expressPackages.map((pkg, idx) => (
-                  <SwiperSlide key={idx} className="!h-auto flex">
-                    <PackageCard pkg={pkg} />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-              {/* Pagination Dots - Positioned Below Card */}
-              <div className="pricing-express-pagination flex items-center justify-center gap-2 mt-6" />
-            </div>
-
-            {/* Tablet & Desktop View: 3 Columns Grid */}
-            <div className="hidden md:grid md:grid-cols-3 gap-6 sm:gap-8">
-              {expressPackages.map((pkg, idx) => (
-                <PackageCard key={idx} pkg={pkg} />
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* 2. Tab Content: Executive Series */}
-        {activeKey === 'executive' && (
-          <div className="mb-16 sm:mb-20">
-            <div className="text-center mb-8">
-              <span className="text-xs font-bold uppercase tracking-wider text-amber-400 block mb-1">
-                Restoration & Deep Clean
-              </span>
-              <p className="text-xs sm:text-sm text-zinc-400">
-                Deeper cleaning and restoration.
-              </p>
-            </div>
-
-            {/* Mobile View: Swiper Carousel */}
-            <div className="block md:hidden">
-              <Swiper
-                modules={[Autoplay, Pagination]}
-                loop={true}
-                speed={600}
-                autoplay={{ delay: 3500, disableOnInteraction: false, pauseOnMouseEnter: true }}
-                pagination={{
-                  clickable: true,
-                  el: '.pricing-executive-pagination',
-                  bulletClass: 'services-bullet',
-                  bulletActiveClass: 'services-bullet-active',
-                }}
-                spaceBetween={16}
-                slidesPerView={1}
-                className="!pb-0"
-              >
-                {executivePackages.map((pkg, idx) => (
-                  <SwiperSlide key={idx} className="!h-auto flex">
-                    <PackageCard pkg={pkg} />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-              {/* Pagination Dots - Positioned Below Card */}
-              <div className="pricing-executive-pagination flex items-center justify-center gap-2 mt-6" />
-            </div>
-
-            {/* Tablet & Desktop View: 3 Columns Grid */}
-            <div className="hidden md:grid md:grid-cols-3 gap-6 sm:gap-8">
-              {executivePackages.map((pkg, idx) => (
-                <PackageCard key={idx} pkg={pkg} />
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* 3. Tab Content: All Series */}
-        {activeKey === 'all' && (
-          <div className="mb-16 sm:mb-20 space-y-14">
-            
-            {/* Express Block inside All Series */}
-            <div>
-              <div className="flex items-center gap-2 pb-3 border-b border-zinc-800 mb-6">
-                <Zap className="w-4 h-4 text-red-500" />
-                <h3 className="text-xl sm:text-2xl font-bold text-white font-['Outfit']">
-                  Express Series
-                </h3>
-                <span className="text-xs text-zinc-400 ml-auto">
-                  Routine maintenance
+        {/* Tab Panels Container with key={activeKey} for smooth fade transitions */}
+        <div key={activeKey} className="tab-fade-in min-h-[480px]">
+          {/* 1. Tab Content: Express Series */}
+          {activeKey === 'express' && (
+            <div className="mb-16 sm:mb-20">
+              <div className="text-center mb-8">
+                <span className="text-xs font-bold uppercase tracking-wider text-red-400 block mb-1">
+                  Maintenance Tier
                 </span>
+                <p className="text-xs sm:text-sm text-zinc-400">
+                  Routine maintenance to keep a vehicle looking its best.
+                </p>
               </div>
 
-              {/* Mobile View */}
+              {/* Mobile View: Swiper Carousel */}
               <div className="block md:hidden">
                 <Swiper
                   modules={[Autoplay, Pagination]}
@@ -386,13 +267,13 @@ export default function PricingSection() {
                   autoplay={{ delay: 3500, disableOnInteraction: false, pauseOnMouseEnter: true }}
                   pagination={{
                     clickable: true,
-                    el: '.pricing-all-express-pagination',
+                    el: '.pricing-express-pagination',
                     bulletClass: 'services-bullet',
                     bulletActiveClass: 'services-bullet-active',
                   }}
                   spaceBetween={16}
                   slidesPerView={1}
-                  className="!pb-0"
+                  className="pricing-swiper !pb-0"
                 >
                   {expressPackages.map((pkg, idx) => (
                     <SwiperSlide key={idx} className="!h-auto flex">
@@ -400,30 +281,32 @@ export default function PricingSection() {
                     </SwiperSlide>
                   ))}
                 </Swiper>
-                <div className="pricing-all-express-pagination flex items-center justify-center gap-2 mt-6" />
+                {/* Pagination Dots - Positioned Below Card */}
+                <div className="pricing-express-pagination flex items-center justify-center gap-2 mt-6" />
               </div>
 
-              {/* Desktop View */}
+              {/* Tablet & Desktop View: 3 Columns Grid */}
               <div className="hidden md:grid md:grid-cols-3 gap-6 sm:gap-8">
                 {expressPackages.map((pkg, idx) => (
                   <PackageCard key={idx} pkg={pkg} />
                 ))}
               </div>
             </div>
+          )}
 
-            {/* Executive Block inside All Series */}
-            <div>
-              <div className="flex items-center gap-2 pb-3 border-b border-zinc-800 mb-6">
-                <Sparkles className="w-4 h-4 text-amber-400" />
-                <h3 className="text-xl sm:text-2xl font-bold text-white font-['Outfit']">
-                  Executive Series
-                </h3>
-                <span className="text-xs text-zinc-400 ml-auto">
-                  Deeper cleaning & restoration
+          {/* 2. Tab Content: Executive Series */}
+          {activeKey === 'executive' && (
+            <div className="mb-16 sm:mb-20">
+              <div className="text-center mb-8">
+                <span className="text-xs font-bold uppercase tracking-wider text-amber-400 block mb-1">
+                  Restoration & Deep Clean
                 </span>
+                <p className="text-xs sm:text-sm text-zinc-400">
+                  Deeper cleaning and restoration.
+                </p>
               </div>
 
-              {/* Mobile View */}
+              {/* Mobile View: Swiper Carousel */}
               <div className="block md:hidden">
                 <Swiper
                   modules={[Autoplay, Pagination]}
@@ -432,13 +315,13 @@ export default function PricingSection() {
                   autoplay={{ delay: 3500, disableOnInteraction: false, pauseOnMouseEnter: true }}
                   pagination={{
                     clickable: true,
-                    el: '.pricing-all-exec-pagination',
+                    el: '.pricing-executive-pagination',
                     bulletClass: 'services-bullet',
                     bulletActiveClass: 'services-bullet-active',
                   }}
                   spaceBetween={16}
                   slidesPerView={1}
-                  className="!pb-0"
+                  className="pricing-swiper !pb-0"
                 >
                   {executivePackages.map((pkg, idx) => (
                     <SwiperSlide key={idx} className="!h-auto flex">
@@ -446,19 +329,118 @@ export default function PricingSection() {
                     </SwiperSlide>
                   ))}
                 </Swiper>
-                <div className="pricing-all-exec-pagination flex items-center justify-center gap-2 mt-6" />
+                {/* Pagination Dots - Positioned Below Card */}
+                <div className="pricing-executive-pagination flex items-center justify-center gap-2 mt-6" />
               </div>
 
-              {/* Desktop View */}
+              {/* Tablet & Desktop View: 3 Columns Grid */}
               <div className="hidden md:grid md:grid-cols-3 gap-6 sm:gap-8">
                 {executivePackages.map((pkg, idx) => (
                   <PackageCard key={idx} pkg={pkg} />
                 ))}
               </div>
             </div>
+          )}
 
-          </div>
-        )}
+          {/* 3. Tab Content: All Series */}
+          {activeKey === 'all' && (
+            <div className="mb-16 sm:mb-20 space-y-14">
+              
+              {/* Express Block inside All Series */}
+              <div>
+                <div className="flex items-center gap-2 pb-3 border-b border-zinc-800 mb-6">
+                  <Zap className="w-4 h-4 text-red-500" />
+                  <h3 className="text-xl sm:text-2xl font-bold text-white font-['Outfit']">
+                    Express Series
+                  </h3>
+                  <span className="text-xs text-zinc-400 ml-auto">
+                    Routine maintenance
+                  </span>
+                </div>
+
+                {/* Mobile View */}
+                <div className="block md:hidden">
+                  <Swiper
+                    modules={[Autoplay, Pagination]}
+                    loop={true}
+                    speed={600}
+                    autoplay={{ delay: 3500, disableOnInteraction: false, pauseOnMouseEnter: true }}
+                    pagination={{
+                      clickable: true,
+                      el: '.pricing-all-express-pagination',
+                      bulletClass: 'services-bullet',
+                      bulletActiveClass: 'services-bullet-active',
+                    }}
+                    spaceBetween={16}
+                    slidesPerView={1}
+                    className="pricing-swiper !pb-0"
+                  >
+                    {expressPackages.map((pkg, idx) => (
+                      <SwiperSlide key={idx} className="!h-auto flex">
+                        <PackageCard pkg={pkg} />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                  <div className="pricing-all-express-pagination flex items-center justify-center gap-2 mt-6" />
+                </div>
+
+                {/* Desktop View */}
+                <div className="hidden md:grid md:grid-cols-3 gap-6 sm:gap-8">
+                  {expressPackages.map((pkg, idx) => (
+                    <PackageCard key={idx} pkg={pkg} />
+                  ))}
+                </div>
+              </div>
+
+              {/* Executive Block inside All Series */}
+              <div>
+                <div className="flex items-center gap-2 pb-3 border-b border-zinc-800 mb-6">
+                  <Sparkles className="w-4 h-4 text-amber-400" />
+                  <h3 className="text-xl sm:text-2xl font-bold text-white font-['Outfit']">
+                    Executive Series
+                  </h3>
+                  <span className="text-xs text-zinc-400 ml-auto">
+                    Deeper cleaning & restoration
+                  </span>
+                </div>
+
+                {/* Mobile View */}
+                <div className="block md:hidden">
+                  <Swiper
+                    modules={[Autoplay, Pagination]}
+                    loop={true}
+                    speed={600}
+                    autoplay={{ delay: 3500, disableOnInteraction: false, pauseOnMouseEnter: true }}
+                    pagination={{
+                      clickable: true,
+                      el: '.pricing-all-exec-pagination',
+                      bulletClass: 'services-bullet',
+                      bulletActiveClass: 'services-bullet-active',
+                    }}
+                    spaceBetween={16}
+                    slidesPerView={1}
+                    className="pricing-swiper !pb-0"
+                  >
+                    {executivePackages.map((pkg, idx) => (
+                      <SwiperSlide key={idx} className="!h-auto flex">
+                        <PackageCard pkg={pkg} />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                  <div className="pricing-all-exec-pagination flex items-center justify-center gap-2 mt-6" />
+                </div>
+
+                {/* Desktop View */}
+                <div className="hidden md:grid md:grid-cols-3 gap-6 sm:gap-8">
+                  {executivePackages.map((pkg, idx) => (
+                    <PackageCard key={idx} pkg={pkg} />
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          )}
+        </div>
 
         {/* 4. Vehicle Size & Add-Ons Surcharges (Side-by-Side Tables) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 sm:mb-20">

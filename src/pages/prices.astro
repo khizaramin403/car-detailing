@@ -1,24 +1,29 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import CostCalculatorHeroSection from '../components/prices/CostCalculatorHeroSection.jsx';
+import CostCalculatorSection from '../components/prices/CostCalculatorSection.jsx';
+import HowQuoteIsBuiltSection from '../components/prices/HowQuoteIsBuiltSection.jsx';
+import WhatCanMoveTheNumberSection from '../components/prices/WhatCanMoveTheNumberSection.jsx';
+import IsItWorthItSection from '../components/prices/IsItWorthItSection.jsx';
+import ServiceTimeSection from '../components/prices/ServiceTimeSection.jsx';
+import PricingFaqSection from '../components/prices/PricingFaqSection.jsx';
+import PricingCtaSection from '../components/prices/PricingCtaSection.jsx';
 ---
 
 <Layout 
-  title="Pricing & Packages | Apex Auto Detailing"
-  description="Transparent detailing packages and pricing for cars, SUVs, and luxury exotics."
+  title="Car Detailing Cost Calculator | Morris, MN | Dos Bros Detailing"
+  description="Get a real starting price in about thirty seconds. Transparent mobile detailing pricing for Morris, MN and surrounding towns."
   showNav={true}
   showFooter={true}
 >
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-    <div class="max-w-3xl">
-      <span class="text-xs font-bold uppercase tracking-widest text-red-500 bg-red-500/10 px-3 py-1 rounded-md border border-red-500/20">
-        Transparent Pricing
-      </span>
-      <h1 class="text-4xl sm:text-5xl font-extrabold text-white font-['Outfit'] mt-4 mb-6">
-        Detailing Packages Tailored To Your Needs.
-      </h1>
-      <p class="text-lg text-neutral-300 leading-relaxed">
-        Choose from our Essential Wash & Seal, Interior Deep Clean, or Ceramic Pro Ultimate package with lifetime gloss.
-      </p>
-    </div>
-  </div>
+  <main>
+    <CostCalculatorHeroSection client:load />
+    <CostCalculatorSection client:load />
+    <HowQuoteIsBuiltSection client:visible />
+    <WhatCanMoveTheNumberSection client:visible />
+    <IsItWorthItSection client:visible />
+    <ServiceTimeSection client:visible />
+    <PricingFaqSection client:visible />
+    <PricingCtaSection client:visible />
+  </main>
 </Layout>

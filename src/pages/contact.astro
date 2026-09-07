@@ -1,13 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import FinalCtaSection from '../components/home/FinalCtaSection.jsx';
+import ContactHeroSection from '../components/contact/ContactHeroSection.jsx';
+import ContactReachAndFormSection from '../components/contact/ContactReachAndFormSection.jsx';
+import WhatHappensNextSection from '../components/contact/WhatHappensNextSection.jsx';
+import SpeedUpQuoteSection from '../components/contact/SpeedUpQuoteSection.jsx';
+import ServiceAreaSection from '../components/contact/ServiceAreaSection.jsx'
+import ContactFaqSection from '../components/contact/ContactFaqSection.jsx';
 ---
 
 <Layout 
   title="Contact & Bookings | Dos Bros Auto Detailing"
-  description="Book your mobile detailing appointment or request a custom quote in Morris, MN."
+  description="Contact Dos Bros Detailing in Morris, MN. Tell us what you drive and where you are for a straight price. Call or text 320-287-3573."
   showNav={true}
   showFooter={true}
 >
-  <FinalCtaSection client:load />
+  <main>
+    <ContactHeroSection client:load />
+    <ContactReachAndFormSection client:load />
+    <WhatHappensNextSection client:visible />
+    <SpeedUpQuoteSection client:visible />
+    <ServiceAreaSection client:visible />
+    <ContactFaqSection client:visible />
+  </main>
 </Layout>

@@ -177,6 +177,9 @@ export default function ServicesSection() {
               prevEl: '.services-swiper-prev',
               nextEl: '.services-swiper-next',
             }}
+            observer={true}
+            observeParents={true}
+            resizeObserver={true}
             spaceBetween={20}
             slidesPerView={1}
             breakpoints={{
