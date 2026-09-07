@@ -443,7 +443,7 @@ export default function PricingSection() {
         </div>
 
         {/* 4. Vehicle Size & Add-Ons Surcharges (Side-by-Side Tables) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 sm:mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 ">
           
           {/* Vehicle Size Table */}
           <div className="lg:col-span-7 rounded-2xl bg-zinc-900/60 border border-zinc-800 p-6 sm:p-8 backdrop-blur-md flex flex-col justify-between">
@@ -538,19 +538,16 @@ export default function PricingSection() {
 
         </div>
 
-        {/* 5. Zero-Click Answer Block & Honest Pricing Guarantee */}
-        <div className="relative rounded-3xl bg-gradient-to-b from-zinc-900 via-zinc-900 to-zinc-950 border border-zinc-800 p-6 sm:p-8 lg:p-10 shadow-xl overflow-hidden">
+        {/* <div className="relative rounded-3xl bg-gradient-to-b from-zinc-900 via-zinc-900 to-zinc-950 border border-zinc-800 p-6 sm:p-8 lg:p-10 shadow-xl overflow-hidden">
           <div className="absolute top-0 right-0 w-80 h-80 bg-red-600/10 blur-[100px] rounded-full pointer-events-none" />
 
           <div className="relative z-10 max-w-4xl mx-auto text-center space-y-5">
             
-            {/* Zero-Click Answer Header Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-950 border border-zinc-800 text-xs font-semibold text-zinc-300">
               <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
               <span>Zero-Click Answer</span>
             </div>
 
-            {/* Quote Formula Headline */}
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white font-['Outfit'] tracking-tight leading-snug">
               How is a quote built? <br className="hidden sm:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
@@ -558,12 +555,10 @@ export default function PricingSection() {
               </span>
             </h3>
 
-            {/* Honest Guarantee Text */}
             <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal max-w-3xl mx-auto">
               Here is the honest part. These are starting prices for a vehicle in average condition. Heavy pet hair, deep stains, or years of buildup can move the number. When that happens, Reyes tells you before he starts working, not after he finishes. We are pretty particular about that. Nobody likes a surprise on the invoice.
             </p>
 
-            {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
               <a
                 href="/contact"
@@ -583,7 +578,7 @@ export default function PricingSection() {
             </div>
 
           </div>
-        </div>
+        </div> */}
 
       </div>
     </section>

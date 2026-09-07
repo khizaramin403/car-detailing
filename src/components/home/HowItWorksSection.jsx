@@ -35,11 +35,7 @@ const steps = [
     title: "2. We come to you",
     subtitle: "100% Mobile Service",
     icon: <Truck className="w-6 h-6 text-[#fb2c36]" strokeWidth={2.2} />,
-    description: "Driveway, work parking lot, farm site, wherever your vehicle sits. We bring all our own equipment, products, and tools.",
-    extraNote: {
-      tag: "One thing we need from you",
-      text: "Access to an outdoor water spigot and a standard power outlet. Most driveways and shops already have both. If you are not sure, just ask us and we will figure it out together before you book."
-    }
+    description: "Driveway, work parking lot, farm site, wherever your vehicle sits. We bring all our own equipment, products, and tools."
   },
   {
     step: "03",
@@ -75,21 +71,7 @@ function StepCard({ item }) {
           {item.description}
         </p>
 
-        {/* Step 2 Special Highlight Note */}
-        {item.extraNote && (
-          <div className="mt-4 p-4 rounded-xl bg-neutral-950/90 border border-red-500/20 space-y-1.5">
-            <div className="flex items-center gap-2 text-xs font-bold text-red-400">
-              <div className="flex items-center gap-1">
-                <Droplet className="w-3.5 h-3.5 text-red-400" />
-                <Plug className="w-3.5 h-3.5 text-amber-400" />
-              </div>
-              <span>{item.extraNote.tag}</span>
-            </div>
-            <p className="text-[11px] sm:text-xs text-neutral-400 leading-relaxed">
-              {item.extraNote.text}
-            </p>
-          </div>
-        )}
+
       </div>
 
       {/* Step Status Indicator */}
@@ -191,37 +173,20 @@ export default function HowItWorksSection() {
           </div>
         </div> */}
 
-        {/* Bottom Time Expectations & Consultation Banner */}
-        <div className="relative rounded-3xl  bg-gradient-to-b from-neutral-900 via-neutral-900 to-neutral-950 border border-neutral-800 p-8 sm:p-10 shadow-2xl overflow-hidden text-center">
-          <div className="max-w-3xl mx-auto space-y-6">
-            
-            {/* Time Estimation Note */}
-            <div className="flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold text-neutral-300">
-              {/* <ClockCircleOutlined className="text-[#fb2c36] text-base" /> */}
-              <span>
-                Most jobs take between <strong className="text-white">one and seven hours</strong> depending on the package. We will give you a realistic window when we quote, not an optimistic one.
-              </span>
-            </div>
+        {/* One thing we need from you & Quote Button */}
+        <div className="text-center max-w-3xl mx-auto space-y-6">
+          <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed">
+            <strong className="text-white">One thing we need from you:</strong> Access to an outdoor water spigot and a standard power outlet. Most driveways and shops already have both. If you are not sure, just ask us and we will figure it out together before you book.
+          </p>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
-              <a
-                href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 shadow-md shadow-red-600/20 hover:-translate-y-0.5 transition-all duration-200 border border-red-500/40"
-              >
-                <CalendarOutlined className="text-sm" />
-                <span>Get My Free Quote</span>
-              </a>
-
-              <a
-                href="tel:3202873573"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-medium text-neutral-300 hover:text-white bg-neutral-950 hover:bg-neutral-800 border border-neutral-800 shadow-sm hover:-translate-y-0.5 transition-all duration-200"
-              >
-                <PhoneOutlined className="text-red-500 text-sm" />
-                <span>Call 320-287-3573</span>
-              </a>
-            </div>
-
+          <div className="flex justify-center">
+            <a
+              href="#contact-booking"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 shadow-lg shadow-red-600/25 hover:-translate-y-0.5 transition-all duration-200 border border-red-500/40"
+            >
+              <CalendarOutlined className="text-sm" />
+              <span>Get My Free Quote</span>
+            </a>
           </div>
         </div>
 
