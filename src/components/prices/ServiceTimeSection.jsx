@@ -12,14 +12,14 @@ const timeData = [
 
 export default function ServiceTimeSection() {
   return (
-    <section id="service-time" className="relative bg-neutral-950 py-12 sm:py-16 lg:py-20 border-t border-neutral-900 overflow-hidden select-none">
+    <section id="service-time" className="relative bg-neutral-950 py-16 sm:py-20 lg:py-24 border-t border-neutral-900 overflow-hidden select-none">
       
       {/* Ambient background glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/3 right-1/4 w-[450px] h-[450px] bg-amber-500/5 blur-[140px] rounded-full" />
       </div>
 
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 z-10 space-y-8 sm:space-y-10">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10 space-y-8 sm:space-y-10">
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto space-y-2">
@@ -28,9 +28,9 @@ export default function ServiceTimeSection() {
             <span className="tracking-widest uppercase">REALISTIC TIMELINES</span>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl font-normal text-white font-['Outfit'] tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
             How Long Will We{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500 font-normal">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
               Be There?
             </span>
           </h2>
@@ -77,17 +77,17 @@ export default function ServiceTimeSection() {
         </div>
 
         {/* Bottom Explanatory Notes */}
-        <div className="rounded-2xl border border-neutral-800/90 bg-neutral-900/30 p-4 sm:p-6 space-y-3">
-          <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed">
+        {/* <div className="rounded-2xl border border-neutral-800/90 bg-neutral-900/30 p-4 sm:p-6 space-y-3"> */}
+          <p className="text-xs sm:text-sm text-center text-neutral-300 font-light leading-relaxed">
             <span className="text-white font-normal">Larger vehicles sit at the top of those ranges.</span> If somebody quotes you a deep interior clean and says an hour, they are doing a vacuum and a wipe down. That might be exactly what you want, and there is nothing wrong with it. Just know what you are buying.
           </p>
-          <div className="flex items-center gap-2 text-xs sm:text-sm text-amber-300/90 font-light pt-1 border-t border-neutral-800/70">
-            <Home className="w-4 h-4 text-amber-400 shrink-0" />
-            <span>
+          {/* <div className="flex items-center justify-center gap-2 text-xs sm:text-sm  text-white font-light pt-1 border-t border-neutral-800/70">
+            <Home className="w-4 h-4 text-white shrink-0" />
+            <span className='text-center!'>
               You do not need to be home for any of it. Plenty of our customers head to work and come back to a finished vehicle.
             </span>
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
 
       </div>
 

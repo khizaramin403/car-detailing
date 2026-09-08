@@ -7,7 +7,7 @@ import { Sparkles } from 'lucide-react';
 
 export default function ServiceAreaCtaSection() {
   return (
-    <section id="cta" className="relative bg-neutral-950 py-12 sm:py-16 lg:py-20 select-none overflow-hidden">
+    <section id="cta" className="relative bg-neutral-950 py-12 sm:py-16 lg:py-20 border-t border-neutral-800 select-none overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Sleek Minimal Consultation Banner Card matching About Page */}
@@ -17,14 +17,14 @@ export default function ServiceAreaCtaSection() {
           <div className="absolute right-0 top-0 bottom-0 w-1/2 sm:w-1/3 bg-gradient-to-l from-red-600/15 to-transparent pointer-events-none" />
           <div className="absolute -right-10 -top-10 w-48 h-48 bg-red-600/15 blur-3xl rounded-full pointer-events-none" />
 
-          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10 text-center lg:text-left">
+          <div className="relative z-10 flex flex-col items-center text-center gap-6 sm:gap-8">
             
-            {/* Left Content */}
-            <div className="max-w-2xl space-y-3">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-xs font-semibold text-red-400">
+            {/* Center Content */}
+            <div className="max-w-2xl space-y-3 mx-auto">
+              {/* <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-xs font-semibold text-red-400">
                 <Sparkles className="w-3.5 h-3.5 text-red-500" />
                 <span>Straight Pricing · Travel Included</span>
-              </div>
+              </div> */}
 
               <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white font-['Outfit'] leading-tight">
                 Tell Us Where You Are
@@ -35,8 +35,8 @@ export default function ServiceAreaCtaSection() {
               </p>
             </div>
 
-            {/* Right Buttons: [Get My Free Quote] or call 320-287-3573 */}
-            <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
+            {/* Buttons Below: [Get My Free Quote] or call 320-287-3573 */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 shrink-0 w-full sm:w-auto">
               <a
                 href="/contact"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 shadow-md shadow-red-600/20 hover:-translate-y-0.5 transition-all duration-200 border border-red-500/40"

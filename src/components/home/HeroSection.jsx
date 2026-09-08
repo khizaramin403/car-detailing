@@ -99,8 +99,8 @@ export default function HeroSection() {
             </p>
 
             {/* Detailed Description */}
-            <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal max-w-2xl">
-              Dos Bros Detailing is a trusted mobile car detailing service based right here in Morris, Minnesota. Reyes and Mariano are two brothers from town, and we bring professional interior and exterior detailing straight to your driveway, your workplace, or your farm site. You never have to drop your vehicle off anywhere. We serve Morris and the surrounding communities.
+            <p className="text-xs sm:text-sm text-neutral-100 leading-relaxed font-normal max-w-2xl">
+              Dos Bros Detailing is a trusted mobile car detailing service based right here in Morris, Minnesota. Reyes and Mariano are two brothers from town, and we bring professional interior and exterior detailing straight to your driveway, your workplace, or your farm site. Serving Morris, Alexandria, Glenwood, Starbuck, Benson, & surrounding towns.
             </p>
 
             {/* CTA Buttons with Consistent Color Theme */}

@@ -44,9 +44,9 @@ export default function SpeedUpQuoteSection() {
             <span className="tracking-wider uppercase">Speed Up Your Quote</span>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl text-white font-['Outfit'] font-normal tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
             What to Tell Us for a{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500 font-normal">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
               Faster Answer
             </span>
           </h2>
@@ -107,13 +107,13 @@ export default function SpeedUpQuoteSection() {
         </div>
 
         {/* 3. Sleek Explanatory Callout Note Below Table */}
-        <div className="rounded-2xl sm:rounded-3xl border border-neutral-800/90 bg-neutral-900/30 p-4 sm:p-6 text-center">
+        {/* <div className="rounded-2xl sm:rounded-3xl border border-neutral-800/90 bg-neutral-900/30 p-4 sm:p-6 text-center"> */}
           <div className="flex items-center justify-center gap-2 text-xs sm:text-sm text-neutral-300 font-light leading-relaxed max-w-2xl mx-auto">
-            <Camera className="w-4 h-4 text-red-400 shrink-0" />
-            <span>
+            {/* <Camera className="w-4 h-4 text-red-400 shrink-0" /> */}
+            <span className='text-center'>
               Honestly, a couple of quick phone photos of the interior does more than anything else on this list.
             </span>
-          </div>
+          {/* </div> */}
         </div>
 
       </div>

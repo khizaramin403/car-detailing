@@ -41,9 +41,9 @@ export default function WhatWeBringSection() {
             <span className="tracking-wider uppercase">WHAT WE BRING AND WHAT WE NEED</span>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl text-white font-['Outfit'] font-normal tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
             What We Bring, and{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500 font-normal">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
               What We Need From You
             </span>
           </h2>
@@ -114,14 +114,14 @@ export default function WhatWeBringSection() {
         </div>
 
         {/* 3. Sleek Explanatory Callout Card Below Table */}
-        <div className="rounded-2xl sm:rounded-3xl border border-neutral-800/90 bg-neutral-900/30 p-5 sm:p-7 lg:p-8 space-y-3.5">
+        {/* <div className="rounded-2xl sm:rounded-3xl border border-neutral-800/90 bg-neutral-900/30 p-5 sm:p-7 lg:p-8 space-y-3.5">
           <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed">
             Most homes, shops, and business lots already have all three. If you are not sure what you have, tell us where the vehicle sits when you ask for a quote and we will work it out before you book. It is a much better conversation to have then than when we are already in your driveway.
           </p>
           <p className="text-xs sm:text-sm text-neutral-400 font-light leading-relaxed">
             If you are on a farm site or a work lot with no spigot nearby, tell us that too. There is usually a way around it.
           </p>
-        </div>
+        </div> */}
 
       </div>
     </section>

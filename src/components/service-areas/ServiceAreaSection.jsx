@@ -183,8 +183,18 @@ export default function ServiceAreaSection() {
           <div className="service-area-pagination flex items-center justify-center gap-2 mt-6" />
         </div>
 
+        <div className="flex justify-center">
+                          <a
+                            href="#contact-booking"
+                            className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 shadow-lg shadow-red-600/25 hover:-translate-y-0.5 transition-all duration-200 border border-red-500/40"
+                          >
+                            <CalendarOutlined className="text-sm" />
+                            <span>Get My Free Quote</span>
+                          </a>
+                        </div>
+
         {/* Bottom Consultation Banner */}
-        <div className="relative rounded-3xl bg-gradient-to-r from-neutral-900 via-neutral-900 to-neutral-950 border border-neutral-800 p-6 sm:p-8 lg:p-10 shadow-xl overflow-hidden">
+        {/* <div className="relative rounded-3xl bg-gradient-to-r from-neutral-900 via-neutral-900 to-neutral-950 border border-neutral-800 p-6 sm:p-8 lg:p-10 shadow-xl overflow-hidden">
           <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-red-600/10 to-transparent pointer-events-none" />
 
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left">
@@ -215,7 +225,7 @@ export default function ServiceAreaSection() {
               </a>
             </div>
           </div>
-        </div>
+        </div> */}
 
       </div>
     </section>

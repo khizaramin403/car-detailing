@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Input, Select, ConfigProvider, theme } from 'antd';
-import { 
-  GoogleOutlined, 
-  FacebookOutlined, 
-  InstagramOutlined, 
+import {
+  GoogleOutlined,
+  FacebookOutlined,
+  InstagramOutlined,
   TikTokOutlined,
   PhoneOutlined,
   CheckCircleFilled,
@@ -11,7 +11,7 @@ import {
   FormOutlined,
   ClockCircleOutlined
 } from '@ant-design/icons';
-import { ArrowRight, Send, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const { TextArea } = Input;
 
@@ -25,19 +25,19 @@ export default function ContactReachAndFormSection() {
       const params = new URLSearchParams(window.location.search);
       const vehicle = params.get('vehicle') || params.get('vehicleType');
       const townParam = params.get('town');
-      const detailsParam = params.get('details') || params.get('service');
+      const detailsParam = params.get('details');
+      const serviceParam = params.get('service');
 
       const valuesToSet = {};
-      if (vehicle) {
-        if (vehicle.includes('Car') || vehicle.includes('sedan')) valuesToSet.vehicleType = 'Car or sedan';
-        else if (vehicle.includes('SUV')) valuesToSet.vehicleType = 'SUV';
-        else if (vehicle.includes('truck') || vehicle.includes('Pickup')) valuesToSet.vehicleType = 'Pickup truck';
-        else if (vehicle.includes('Van') || vehicle.includes('Sprinter')) valuesToSet.vehicleType = 'Van or Sprinter';
-        else if (vehicle.includes('Boat') || vehicle.includes('pontoon') || vehicle.includes('RV')) valuesToSet.vehicleType = 'Boat or pontoon';
-        else valuesToSet.vehicleType = 'Something else';
-      }
+      if (vehicle) valuesToSet.vehicleType = vehicle;
       if (townParam) valuesToSet.town = townParam;
       if (detailsParam) valuesToSet.details = detailsParam;
+      if (serviceParam) {
+        if (serviceParam.toLowerCase().includes('interior')) valuesToSet.service = 'Interior Detailing';
+        else if (serviceParam.toLowerCase().includes('exterior')) valuesToSet.service = 'Exterior Detailing';
+        else if (serviceParam.toLowerCase().includes('full')) valuesToSet.service = 'Full Car Detailing';
+        else valuesToSet.service = serviceParam;
+      }
 
       if (Object.keys(valuesToSet).length > 0) {
         form.setFieldsValue(valuesToSet);
@@ -113,7 +113,7 @@ export default function ContactReachAndFormSection() {
       }}
     >
       <section id="contact-booking" className="relative bg-neutral-950 py-12 sm:py-16 lg:py-20 border-t border-neutral-900/90 overflow-hidden select-none">
-        
+
         {/* Subtle Ambient Radial Glows */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/3 left-10 w-96 h-96 bg-red-600/5 blur-[130px] rounded-full" />
@@ -122,12 +122,12 @@ export default function ContactReachAndFormSection() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-start">
-            
+
             {/* ========================================================================= */}
             {/* LEFT COLUMN: SECTION 2: HOW TO REACH US                                   */}
             {/* ========================================================================= */}
             <div className="lg:col-span-5 xl:col-span-5 space-y-5">
-              
+
               {/* Header */}
               <div className="space-y-2">
                 <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-neutral-900 border border-neutral-800 text-[10px] font-normal text-neutral-300">
@@ -135,8 +135,8 @@ export default function ContactReachAndFormSection() {
                   <span className="tracking-wide uppercase">How To Reach Us</span>
                 </div>
 
-                <h2 className="text-2xl sm:text-3xl font-light text-white font-['Outfit'] tracking-tight leading-snug">
-                  Three Ways to <span className="font-normal text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">Get in Touch</span>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
+                  Three Ways to <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">Get in Touch</span>
                 </h2>
 
                 <div className="w-8 h-0.5 bg-gradient-to-r from-red-500 to-amber-500 rounded-full" />
@@ -144,7 +144,7 @@ export default function ContactReachAndFormSection() {
 
               {/* Minimal Streamlined List (No bulky boxes) */}
               <div className="divide-y divide-neutral-900/90 border-y border-neutral-900/90">
-                
+
                 {/* 1. Quote Form */}
                 <div className="py-3.5 space-y-1">
                   <div className="flex flex-wrap items-center justify-between gap-2">
@@ -152,7 +152,7 @@ export default function ContactReachAndFormSection() {
                       <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
                       Quote form
                     </span>
-                    <span className="text-[11px] text-amber-400/90 font-light">
+                    <span className="text-[11px] text-neutral-400 font-light">
                       Best for: Getting a price
                     </span>
                   </div>
@@ -173,8 +173,8 @@ export default function ContactReachAndFormSection() {
                     </span>
                   </div>
                   <p className="text-xs text-neutral-400 font-light leading-relaxed pl-3.5">
-                    <a 
-                      href="tel:3202873573" 
+                    <a
+                      href="tel:3202873573"
                       className="text-white hover:text-red-400 font-normal underline underline-offset-4 decoration-neutral-700 hover:decoration-red-500 transition-colors"
                     >
                       320-287-3573
@@ -226,7 +226,7 @@ export default function ContactReachAndFormSection() {
                   Connect With Us
                 </span>
                 <div className="flex items-center gap-2">
-                  
+
                   {/* Google */}
                   <a
                     href="https://google.com"
@@ -281,7 +281,7 @@ export default function ContactReachAndFormSection() {
             {/* ========================================================================= */}
             <div id="contact-form" className="lg:col-span-7 xl:col-span-7">
               <div className="rounded-2xl bg-neutral-900/30 border border-neutral-800/60 p-4 sm:p-6 lg:p-7 shadow-xl backdrop-blur-md">
-                
+
                 {/* Form Title & Subtitle (Clean & Minimal) */}
                 <div className="border-b border-neutral-800/60 pb-3 mb-4">
                   <h2 className="text-lg sm:text-xl font-normal text-white font-['Outfit'] tracking-tight">
@@ -323,9 +323,9 @@ export default function ContactReachAndFormSection() {
                     requiredMark={false}
                     className="space-y-0"
                   >
-                    {/* Row 1: First Name & Phone Number */}
+                    {/* Row 1: First Name & Last Name */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3.5">
-                      
+
                       {/* First Name (Required) */}
                       <Form.Item
                         name="firstName"
@@ -337,11 +337,33 @@ export default function ContactReachAndFormSection() {
                         rules={[{ required: true, message: 'Please enter your first name' }]}
                         className="!mb-2.5"
                       >
-                        <Input 
-                          placeholder="Your first name" 
+                        <Input
+                          placeholder="Your first name"
                           className="bg-neutral-950/90"
                         />
                       </Form.Item>
+
+                      {/* Last Name (Required) */}
+                      <Form.Item
+                        name="lastName"
+                        label={
+                          <span className="text-[11.5px] text-neutral-300 font-light">
+                            Last name <span className="text-red-500">*</span>
+                          </span>
+                        }
+                        rules={[{ required: true, message: 'Please enter your last name' }]}
+                        className="!mb-2.5"
+                      >
+                        <Input
+                          placeholder="Your last name"
+                          className="bg-neutral-950/90"
+                        />
+                      </Form.Item>
+
+                    </div>
+
+                    {/* Row 2: Phone Number & What town are you in? */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3.5">
 
                       {/* Phone Number (Required) */}
                       <Form.Item
@@ -354,43 +376,9 @@ export default function ContactReachAndFormSection() {
                         rules={[{ required: true, message: 'Please enter your phone number' }]}
                         className="!mb-2.5"
                       >
-                        <Input 
-                          placeholder="(320) 000-0000" 
+                        <Input
+                          placeholder="(320) 000-0000"
                           className="bg-neutral-950/90"
-                        />
-                      </Form.Item>
-
-                    </div>
-
-                    {/* Row 2: What do you drive? (Dropdown) & What town are you in? (Required) */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3.5">
-                      
-                      {/* What do you drive? (Dropdown with allowClear and custom black scrollable popup) */}
-                      <Form.Item
-                        name="vehicleType"
-                        label={
-                          <span className="text-[11.5px] text-neutral-300 font-light">
-                            What do you drive?
-                          </span>
-                        }
-                        className="!mb-2.5"
-                      >
-                        <Select
-                          placeholder="Select vehicle type..."
-                          allowClear={true}
-                          popupClassName="dark-select-dropdown"
-                          popupMatchSelectWidth={true}
-                          dropdownStyle={{ backgroundColor: '#000000', padding: '4px' }}
-                          className="w-full bg-neutral-950/90"
-                          options={[
-                            { value: 'Car or sedan', label: 'Car or sedan' },
-                            { value: 'SUV', label: 'SUV' },
-                            { value: 'Pickup truck', label: 'Pickup truck' },
-                            { value: 'Van or Sprinter', label: 'Van or Sprinter' },
-                            { value: 'Boat or pontoon', label: 'Boat or pontoon' },
-                            { value: 'Fleet or multiple vehicles', label: 'Fleet or multiple vehicles' },
-                            { value: 'Something else', label: 'Something else' },
-                          ]}
                         />
                       </Form.Item>
 
@@ -405,15 +393,61 @@ export default function ContactReachAndFormSection() {
                         rules={[{ required: true, message: 'Please tell us what town you are in' }]}
                         className="!mb-2.5"
                       >
-                        <Input 
-                          placeholder="e.g. Morris, Hancock, Glenwood..." 
+                        <Input
+                          placeholder="e.g. Morris, Hancock, Glenwood..."
                           className="bg-neutral-950/90"
                         />
                       </Form.Item>
 
                     </div>
 
-                    {/* Row 3: Anything we should know? (Optional) */}
+                    {/* Row 3: What do you drive? (Input) & Select Service (Dropdown) */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3.5">
+
+                      {/* What do you drive? (Input) */}
+                      <Form.Item
+                        name="vehicleType"
+                        label={
+                          <span className="text-[11.5px] text-neutral-300 font-light">
+                            What do you drive?
+                          </span>
+                        }
+                        className="!mb-2.5"
+                      >
+                        <Input
+                          placeholder="e.g. Car, SUV, Truck, etc."
+                          className="bg-neutral-950/90"
+                        />
+                      </Form.Item>
+
+                      {/* Service Dropdown Selector */}
+                      <Form.Item
+                        name="service"
+                        label={
+                          <span className="text-[11.5px] text-neutral-300 font-light">
+                            Select Service
+                          </span>
+                        }
+                        className="!mb-2.5"
+                      >
+                        <Select
+                          placeholder="Select service..."
+                          allowClear={true}
+                          popupClassName="dark-select-dropdown"
+                          popupMatchSelectWidth={true}
+                          dropdownStyle={{ backgroundColor: '#000000', padding: '4px' }}
+                          className="w-full bg-neutral-950/90"
+                          options={[
+                            { value: 'Interior Detailing', label: 'Interior Detailing' },
+                            { value: 'Exterior Detailing', label: 'Exterior Detailing' },
+                            { value: 'Full Car Detailing', label: 'Full Car Detailing' },
+                          ]}
+                        />
+                      </Form.Item>
+
+                    </div>
+
+                    {/* Row 4: Anything we should know? (Optional) */}
                     <Form.Item
                       name="details"
                       label={
@@ -430,15 +464,13 @@ export default function ContactReachAndFormSection() {
                       />
                     </Form.Item>
 
-                    {/* Submit Button: [Get My Free Quote] */}
+                    {/* Submit Button */}
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-medium text-white bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-600 active:scale-[0.99] shadow-lg shadow-red-600/20 border border-red-500/30 transition-all duration-200 cursor-pointer disabled:opacity-60"
+                      className="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-xl text-xs sm:text-sm font-medium text-white bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-600 active:scale-[0.99] shadow-lg shadow-red-600/20 border border-red-500/30 transition-all duration-200 cursor-pointer disabled:opacity-60"
                     >
-                      <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-                      <span>{isSubmitting ? 'Sending Request...' : 'Get My Free Quote'}</span>
-                      <Send className="w-3.5 h-3.5 text-white/90" />
+                      <span>{isSubmitting ? 'Submitting...' : 'Submit'}</span>
                     </button>
 
                   </Form>

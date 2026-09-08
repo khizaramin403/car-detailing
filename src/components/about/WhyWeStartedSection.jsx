@@ -112,8 +112,8 @@ export default function WhyWeStartedSection() {
             </div>
 
             {/* H2 Heading */}
-            <h2 className="text-3xl xl:text-4xl font-light text-white font-['Outfit'] tracking-tight leading-[1.15]">
-              Why We Started <span className="font-normal text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">Dos Bros</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
+              Why We Started <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">Dos Bros</span>
             </h2>
 
             {/* Story Paragraphs */}
@@ -220,8 +220,8 @@ export default function WhyWeStartedSection() {
             </div>
 
             {/* H2 Heading */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-white font-['Outfit'] tracking-tight leading-[1.15]">
-              Why We Started <span className="font-normal text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">Dos Bros</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
+              Why We Started <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">Dos Bros</span>
             </h2>
 
             {/* Story Paragraphs */}

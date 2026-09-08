@@ -27,14 +27,14 @@ const valueStories = [
 
 export default function IsItWorthItSection() {
   return (
-    <section id="worth-it" className="relative bg-neutral-950 py-12 sm:py-16 lg:py-20 border-t border-neutral-900 overflow-hidden select-none">
+    <section id="worth-it" className="relative bg-neutral-950 py-16 sm:py-20 lg:py-24 border-t border-neutral-900 overflow-hidden select-none">
       
       {/* Ambient background glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-red-600/5 blur-[150px] rounded-full" />
       </div>
 
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 z-10 space-y-8 sm:space-y-10">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10 space-y-8 sm:space-y-10">
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto space-y-2">
@@ -43,9 +43,9 @@ export default function IsItWorthItSection() {
             <span className="tracking-widest uppercase">HONEST PERSPECTIVE</span>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl font-normal text-white font-['Outfit'] tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
             Is Detailing{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500 font-normal">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
               Worth the Money?
             </span>
           </h2>

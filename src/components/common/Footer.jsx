@@ -9,27 +9,28 @@ import {
   ArrowUpRight
 } from 'lucide-react';
 import {
-  InstagramOutlined,
+  GoogleOutlined,
   FacebookOutlined,
-  YoutubeOutlined
+  InstagramOutlined,
+  TikTokOutlined
 } from '@ant-design/icons';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const services = [
-    { name: 'Full Interior Revival', href: '/services' },
-    { name: 'Exterior Hand Wash & Seal', href: '/services' },
-    { name: 'Multi-Stage Paint Correction', href: '/services' },
-    { name: 'Ceramic & Graphene Coating', href: '/services' },
-    { name: 'Farm & Heavy Duty Equipment', href: '/services' },
-    { name: 'Odor & Pet Hair Removal', href: '/services' },
+    { name: 'Full Interior Revival', href: '' },
+    { name: 'Exterior Hand Wash & Seal', href: '' },
+    { name: 'Multi-Stage Paint Correction', href: '' },
+    { name: 'Ceramic & Graphene Coating', href: '' },
+    { name: 'Farm & Heavy Duty Equipment', href: '' },
+    { name: 'Odor & Pet Hair Removal', href: '' },
   ];
 
   const quickLinks = [
     { name: 'Home', href: '/' },
     { name: 'About Our Studio', href: '/about' },
-    { name: 'Detailing Services', href: '/services' },
+    { name: 'Detailing Services', href: '/#services' },
     { name: 'Pricing & Packages', href: '/prices' },
     { name: 'Service Areas', href: '/service-areas' },
     { name: 'Contact & Booking', href: '/contact' },
@@ -69,20 +70,20 @@ export default function Footer() {
 
             {/* Concise Bio */}
             <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed max-w-sm">
-              Mobile auto detailing crafted with precision and care. We bring showroom gloss, deep interior rejuvenation, and long-lasting ceramic protection directly to your location.
+              We bring professional interior and exterior detailing straight to your driveway, your workplace, or your farm site. Serving Morris, Alexandria, Glenwood, Starbuck, Benson, & surrounding towns.
             </p>
 
 
             {/* Social Links */}
             <div className="flex items-center gap-2.5 pt-2">
               <a
-                href="https://instagram.com"
+                href="https://google.com"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Follow Dos Bros Detailing on Instagram"
+                aria-label="Google Review and Profile"
                 className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-neutral-900/80 hover:bg-red-600/90 text-neutral-400 hover:text-white flex items-center justify-center transition-all duration-200 border border-neutral-800/80 hover:border-red-500 hover:scale-105"
               >
-                <InstagramOutlined className="text-sm" />
+                <GoogleOutlined className="text-sm" />
               </a>
               <a
                 href="https://facebook.com"
@@ -94,13 +95,22 @@ export default function Footer() {
                 <FacebookOutlined className="text-sm" />
               </a>
               <a
-                href="https://youtube.com"
+                href="https://instagram.com"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Watch Dos Bros Detailing on YouTube"
+                aria-label="Follow Dos Bros Detailing on Instagram"
                 className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-neutral-900/80 hover:bg-red-600/90 text-neutral-400 hover:text-white flex items-center justify-center transition-all duration-200 border border-neutral-800/80 hover:border-red-500 hover:scale-105"
               >
-                <YoutubeOutlined className="text-sm" />
+                <InstagramOutlined className="text-sm" />
+              </a>
+              <a
+                href="https://tiktok.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Follow Dos Bros Detailing on TikTok"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-neutral-900/80 hover:bg-red-600/90 text-neutral-400 hover:text-white flex items-center justify-center transition-all duration-200 border border-neutral-800/80 hover:border-red-500 hover:scale-105"
+              >
+                <TikTokOutlined className="text-sm" />
               </a>
             </div>
           </div>
@@ -161,9 +171,9 @@ export default function Footer() {
               {/* Phone */}
               <a
                 href="tel:3202873573"
-                className="group flex items-center gap-2.5 p-2 rounded-lg bg-neutral-900/60 hover:bg-neutral-900 border border-neutral-800/80 hover:border-red-500/40 text-neutral-300 hover:text-white transition-all duration-150"
+                className="group flex items-center gap-2.5 p-2 rounded-lg  text-neutral-300  "
               >
-                <div className="w-7 h-7 rounded-md bg-red-500/10 text-red-400 flex items-center justify-center shrink-0 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                <div className="w-7 h-7 rounded-md bg-red-500/10 text-red-400 flex items-center justify-center shrink-0 ">
                   <Phone className="w-3.5 h-3.5" />
                 </div>
                 <div className="flex-1 min-w-0">
@@ -174,7 +184,9 @@ export default function Footer() {
 
               {/* Location */}
               <div className="flex items-start gap-2.5 px-2 py-1 text-neutral-400">
-                <MapPin className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+                <div className="w-7 h-7 rounded-md bg-red-500/10 text-red-400 flex items-center justify-center shrink-0 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                  <MapPin className="w-3.5 h-3.5" />
+                </div>
                 <div className="leading-snug">
                   <span className="text-neutral-300 font-medium block">Morris, MN 56267</span>
                   <span className="text-[11px] text-neutral-500">Stevens County & Surrounding Cities</span>
@@ -183,7 +195,10 @@ export default function Footer() {
 
               {/* Operating Hours */}
               <div className="flex items-start gap-2.5 px-2 py-1 text-neutral-400">
-                <Clock className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                <div className="w-7 h-7 rounded-md bg-red-500/10 text-red-400 flex items-center justify-center shrink-0 ">
+                  <Clock className="w-4 h-4 shrink-0 mt-0.5" />
+                </div>
+                
                 <div className="leading-snug">
                   <span className="text-neutral-300 font-medium block">Mon - Sat: 8:00 AM - 7:00 PM</span>
                   <span className="text-[11px] text-neutral-500">Sunday: By Appointment</span>
@@ -192,7 +207,7 @@ export default function Footer() {
             </div>
 
             {/* Quick Action Button */}
-            <div className="pt-2">
+            {/* <div className="pt-2">
               <a
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-lg text-xs sm:text-sm font-medium text-white bg-linear-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 transition-all shadow-sm shadow-red-950/40 hover:shadow-red-900/50"
@@ -200,23 +215,23 @@ export default function Footer() {
                 <span>Book Mobile Detail</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
-            </div>
+            </div> */}
           </div>
 
         </div>
 
         {/* Bottom Bar: Copyright, Guarantee & Legal */}
-        <div className="pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left text-xs text-neutral-500">
+        <div className="pt-6 sm:pt-8 flex items-center justify-center gap-4 text-center md:text-left text-xs text-neutral-500">
           
           {/* Copyright */}
-          <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
+          <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 ">
             <p>© {currentYear} Dos Bros Auto Detailing. All rights reserved.</p>
             <span className="hidden sm:inline text-neutral-700">•</span>
             <span className="text-neutral-400">Morris, Minnesota</span>
           </div>
 
           {/* Trust Guarantees */}
-          <div className="flex items-center flex-wrap justify-center gap-3 sm:gap-4 text-[11px] text-neutral-400">
+          {/* <div className="flex items-center flex-wrap justify-center gap-3 sm:gap-4 text-[11px] text-neutral-400">
             <span className="inline-flex items-center gap-1.5">
               <ShieldCheck className="w-3.5 h-3.5 text-red-400" />
               <span>100% Satisfaction Guarantee</span>
@@ -226,7 +241,7 @@ export default function Footer() {
               <Sparkles className="w-3.5 h-3.5 text-amber-400" />
               <span>Premium Eco-Safe Products</span>
             </span>
-          </div>
+          </div> */}
 
         </div>
       </div>

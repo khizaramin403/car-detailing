@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Form, Input, DatePicker, TimePicker, ConfigProvider, theme } from 'antd';
+import React, { useState, useEffect } from 'react';
+import { Form, Input, Select, ConfigProvider, theme } from 'antd';
 import { 
   CheckCircleFilled
 } from '@ant-design/icons';
@@ -13,11 +13,45 @@ import {
   Calendar,
   Send
 } from 'lucide-react';
+import { 
+  FacebookOutlined, 
+  InstagramOutlined, 
+  TikTokOutlined, 
+  YoutubeOutlined, 
+  GoogleOutlined 
+} from '@ant-design/icons';
+
+const { TextArea } = Input;
 
 export default function FinalCtaSection() {
   const [form] = Form.useForm();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const vehicle = params.get('vehicle') || params.get('vehicleType');
+      const townParam = params.get('town');
+      const detailsParam = params.get('details');
+      const serviceParam = params.get('service');
+
+      const valuesToSet = {};
+      if (vehicle) valuesToSet.vehicleType = vehicle;
+      if (townParam) valuesToSet.town = townParam;
+      if (detailsParam) valuesToSet.details = detailsParam;
+      if (serviceParam) {
+        if (serviceParam.toLowerCase().includes('interior')) valuesToSet.service = 'Interior Detailing';
+        else if (serviceParam.toLowerCase().includes('exterior')) valuesToSet.service = 'Exterior Detailing';
+        else if (serviceParam.toLowerCase().includes('full')) valuesToSet.service = 'Full Car Detailing';
+        else valuesToSet.service = serviceParam;
+      }
+
+      if (Object.keys(valuesToSet).length > 0) {
+        form.setFieldsValue(valuesToSet);
+      }
+    }
+  }, [form]);
 
   const handleSubmit = (values) => {
     setIsSubmitting(true);
@@ -68,33 +102,20 @@ export default function FinalCtaSection() {
             paddingInline: 10,
             fontSize: 12,
           },
-          DatePicker: {
+          Select: {
             colorBgContainer: '#0a0a0a',
-            colorBgElevated: '#141414',
+            colorBgElevated: '#000000',
             colorBorder: 'rgba(38, 38, 38, 0.9)',
             activeBorderColor: '#ef4444',
             hoverBorderColor: 'rgba(239, 68, 68, 0.5)',
-            activeShadow: '0 0 0 2px rgba(239, 68, 68, 0.12)',
+            activeOutlineColor: 'rgba(239, 68, 68, 0.12)',
             colorText: '#ffffff',
             colorTextPlaceholder: '#52525b',
             borderRadius: 8,
-            paddingBlock: 6,
-            paddingInline: 10,
-            fontSize: 12,
-          },
-          TimePicker: {
-            colorBgContainer: '#0a0a0a',
-            colorBgElevated: '#141414',
-            colorBorder: 'rgba(38, 38, 38, 0.9)',
-            activeBorderColor: '#ef4444',
-            hoverBorderColor: 'rgba(239, 68, 68, 0.5)',
-            activeShadow: '0 0 0 2px rgba(239, 68, 68, 0.12)',
-            colorText: '#ffffff',
-            colorTextPlaceholder: '#52525b',
-            borderRadius: 8,
-            paddingBlock: 6,
-            paddingInline: 10,
-            fontSize: 12,
+            controlHeight: 38,
+            fontSize: 13,
+            optionSelectedBg: 'rgba(239, 68, 68, 0.18)',
+            optionActiveBg: 'rgba(255, 255, 255, 0.08)',
           }
         }
       }}
@@ -175,7 +196,7 @@ export default function FinalCtaSection() {
 
                 {/* Location */}
                 <div className="flex items-center gap-2.5 p-2 rounded-lg bg-neutral-900/40 border border-neutral-800/60">
-                  <div className="w-7 h-7 rounded-md bg-neutral-800/80 text-neutral-400 flex items-center justify-center shrink-0">
+                  <div className="w-7 h-7 rounded-md bg-red-500/10 text-red-400 flex items-center justify-center shrink-0 group-hover:bg-red-500 group-hover:text-white transition-colors">
                     <MapPin className="w-3.5 h-3.5 text-red-400" />
                   </div>
                   <div className="min-w-0 flex-1">
@@ -188,8 +209,8 @@ export default function FinalCtaSection() {
 
                 {/* Hours */}
                 <div className="flex items-center gap-2.5 p-2 rounded-lg bg-neutral-900/40 border border-neutral-800/60">
-                  <div className="w-7 h-7 rounded-md bg-neutral-800/80 text-neutral-400 flex items-center justify-center shrink-0">
-                    <Clock className="w-3.5 h-3.5 text-amber-400" />
+                  <div className="w-7 h-7 rounded-md bg-red-500/10 text-red-400 flex items-center justify-center shrink-0 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                    <Clock className="w-3.5 h-3.5 text-red-400" />
                   </div>
                   <div className="min-w-0 flex-1">
                     <span className="block text-[9px] text-neutral-500 uppercase tracking-wider">Operating Hours</span>
@@ -201,8 +222,48 @@ export default function FinalCtaSection() {
 
               </div>
 
+              {/* Social Links */}
+            <div className="flex items-center gap-2.5 pt-2">
+              <a
+                href="https://google.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Google Review and Profile"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-neutral-900/80 hover:bg-red-600/90 text-neutral-400 hover:text-white flex items-center justify-center transition-all duration-200 border border-neutral-800/80 hover:border-red-500 hover:scale-105"
+              >
+                <GoogleOutlined className="text-sm" />
+              </a>
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Follow Dos Bros Detailing on Facebook"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-neutral-900/80 hover:bg-red-600/90 text-neutral-400 hover:text-white flex items-center justify-center transition-all duration-200 border border-neutral-800/80 hover:border-red-500 hover:scale-105"
+              >
+                <FacebookOutlined className="text-sm" />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Follow Dos Bros Detailing on Instagram"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-neutral-900/80 hover:bg-red-600/90 text-neutral-400 hover:text-white flex items-center justify-center transition-all duration-200 border border-neutral-800/80 hover:border-red-500 hover:scale-105"
+              >
+                <InstagramOutlined className="text-sm" />
+              </a>
+              <a
+                href="https://tiktok.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Follow Dos Bros Detailing on TikTok"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-neutral-900/80 hover:bg-red-600/90 text-neutral-400 hover:text-white flex items-center justify-center transition-all duration-200 border border-neutral-800/80 hover:border-red-500 hover:scale-105"
+              >
+                <TikTokOutlined className="text-sm" />
+              </a>
+            </div>
+
               {/* Minimal Trust Badges */}
-              <div className="flex flex-wrap items-center gap-1.5 pt-0.5 text-[10px] text-neutral-400">
+              {/* <div className="flex flex-wrap items-center gap-1.5 pt-0.5 text-[10px] text-neutral-400">
                 <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-neutral-900 border border-neutral-800">
                   <ShieldCheck className="w-3 h-3 text-emerald-400" />
                   <span>100% Mobile</span>
@@ -211,7 +272,7 @@ export default function FinalCtaSection() {
                   <Sparkles className="w-3 h-3 text-amber-400" />
                   <span>5.0 Star Rated</span>
                 </span>
-              </div>
+              </div> */}
 
             </div>
 
@@ -261,86 +322,144 @@ export default function FinalCtaSection() {
                     className="space-y-0"
                   >
                     {/* Row 1: First Name & Last Name */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3.5">
+
+                      {/* First Name (Required) */}
                       <Form.Item
-                        label={<span className="text-[11px] text-neutral-400">First Name</span>}
                         name="firstName"
-                        rules={[{ required: true, message: 'Required' }]}
+                        label={
+                          <span className="text-[11.5px] text-neutral-300 font-light">
+                            First name <span className="text-red-500">*</span>
+                          </span>
+                        }
+                        rules={[{ required: true, message: 'Please enter your first name' }]}
                         className="!mb-2.5"
                       >
-                        <Input placeholder="e.g. John" className="bg-neutral-950/80" />
+                        <Input
+                          placeholder="Your first name"
+                          className="bg-neutral-950/90"
+                        />
                       </Form.Item>
 
+                      {/* Last Name (Required) */}
                       <Form.Item
-                        label={<span className="text-[11px] text-neutral-400">Last Name</span>}
                         name="lastName"
-                        rules={[{ required: true, message: 'Required' }]}
+                        label={
+                          <span className="text-[11.5px] text-neutral-300 font-light">
+                            Last name <span className="text-red-500">*</span>
+                          </span>
+                        }
+                        rules={[{ required: true, message: 'Please enter your last name' }]}
                         className="!mb-2.5"
                       >
-                        <Input placeholder="e.g. Doe" className="bg-neutral-950/80" />
-                      </Form.Item>
-                    </div>
-
-                    {/* Row 2: Phone & Email */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
-                      <Form.Item
-                        label={<span className="text-[11px] text-neutral-400">Phone Number</span>}
-                        name="phone"
-                        rules={[{ required: true, message: 'Required' }]}
-                        className="!mb-2.5"
-                      >
-                        <Input 
-                          placeholder="(320) 000-0000" 
-                          prefix={<Phone className="w-3 h-3 text-neutral-500 mr-0.5" />}
-                          className="bg-neutral-950/80" 
+                        <Input
+                          placeholder="Your last name"
+                          className="bg-neutral-950/90"
                         />
                       </Form.Item>
 
+                    </div>
+
+                    {/* Row 2: Phone Number & What town are you in? */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3.5">
+
+                      {/* Phone Number (Required) */}
                       <Form.Item
-                        label={<span className="text-[11px] text-neutral-400">Email Address</span>}
-                        name="email"
-                        rules={[
-                          { required: true, message: 'Required' },
-                          { type: 'email', message: 'Invalid email' }
-                        ]}
+                        name="phoneNumber"
+                        label={
+                          <span className="text-[11.5px] text-neutral-300 font-light">
+                            Phone number <span className="text-red-500">*</span>
+                          </span>
+                        }
+                        rules={[{ required: true, message: 'Please enter your phone number' }]}
                         className="!mb-2.5"
                       >
-                        <Input 
-                          placeholder="john@example.com" 
-                          prefix={<Mail className="w-3 h-3 text-neutral-500 mr-0.5" />}
-                          className="bg-neutral-950/80" 
+                        <Input
+                          placeholder="(320) 000-0000"
+                          className="bg-neutral-950/90"
                         />
                       </Form.Item>
-                    </div>
 
-                    {/* Row 3: Date & Time */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                      {/* What town are you in? (Required) */}
                       <Form.Item
-                        label={<span className="text-[11px] text-neutral-400">Preferred Date</span>}
-                        name="date"
-                        rules={[{ required: true, message: 'Required' }]}
+                        name="town"
+                        label={
+                          <span className="text-[11.5px] text-neutral-300 font-light">
+                            What town are you in? <span className="text-red-500">*</span>
+                          </span>
+                        }
+                        rules={[{ required: true, message: 'Please tell us what town you are in' }]}
                         className="!mb-2.5"
                       >
-                        <DatePicker className="w-full bg-neutral-950/80" placeholder="Select date" />
+                        <Input
+                          placeholder="e.g. Morris, Hancock, Glenwood..."
+                          className="bg-neutral-950/90"
+                        />
                       </Form.Item>
 
-                      <Form.Item
-                        label={<span className="text-[11px] text-neutral-400">Preferred Time</span>}
-                        name="time"
-                        rules={[{ required: true, message: 'Required' }]}
-                        className="!mb-2.5"
-                      >
-                        <TimePicker use12Hours format="h:mm a" className="w-full bg-neutral-950/80" placeholder="Select time" />
-                      </Form.Item>
                     </div>
 
-                    {/* Row 4: Vehicle / Notes (Optional, sleek single-line input) */}
+                    {/* Row 3: What do you drive? (Input) & Select Service (Dropdown) */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3.5">
+
+                      {/* What do you drive? (Input) */}
+                      <Form.Item
+                        name="vehicleType"
+                        label={
+                          <span className="text-[11.5px] text-neutral-300 font-light">
+                            What do you drive?
+                          </span>
+                        }
+                        className="!mb-2.5"
+                      >
+                        <Input
+                          placeholder="e.g. Car, SUV, Truck, etc."
+                          className="bg-neutral-950/90"
+                        />
+                      </Form.Item>
+
+                      {/* Service Dropdown Selector */}
+                      <Form.Item
+                        name="service"
+                        label={
+                          <span className="text-[11.5px] text-neutral-300 font-light">
+                            Select Service
+                          </span>
+                        }
+                        className="!mb-2.5"
+                      >
+                        <Select
+                          placeholder="Select service..."
+                          allowClear={true}
+                          popupClassName="dark-select-dropdown"
+                          popupMatchSelectWidth={true}
+                          dropdownStyle={{ backgroundColor: '#000000', padding: '4px' }}
+                          className="w-full bg-neutral-950/90"
+                          options={[
+                            { value: 'Interior Detailing', label: 'Interior Detailing' },
+                            { value: 'Exterior Detailing', label: 'Exterior Detailing' },
+                            { value: 'Full Car Detailing', label: 'Full Car Detailing' },
+                          ]}
+                        />
+                      </Form.Item>
+
+                    </div>
+
+                    {/* Row 4: Anything we should know? (Optional) */}
                     <Form.Item
-                      label={<span className="text-[11px] text-neutral-400">Vehicle / Notes <span className="text-neutral-500">(Optional)</span></span>}
-                      name="notes"
+                      name="details"
+                      label={
+                        <span className="text-[11.5px] text-neutral-300 font-light">
+                          Anything we should know? <span className="text-neutral-500">(Optional)</span>
+                        </span>
+                      }
                       className="!mb-3.5"
                     >
-                      <Input placeholder="Year, Make, Model or package preference..." className="bg-neutral-950/80" />
+                      <TextArea
+                        rows={3}
+                        placeholder="Pet hair, stains, smells, or anything you want us to look at."
+                        className="bg-neutral-950/90 resize-none"
+                      />
                     </Form.Item>
 
                     {/* Submit Button (Compact & Sleek) */}
@@ -353,16 +472,16 @@ export default function FinalCtaSection() {
                         <span>Sending...</span>
                       ) : (
                         <>
-                          <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+                          {/* <Sparkles className="w-3.5 h-3.5 text-amber-300" /> */}
                           <span>Request Free Quote & Booking</span>
-                          <Send className="w-3 h-3 text-white/80" />
+                          {/* <Send className="w-3 h-3 text-white/80" /> */}
                         </>
                       )}
                     </button>
 
-                    <p className="text-[10px] text-neutral-500 text-center pt-2">
+                    {/* <p className="text-[10px] text-neutral-500 text-center pt-2">
                       🔒 Zero spam. We only use this to confirm your detail.
-                    </p>
+                    </p> */}
                   </Form>
                 )}
 

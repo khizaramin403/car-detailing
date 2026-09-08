@@ -58,8 +58,8 @@ export default function WhatHappensNextSection() {
             <span className="tracking-wide uppercase">What Happens Next</span>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-white font-['Outfit'] tracking-tight">
-            What Happens <span className="font-normal text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">After You Send It</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
+            What Happens <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">After You Send It</span>
           </h2>
 
           <div className="w-8 h-0.5 bg-gradient-to-r from-red-500 to-amber-500 rounded-full mx-auto" />

@@ -48,9 +48,9 @@ export default function ServiceAreaHeroSection() {
             <div className="lg:col-span-6 xl:col-span-5 flex flex-col items-center text-center space-y-3 sm:space-y-4 pt-8 sm:pt-14 md:pt-20 lg:pt-0">
 
               {/* H1: Sleek, Modern, Non-bulky */}
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-light text-white font-['Outfit'] tracking-tight leading-[1.18]">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-bold text-white font-['Outfit'] tracking-tight leading-[1.18]">
                 Where We Detail: <br className="hidden sm:block" />
-                <span className="font-normal text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
                   Morris, MN and Surrounding Towns
                 </span>
               </h1>

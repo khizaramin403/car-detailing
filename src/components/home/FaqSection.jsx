@@ -1,18 +1,6 @@
 import React from 'react';
 import { Collapse, ConfigProvider, theme } from 'antd';
-import { 
-  CalendarOutlined, 
-  PhoneOutlined, 
-  PlusOutlined, 
-  MinusOutlined 
-} from '@ant-design/icons';
-import { 
-  HelpCircle, 
-  Sparkles, 
-  MessageSquareQuote, 
-  CheckCircle2, 
-  ChevronDown 
-} from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 const faqItems = [
   {
@@ -108,6 +96,31 @@ const faqItems = [
 ];
 
 export default function FaqSection() {
+  const midIndex = Math.ceil(faqItems.length / 2);
+  const leftItems = faqItems.slice(0, midIndex);
+  const rightItems = faqItems.slice(midIndex);
+
+  const renderExpandIcon = ({ isActive }) => (
+    <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 border ${
+      isActive 
+        ? 'bg-red-500/20 border-red-500/50 text-[#fb2c36] rotate-180' 
+        : 'bg-neutral-900 border-neutral-800 text-neutral-400 hover:text-white'
+    }`}>
+      <ChevronDown className="w-4 h-4" />
+    </div>
+  );
+
+  const formatItem = (item) => ({
+    key: item.key,
+    label: (
+      <span className="font-['Outfit'] text-sm sm:text-base font-semibold text-neutral-100 hover:text-white transition-colors">
+        {item.label}
+      </span>
+    ),
+    children: item.children,
+    className: "mb-3 rounded-2xl overflow-hidden border border-neutral-800/90 bg-neutral-900/60 hover:border-neutral-700/80 transition-all backdrop-blur-sm shadow-md"
+  });
+
   return (
     <ConfigProvider
       theme={{
@@ -134,7 +147,7 @@ export default function FaqSection() {
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-red-600/5 blur-[150px] rounded-full pointer-events-none" />
         <div className="absolute bottom-10 right-10 w-[450px] h-[300px] bg-amber-500/5 blur-[130px] rounded-full pointer-events-none" />
 
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           
           {/* Section Header */}
           <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-16 space-y-4">
@@ -155,32 +168,26 @@ export default function FaqSection() {
             </p>
           </div>
 
-          {/* Ant Design Collapse FAQ Accordion */}
-          <div className="custom-faq-wrapper mb-14 sm:mb-16">
-            <Collapse
-              accordion
-              bordered={false}
-              expandIconPosition="end"
-              expandIcon={({ isActive }) => (
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 border ${
-                  isActive 
-                    ? 'bg-red-500/20 border-red-500/50 text-[#fb2c36] rotate-180' 
-                    : 'bg-neutral-900 border-neutral-800 text-neutral-400 hover:text-white'
-                }`}>
-                  <ChevronDown className="w-4 h-4" />
-                </div>
-              )}
-              items={faqItems.map(item => ({
-                key: item.key,
-                label: (
-                  <span className="font-['Outfit'] text-sm sm:text-base font-semibold text-neutral-100 hover:text-white transition-colors">
-                    {item.label}
-                  </span>
-                ),
-                children: item.children,
-                className: "mb-3 rounded-2xl overflow-hidden border border-neutral-800/90 bg-neutral-900/60 hover:border-neutral-700/80 transition-all backdrop-blur-sm shadow-md"
-              }))}
-            />
+          {/* Ant Design Collapse FAQ Accordion in 2 Responsive Columns */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 mb-14 sm:mb-16">
+            <div className="custom-faq-wrapper">
+              <Collapse
+                accordion
+                bordered={false}
+                expandIconPosition="end"
+                expandIcon={renderExpandIcon}
+                items={leftItems.map(formatItem)}
+              />
+            </div>
+            <div className="custom-faq-wrapper">
+              <Collapse
+                accordion
+                bordered={false}
+                expandIconPosition="end"
+                expandIcon={renderExpandIcon}
+                items={rightItems.map(formatItem)}
+              />
+            </div>
           </div>
 
           

@@ -101,7 +101,7 @@ export default function HowItWorksSection() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
-            How mobile detailing <br />
+            How mobile detailing&nbsp;
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
               works
             </span>

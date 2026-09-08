@@ -26,7 +26,7 @@ const factorsData = [
 
 export default function WhatCanMoveTheNumberSection() {
   return (
-    <section id="price-factors" className="relative bg-neutral-950 py-12 sm:py-16 lg:py-20 border-t border-neutral-900 overflow-hidden select-none">
+    <section id="price-factors" className="relative bg-neutral-950 py-16 sm:py-20 lg:py-24 border-t border-neutral-900 overflow-hidden select-none">
       
       {/* Ambient background glows */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -34,7 +34,7 @@ export default function WhatCanMoveTheNumberSection() {
         <div className="absolute bottom-10 left-10 w-96 h-96 bg-amber-500/5 blur-[140px] rounded-full" />
       </div>
 
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 z-10 space-y-8 sm:space-y-10">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10 space-y-8 sm:space-y-10">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto space-y-2">
@@ -43,9 +43,9 @@ export default function WhatCanMoveTheNumberSection() {
             <span className="tracking-widest uppercase">UPFRONT POLICY</span>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl font-normal text-white font-['Outfit'] tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
             What Can Move the{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500 font-normal">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
               Number
             </span>
           </h2>
@@ -102,10 +102,10 @@ export default function WhatCanMoveTheNumberSection() {
         </div>
 
         {/* Upfront Guarantee Callout Card */}
-        <div className="rounded-2xl border border-neutral-800/90 bg-neutral-900/30 p-4 sm:p-6 space-y-2.5">
+        {/* <div className="rounded-2xl border border-neutral-800/90 bg-neutral-900/30 p-4 sm:p-6 space-y-2.5"> */}
           <div className="flex items-start gap-3">
-            <ShieldCheck className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
-            <div className="space-y-1.5">
+            {/* <ShieldCheck className="w-5 h-5 text-red-400 shrink-0 mt-0.5" /> */}
+            <div className="space-y-1.5 text-center">
               <p className="text-xs sm:text-sm text-neutral-200 font-normal leading-relaxed">
                 Here is the part that matters. If your vehicle needs more than the starting price covers, Reyes tells you before he starts working, while it is still untouched, and you decide. Never on the invoice at the end.
               </p>
@@ -114,7 +114,7 @@ export default function WhatCanMoveTheNumberSection() {
               </p>
             </div>
           </div>
-        </div>
+        {/* </div> */}
 
       </div>
 

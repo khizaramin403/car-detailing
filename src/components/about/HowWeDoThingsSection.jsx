@@ -125,7 +125,7 @@ export default function HowWeDoThingsSection() {
             <span>HOW WE DO THINGS</span>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl text-white font-['Outfit'] tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
             How We Do{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
               Things

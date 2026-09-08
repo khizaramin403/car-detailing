@@ -8,17 +8,17 @@ const quoteParts = [
     meaning: 'Interior, exterior, or both. Express for maintenance, Executive for a deep clean.'
   },
   {
-    icon: <Truck className="w-4 h-4 text-amber-400" />,
+    icon: <Truck className="w-4 h-4 text-red-500" />,
     part: 'Vehicle size',
     meaning: 'A full-size truck takes longer than a sedan. Bigger vehicle, higher price.'
   },
   {
-    icon: <Compass className="w-4 h-4 text-red-400" />,
+    icon: <Compass className="w-4 h-4 text-red-500" />,
     part: 'Travel',
     meaning: 'Nothing within about 20 miles of Morris. Beyond that a small fee covers fuel and time.'
   },
   {
-    icon: <Sparkles className="w-4 h-4 text-amber-500" />,
+    icon: <Sparkles className="w-4 h-4 text-red-500" />,
     part: 'Add-ons',
     meaning: 'Pet hair, odor, heavy stains, engine bay. Only if you need them.'
   }
@@ -49,20 +49,19 @@ const comparisonData = [
 
 export default function HowQuoteIsBuiltSection() {
   return (
-    <section id="quote-built" className="relative bg-neutral-950 py-12 sm:py-16 lg:py-20 border-t border-neutral-900 overflow-hidden select-none">
-      
-      {/* Ambient background glows */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-10 w-[450px] h-[450px] bg-red-600/5 blur-[140px] rounded-full" />
-        <div className="absolute bottom-1/4 right-10 w-[450px] h-[450px] bg-amber-500/5 blur-[140px] rounded-full" />
-      </div>
-
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 z-10 space-y-12 sm:space-y-16">
+    <>
+      {/* ========================================================================= */}
+      {/* PART 1: THE FOUR BUILDING BLOCKS                                          */}
+      {/* ========================================================================= */}
+      <section id="quote-built" className="relative bg-neutral-950 py-16 sm:py-20 lg:py-24 border-t border-neutral-900 overflow-hidden select-none">
         
-        {/* ========================================================================= */}
-        {/* PART 1: THE FOUR BUILDING BLOCKS                                          */}
-        {/* ========================================================================= */}
-        <div className="space-y-6 sm:space-y-8">
+        {/* Ambient background glows */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 left-10 w-[450px] h-[450px] bg-red-600/5 blur-[140px] rounded-full" />
+          <div className="absolute bottom-1/4 right-10 w-[450px] h-[450px] bg-amber-500/5 blur-[140px] rounded-full" />
+        </div>
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10 space-y-6 sm:space-y-8">
           
           <div className="text-center max-w-2xl mx-auto space-y-2">
             <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-neutral-900 border border-neutral-800 text-[10px] font-medium text-neutral-300">
@@ -70,9 +69,9 @@ export default function HowQuoteIsBuiltSection() {
               <span className="tracking-widest uppercase">TRANSPARENT PRICING</span>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl font-normal text-white font-['Outfit'] tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
               How a Detailing Quote Is{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500 font-normal">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
                 Built
               </span>
             </h2>
@@ -107,7 +106,7 @@ export default function HowQuoteIsBuiltSection() {
           </div>
 
           {/* Summary Note */}
-          <div className="rounded-xl border border-neutral-800/70 bg-neutral-900/30 py-2.5 px-4 text-center">
+          <div className="text-center">
             <p className="text-xs text-neutral-300 font-light">
               <span className="text-white font-medium">Add those four together and that is your price.</span> Nothing else gets tacked on.
             </p>
@@ -115,25 +114,43 @@ export default function HowQuoteIsBuiltSection() {
 
         </div>
 
-        {/* ========================================================================= */}
-        {/* PART 2: EXPRESS OR EXECUTIVE COMPARISON TABLE                             */}
-        {/* ========================================================================= */}
-        <div className="space-y-6 sm:space-y-7 pt-4 border-t border-neutral-900/90">
+      </section>
+
+      {/* ========================================================================= */}
+      {/* PART 2: EXPRESS OR EXECUTIVE COMPARISON TABLE SECTION                     */}
+      {/* ========================================================================= */}
+      <section id="express-or-executive" className="relative bg-neutral-950 py-16 sm:py-20 lg:py-24 border-t border-neutral-900 overflow-hidden select-none">
+        
+        {/* Ambient background glows */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 right-10 w-[450px] h-[450px] bg-red-600/5 blur-[140px] rounded-full" />
+          <div className="absolute bottom-1/4 left-10 w-[450px] h-[450px] bg-amber-500/5 blur-[140px] rounded-full" />
+        </div>
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10 space-y-6 sm:space-y-8">
           
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <h3 className="text-xl sm:text-2xl font-normal text-white font-['Outfit'] tracking-tight">
+            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-neutral-900 border border-neutral-800 text-[10px] font-medium text-neutral-300">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+              <span className="tracking-widest uppercase">PACKAGE COMPARISON</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
               Express or{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500 font-normal">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
                 Executive?
               </span>
-            </h3>
-            <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed max-w-xl mx-auto">
+            </h2>
+
+            <div className="w-8 h-0.5 bg-gradient-to-r from-red-500 to-amber-500 rounded-full mx-auto" />
+
+            <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed max-w-xl mx-auto pt-0.5">
               The honest answer is that most people need Express more often than they think, and Executive less often than they fear.
             </p>
           </div>
 
           {/* Comparison Table */}
-          <div className="rounded-2xl border border-neutral-800/90 bg-neutral-900/40 backdrop-blur-md overflow-hidden shadow-2xl">
+          <div className="overflow-x-auto rounded-2xl border border-neutral-800/90 bg-neutral-900/40 backdrop-blur-md shadow-2xl">
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="border-b border-neutral-800 bg-neutral-900/80">
@@ -176,22 +193,15 @@ export default function HowQuoteIsBuiltSection() {
           </div>
 
           {/* Explanatory Callout Card */}
-          <div className="rounded-2xl border border-neutral-800/90 bg-neutral-900/30 p-4 sm:p-5 space-y-2">
-            <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed">
+          <div>
+            <p className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed text-center max-w-2xl mx-auto">
               <span className="text-white font-normal">The real dividing line is extraction.</span> If dirt has worked down into the carpet fibers, wiping and vacuuming will not reach it. That is what Executive is for.
             </p>
-            <div className="flex items-center gap-2 text-xs sm:text-sm text-amber-300/90 font-light pt-0.5">
-              <Camera className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-              <span>
-                Not sure which one you need? Send us a photo. We will tell you honestly, and it is usually the cheaper one.
-              </span>
-            </div>
           </div>
 
         </div>
 
-      </div>
-
-    </section>
+      </section>
+    </>
   );
 }

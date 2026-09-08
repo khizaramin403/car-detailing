@@ -71,9 +71,9 @@ export default function ServiceAreaFaqSection() {
               <span>FAQ</span>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white font-['Outfit'] tracking-tight leading-[1.15]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
               Questions About <br className="hidden sm:inline" />
-              <span className="font-normal text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
                 Where We Go
               </span>
             </h2>

@@ -62,13 +62,13 @@ export default function PricingFaqSection() {
         },
       }}
     >
-      <section id="pricing-faq" className="relative bg-neutral-950 py-12 sm:py-16 lg:py-20 border-t border-neutral-900 overflow-hidden select-none">
+      <section id="pricing-faq" className="relative bg-neutral-950 py-16 sm:py-20 lg:py-24 border-t border-neutral-900 overflow-hidden select-none">
         
         {/* Ambient Background Glows */}
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-red-600/5 blur-[150px] rounded-full pointer-events-none" />
         <div className="absolute bottom-10 right-10 w-[400px] h-[300px] bg-amber-500/5 blur-[130px] rounded-full pointer-events-none" />
 
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 z-10 space-y-8 sm:space-y-10">
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 z-10 space-y-8 sm:space-y-10">
           
           {/* Section Header */}
           <div className="text-center max-w-2xl mx-auto space-y-2">
@@ -77,9 +77,9 @@ export default function PricingFaqSection() {
               <span className="tracking-widest uppercase">FAQ</span>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl font-normal text-white font-['Outfit'] tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
               Questions About{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500 font-normal">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
                 Pricing
               </span>
             </h2>

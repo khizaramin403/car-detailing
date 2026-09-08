@@ -387,7 +387,7 @@ export default function CostCalculatorSection() {
       }}
     >
       {/* SECTION ROOT: Notice no overflow-hidden so position:sticky works flawlessly */}
-      <section id="cost-calculator" className="relative bg-neutral-950 py-10 sm:py-14 lg:py-16 border-t border-neutral-900 select-none">
+      <section id="cost-calculator" className="relative bg-neutral-950 py-16 sm:py-20 lg:py-24 border-t border-neutral-900 select-none">
         
         {/* Subtle Ambient Radial Glows contained in isolated wrapper */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -395,7 +395,7 @@ export default function CostCalculatorSection() {
           <div className="absolute bottom-1/4 left-10 w-[500px] h-[500px] bg-amber-500/5 blur-[140px] rounded-full" />
         </div>
 
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           
           {/* Centered Section Header */}
           <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10 space-y-2.5">
@@ -404,7 +404,7 @@ export default function CostCalculatorSection() {
               <span className="tracking-widest uppercase">PRICE CALCULATOR</span>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-normal text-white font-['Outfit'] tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
               Find your starting price in{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
                 about a minute
@@ -720,7 +720,7 @@ export default function CostCalculatorSection() {
                       What town are you in?
                     </h3>
                   </div>
-                  {selectedTownObj && (
+                  {/* {selectedTownObj && (
                     <span className={`text-[10.5px] font-light px-2 py-0.5 rounded-full border ${
                       selectedTownObj.zone === 1
                         ? 'bg-emerald-950/40 text-emerald-400 border-emerald-800/40'
@@ -733,7 +733,7 @@ export default function CostCalculatorSection() {
                       {selectedTownObj.zone === 3 && 'Zone 3 · $25 Travel'}
                       {selectedTownObj.zone >= 4 && 'Extended Travel'}
                     </span>
-                  )}
+                  )} */}
                 </div>
 
                 <div className="relative">
@@ -868,8 +868,8 @@ export default function CostCalculatorSection() {
                         {currentPackage.name} · {selectedVehicleObj.label} · {selectedTownName}
                       </div>
 
-                      <div className="flex items-center gap-1.5 text-[11.5px] text-amber-300/90 font-light pt-1 border-t border-neutral-900">
-                        <Clock className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                      <div className="flex items-center gap-1.5 text-[11.5px] text-neutral-200 font-light pt-1 border-t border-neutral-900">
+                        <Clock className="w-3.5 h-3.5 text-neutral-200 shrink-0" />
                         <span>Expect us to be there {currentPackage.timeRange}</span>
                       </div>
                     </div>
