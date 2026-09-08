@@ -19,32 +19,32 @@ const servicesList = [
   {
     title: 'Interior Detailing',
     icon: <Armchair className="w-5 h-5 text-[#fb2c36]" />,
-    href: '/services'
+    href: ''
   },
   {
     title: 'Exterior & Hand Wash',
     icon: <Droplets className="w-5 h-5 text-[#fb2c36]" />,
-    href: '/services'
+    href: ''
   },
   {
     title: 'Full Detail Package',
     icon: <Sparkles className="w-5 h-5 text-[#fb2c36]" />,
-    href: '/services'
+    href: ''
   },
   {
     title: 'Truck & Farm Vehicles',
     icon: <Truck className="w-5 h-5 text-[#fb2c36]" />,
-    href: '/services'
+    href: ''
   },
   {
     title: 'Fleet & Commercial',
     icon: <Building2 className="w-5 h-5 text-[#fb2c36]" />,
-    href: '/services'
+    href: ''
   },
   {
     title: 'Boat & Pontoon Detailing',
     icon: <Ship className="w-5 h-5 text-[#fb2c36]" />,
-    href: '/services'
+    href: ''
   }
 ];
 

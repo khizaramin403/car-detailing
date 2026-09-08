@@ -9,7 +9,8 @@ import {
   CheckCircleFilled,
   MessageOutlined,
   FormOutlined,
-  ClockCircleOutlined
+  ClockCircleOutlined,
+  LoadingOutlined
 } from '@ant-design/icons';
 import { ArrowRight } from 'lucide-react';
 
@@ -45,12 +46,28 @@ export default function ContactReachAndFormSection() {
     }
   }, [form]);
 
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxT-6YOWssRb1SFuFLpGqphhuydzK835EP2lpg4DMnJtL71OY_tVWEEYUy5K9zdMg974A/exec';
+
   const handleSubmit = (values) => {
     setIsSubmitting(true);
+
+    // Fast background dispatch to Google Apps Script (doesn't freeze UI)
+    fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'text/plain;charset=utf-8',
+      },
+      body: JSON.stringify(values),
+    }).catch((err) => {
+      console.error('Lead submission background error:', err);
+    });
+
+    // Sleek micro-delay for smooth spinner feedback, then instant Thank You transition
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
-    }, 450);
+    }, 600);
   };
 
   const handleReset = () => {
@@ -303,7 +320,7 @@ export default function ContactReachAndFormSection() {
                         Thank You! Quote Request Received
                       </h3>
                       <p className="text-xs text-neutral-400 font-light max-w-md mx-auto leading-relaxed">
-                        Reyes or Mariano will review what you drive and send you a straight price shortly.
+                        Reyes will get back to you soon with your free quote.
                       </p>
                     </div>
                     <button
@@ -436,7 +453,7 @@ export default function ContactReachAndFormSection() {
                           popupClassName="dark-select-dropdown"
                           popupMatchSelectWidth={true}
                           dropdownStyle={{ backgroundColor: '#000000', padding: '4px' }}
-                          className="w-full bg-neutral-950/90"
+                          className="w-full"
                           options={[
                             { value: 'Interior Detailing', label: 'Interior Detailing' },
                             { value: 'Exterior Detailing', label: 'Exterior Detailing' },
@@ -468,9 +485,16 @@ export default function ContactReachAndFormSection() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-xl text-xs sm:text-sm font-medium text-white bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-600 active:scale-[0.99] shadow-lg shadow-red-600/20 border border-red-500/30 transition-all duration-200 cursor-pointer disabled:opacity-60"
+                      className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-medium text-white bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-600 active:scale-[0.99] shadow-lg shadow-red-600/20 border border-red-500/30 transition-all duration-200 cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed"
                     >
-                      <span>{isSubmitting ? 'Submitting...' : 'Submit'}</span>
+                      {isSubmitting ? (
+                        <>
+                          <LoadingOutlined className="text-sm" />
+                          <span>Sending your request...</span>
+                        </>
+                      ) : (
+                        <span>Submit</span>
+                      )}
                     </button>
 
                   </Form>

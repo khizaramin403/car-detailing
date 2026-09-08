@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Input, Select, ConfigProvider, theme } from 'antd';
 import { 
-  CheckCircleFilled
+  CheckCircleFilled,
+  LoadingOutlined
 } from '@ant-design/icons';
 import { 
   Sparkles, 
@@ -53,12 +54,28 @@ export default function FinalCtaSection() {
     }
   }, [form]);
 
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxT-6YOWssRb1SFuFLpGqphhuydzK835EP2lpg4DMnJtL71OY_tVWEEYUy5K9zdMg974A/exec';
+
   const handleSubmit = (values) => {
     setIsSubmitting(true);
+
+    // Fast background dispatch to Google Apps Script (doesn't freeze UI)
+    fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'text/plain;charset=utf-8',
+      },
+      body: JSON.stringify(values),
+    }).catch((err) => {
+      console.error('Lead submission background error:', err);
+    });
+
+    // Sleek micro-delay for smooth spinner feedback, then instant Thank You transition
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
-    }, 500);
+    }, 600);
   };
 
   const handleReset = () => {
@@ -299,10 +316,10 @@ export default function FinalCtaSection() {
                     </div>
                     <div className="space-y-1 max-w-sm mx-auto">
                       <h4 className="text-sm sm:text-base font-bold text-white font-['Outfit']">
-                        Request Received!
+                        Thank You! Request Received
                       </h4>
                       <p className="text-xs text-neutral-300">
-                        We will contact you shortly to confirm your quote and appointment time.
+                        Reyes will get back to you soon with your free quote.
                       </p>
                     </div>
                     <button
@@ -434,7 +451,7 @@ export default function FinalCtaSection() {
                           popupClassName="dark-select-dropdown"
                           popupMatchSelectWidth={true}
                           dropdownStyle={{ backgroundColor: '#000000', padding: '4px' }}
-                          className="w-full bg-neutral-950/90"
+                          className="w-full"
                           options={[
                             { value: 'Interior Detailing', label: 'Interior Detailing' },
                             { value: 'Exterior Detailing', label: 'Exterior Detailing' },
@@ -466,16 +483,15 @@ export default function FinalCtaSection() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-xs font-semibold text-white bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-600 active:scale-[0.99] shadow-md shadow-red-600/20 transition-all duration-150 cursor-pointer disabled:opacity-60 border border-red-500/30"
+                      className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-xs font-semibold text-white bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-600 active:scale-[0.99] shadow-md shadow-red-600/20 transition-all duration-150 cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed border border-red-500/30"
                     >
                       {isSubmitting ? (
-                        <span>Sending...</span>
-                      ) : (
                         <>
-                          {/* <Sparkles className="w-3.5 h-3.5 text-amber-300" /> */}
-                          <span>Request Free Quote & Booking</span>
-                          {/* <Send className="w-3 h-3 text-white/80" /> */}
+                          <LoadingOutlined className="text-sm" />
+                          <span>Sending your request...</span>
                         </>
+                      ) : (
+                        <span>Request Free Quote & Booking</span>
                       )}
                     </button>
 
