@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Drawer, ConfigProvider, theme } from 'antd';
 import {
   AlignRightOutlined,
   CloseOutlined,
@@ -21,11 +22,17 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentPath, setCurrentPath] = useState('/');
+  const [drawerKey, setDrawerKey] = useState(0);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const updateState = () => {
         setCurrentPath(window.location.pathname);
+        setMobileMenuOpen(false);
+        setDrawerKey((prev) => prev + 1);
+      };
+
+      const handleBeforeSwap = () => {
         setMobileMenuOpen(false);
       };
 
@@ -37,15 +44,25 @@ export default function Navbar() {
         setIsScrolled(window.scrollY > 20);
       };
 
-      // Astro ClientRouter page-load event listener (fires on client navigation)
+      const handleResize = () => {
+        if (window.innerWidth >= 1024) {
+          setMobileMenuOpen(false);
+        }
+      };
+
+      // Astro ClientRouter page lifecycle listeners (fires on client navigation)
+      document.addEventListener('astro:before-swap', handleBeforeSwap);
       document.addEventListener('astro:page-load', updateState);
       window.addEventListener('popstate', updateState);
       window.addEventListener('scroll', handleScroll, { passive: true });
+      window.addEventListener('resize', handleResize);
 
       return () => {
+        document.removeEventListener('astro:before-swap', handleBeforeSwap);
         document.removeEventListener('astro:page-load', updateState);
         window.removeEventListener('popstate', updateState);
         window.removeEventListener('scroll', handleScroll);
+        window.removeEventListener('resize', handleResize);
       };
     }
   }, []);
@@ -164,24 +181,97 @@ export default function Navbar() {
             <div className="flex items-center lg:hidden">
               <button
                 type="button"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2.5 rounded-xl  text-neutral-300   transition-colors focus:outline-none"
-                aria-label="Toggle Navigation Menu"
+                onClick={() => setMobileMenuOpen((prev) => !prev)}
+                className="p-2.5 rounded-xl text-neutral-300 hover:text-white hover:bg-neutral-900/60 transition-colors focus:outline-none cursor-pointer"
+                aria-label="Open Navigation Menu"
               >
-                {mobileMenuOpen ? (
-                  <CloseOutlined className="text-lg text-red-400" />
-                ) : (
-                  <AlignRightOutlined className="text-lg" />
-                )}
+                <AlignRightOutlined className="text-lg" />
               </button>
             </div>
 
           </div>
         </div>
+      </header>
 
-        {/* Mobile Dropdown Menu */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden bg-neutral-950/98 border-b border-neutral-800 backdrop-blur-xl px-4 pt-3 pb-6">
+      {/* Mobile Navigation Drawer (Ant Design Drawer) */}
+      <ConfigProvider
+        theme={{
+          algorithm: theme.darkAlgorithm,
+          token: {
+            colorBgElevated: '#0a0a0a',
+            colorText: '#f5f5f5',
+            colorLink: '#f87171',
+            colorLinkHover: '#ffffff',
+            colorLinkActive: '#f87171',
+          },
+        }}
+      >
+        <Drawer
+          key={drawerKey}
+          placement="right"
+          open={mobileMenuOpen}
+          onClose={() => setMobileMenuOpen(false)}
+          destroyOnClose
+          getContainer={() => document.body}
+          width="82%"
+          style={{ maxWidth: '340px' }}
+          closeIcon={null}
+          title={
+            <div className="flex items-center justify-between w-full">
+              <a
+                href="/"
+                onClick={(e) => handleLinkClick(e, '/')}
+                className="flex items-center focus:outline-none cursor-pointer"
+                title="Dos Bros Auto Detailing"
+              >
+                <img
+                  src="/logo.png"
+                  alt="Dos Bros Auto Detailing"
+                  style={{
+                    height: '38px',
+                    width: 'auto',
+                    maxHeight: '42px',
+                    display: 'block',
+                    objectFit: 'contain',
+                  }}
+                />
+              </a>
+              <button
+                type="button"
+                onClick={() => setMobileMenuOpen(false)}
+                className="p-1.5 rounded-xl text-neutral-400 hover:text-red-400 hover:bg-neutral-900 transition-colors focus:outline-none cursor-pointer"
+                aria-label="Close Navigation Menu"
+              >
+                <CloseOutlined className="text-base" />
+              </button>
+            </div>
+          }
+          styles={{
+            wrapper: {
+              maxWidth: '340px',
+              width: '82%',
+            },
+            content: {
+              backgroundColor: '#0a0a0a',
+              borderLeft: '1px solid rgba(38, 38, 38, 0.8)',
+            },
+            header: {
+              backgroundColor: '#0a0a0a',
+              borderBottom: '1px solid rgba(38, 38, 38, 0.8)',
+              padding: '14px 16px',
+            },
+            body: {
+              backgroundColor: '#0a0a0a',
+              padding: '16px',
+            },
+            mask: {
+              backdropFilter: 'blur(4px)',
+              WebkitBackdropFilter: 'blur(4px)',
+              backgroundColor: 'rgba(0, 0, 0, 0.75)',
+            },
+          }}
+        >
+          <div className="flex flex-col h-full justify-between">
             <div className="space-y-1.5">
               {navLinks.map((link) => {
                 const active = isActive(link.href);
@@ -190,10 +280,11 @@ export default function Navbar() {
                     key={link.name}
                     href={link.href}
                     onClick={(e) => handleLinkClick(e, link.href)}
-                    className={`block px-4 py-3 rounded-xl text-base font-medium transition-all ${active
-                      ? 'bg-red-600/15 text-red-400 border-l-4 border-red-500 font-semibold'
-                      : 'text-neutral-300 hover:bg-neutral-900 hover:text-white'
-                      }`}
+                    className={`nav-drawer-link block px-4 py-3 rounded-xl text-base font-medium transition-all ${
+                      active
+                        ? 'nav-drawer-active bg-red-600/15! text-red-400! border-l-4 border-red-500! font-semibold'
+                        : 'text-neutral-300! hover:bg-neutral-900! hover:text-white!'
+                    }`}
                   >
                     {link.name}
                   </a>
@@ -201,11 +292,11 @@ export default function Navbar() {
               })}
             </div>
 
-            <div className="mt-5 pt-4 border-t border-neutral-900 space-y-3">
+            <div className="mt-8 pt-5 border-t border-neutral-900 space-y-3">
               <a
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white bg-linear-to-r from-red-600 to-red-700 shadow-lg shadow-red-600/30"
+                className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white! bg-linear-to-r from-red-600 to-red-700 shadow-lg shadow-red-600/30 hover:from-red-500 hover:to-red-600 transition-all"
               >
                 <CalendarOutlined />
                 <span>Book Appointment</span>
@@ -213,15 +304,15 @@ export default function Navbar() {
 
               <a
                 href="tel:+15558392849"
-                className="w-full flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium text-neutral-300 bg-neutral-900 hover:bg-neutral-800 border border-neutral-800"
+                className="w-full flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium text-neutral-300! bg-neutral-900 hover:bg-neutral-800 border border-neutral-800! transition-all"
               >
-                <PhoneOutlined className="text-red-500" />
+                <PhoneOutlined className="text-red-500!" />
                 <span>Call +1 (555) 839-2849</span>
               </a>
             </div>
           </div>
-        )}
-      </header>
+        </Drawer>
+      </ConfigProvider>
     </>
   );
 }

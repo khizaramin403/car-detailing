@@ -20,8 +20,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 
-// Photo Sphere Viewer Styles
-import '@photo-sphere-viewer/core/index.css';
 
 // Curated Project Gallery Items from local assets
 const projectImages = [
@@ -43,67 +41,38 @@ const projectImages = [
 
 export default function ProjectGallerySection() {
   const [activeViewerImage, setActiveViewerImage] = useState(null);
-  const sphereContainerRef = useRef(null);
-  const viewerInstanceRef = useRef(null);
 
-  // Initialize @photo-sphere-viewer/core dynamically when modal opens
+  const handlePrevImage = () => {
+    if (!activeViewerImage) return;
+    const currentIndex = projectImages.findIndex((img) => img.id === activeViewerImage.id);
+    const prevIndex = (currentIndex - 1 + projectImages.length) % projectImages.length;
+    setActiveViewerImage(projectImages[prevIndex]);
+  };
+
+  const handleNextImage = () => {
+    if (!activeViewerImage) return;
+    const currentIndex = projectImages.findIndex((img) => img.id === activeViewerImage.id);
+    const nextIndex = (currentIndex + 1) % projectImages.length;
+    setActiveViewerImage(projectImages[nextIndex]);
+  };
+
+  // Keyboard navigation for gallery modal
   useEffect(() => {
-    let viewer = null;
-    let timer = null;
+    if (!activeViewerImage) return;
 
-    if (activeViewerImage) {
-      timer = setTimeout(() => {
-        if (sphereContainerRef.current) {
-          import('@photo-sphere-viewer/core').then(({ Viewer }) => {
-            try {
-              // Destroy any previous instance
-              if (viewerInstanceRef.current) {
-                viewerInstanceRef.current.destroy();
-                viewerInstanceRef.current = null;
-              }
-
-              viewer = new Viewer({
-                container: sphereContainerRef.current,
-                panorama: activeViewerImage.src,
-                caption: `${activeViewerImage.title} · ${activeViewerImage.category}`,
-                defaultZoomLvl: 10,
-                touchmoveTwoFingers: false,
-                mousewheel: true,
-                navbar: ['zoom', 'move', 'fullscreen']
-              });
-
-              viewerInstanceRef.current = viewer;
-            } catch (e) {
-              console.error('Error initializing PhotoSphereViewer:', e);
-            }
-          });
-        }
-      }, 60);
-    }
-
-    return () => {
-      if (timer) clearTimeout(timer);
-      if (viewerInstanceRef.current) {
-        viewerInstanceRef.current.destroy();
-        viewerInstanceRef.current = null;
+    const handleKeyDown = (e) => {
+      if (e.key === 'ArrowLeft') {
+        handlePrevImage();
+      } else if (e.key === 'ArrowRight') {
+        handleNextImage();
+      } else if (e.key === 'Escape') {
+        setActiveViewerImage(null);
       }
     };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, [activeViewerImage]);
-
-  // Handle window and mobile orientation resize so PhotoSphereViewer auto-adapts dynamically
-  useEffect(() => {
-    const handleResize = () => {
-      if (viewerInstanceRef.current && typeof viewerInstanceRef.current.autoSize === 'function') {
-        viewerInstanceRef.current.autoSize();
-      }
-    };
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('orientationchange', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('orientationchange', handleResize);
-    };
-  }, []);
 
   return (
     <section id="gallery" className="relative bg-neutral-950 py-18 sm:py-22 lg:py-26 border-b border-neutral-800/80 overflow-hidden select-none">
@@ -241,7 +210,7 @@ export default function ProjectGallerySection() {
                       <span>{item.location}</span>
                       <span className="text-[9px] font-medium text-red-400 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                         <Maximize2 className="w-2.5 h-2.5" />
-                        <span>360°</span>
+                        <span>Preview</span>
                       </span>
                     </div>
                   </div>
@@ -259,7 +228,7 @@ export default function ProjectGallerySection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 text-center pt-1">
         <p className="text-xs text-neutral-500 flex items-center justify-center gap-1.5">
           <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-          <span>Click any vehicle card to open full interactive 360° Panorama inspection</span>
+          <span>Click any vehicle card to view high-resolution detailing photo</span>
         </p>
       </div>
 
@@ -321,11 +290,42 @@ export default function ProjectGallerySection() {
               </div>
             </div>
 
-            {/* PhotoSphereViewer Canvas Container - Fully Responsive on ALL screens */}
-            <div
-              ref={sphereContainerRef}
-              className="w-full h-[45vh] min-h-[220px] max-h-[360px] xs:h-[50vh] xs:min-h-[250px] sm:h-[55vh] sm:max-h-[500px] md:h-[62vh] md:max-h-[580px] rounded-xl sm:rounded-2xl overflow-hidden border border-neutral-800/90 bg-neutral-950 shadow-2xl relative"
-            />
+            {/* High-Resolution Vehicle Detailing Image Preview Container */}
+            <div className="w-full h-[48vh] min-h-[240px] max-h-[380px] xs:h-[54vh] xs:min-h-[270px] sm:h-[60vh] sm:max-h-[520px] md:h-[68vh] md:max-h-[620px] rounded-xl sm:rounded-2xl overflow-hidden border border-neutral-800/90 bg-neutral-950/90 shadow-2xl relative flex items-center justify-center p-2 sm:p-4">
+              {/* Previous Image Navigation Arrow */}
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handlePrevImage();
+                }}
+                aria-label="Previous image"
+                className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-neutral-950/80 hover:bg-neutral-900 border border-neutral-800 hover:border-red-500/50 text-neutral-300 hover:text-white flex items-center justify-center transition-all cursor-pointer backdrop-blur-md shadow-lg"
+              >
+                <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+              </button>
+
+              {/* Vehicle Detailing Photo */}
+              <img
+                key={activeViewerImage.src}
+                src={activeViewerImage.src}
+                alt={activeViewerImage.title}
+                className="w-auto h-auto max-w-full max-h-full object-contain rounded-lg sm:rounded-xl shadow-2xl select-none"
+              />
+
+              {/* Next Image Navigation Arrow */}
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleNextImage();
+                }}
+                aria-label="Next image"
+                className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-neutral-950/80 hover:bg-neutral-900 border border-neutral-800 hover:border-red-500/50 text-neutral-300 hover:text-white flex items-center justify-center transition-all cursor-pointer backdrop-blur-md shadow-lg"
+              >
+                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
+              </button>
+            </div>
 
             {/* Modal Footer Info */}
             <div className="flex items-center justify-between flex-wrap gap-2 text-[11px] sm:text-xs text-neutral-400 pt-0.5 sm:pt-1">
