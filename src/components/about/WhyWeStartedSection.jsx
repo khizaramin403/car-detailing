@@ -251,7 +251,7 @@ export default function WhyWeStartedSection() {
 
           {/* Single Clean Responsive Slider on Small Screens */}
           <div className="w-full max-w-md sm:max-w-lg mx-auto pt-2">
-            <div className="relative w-full h-[280px] sm:h-[340px] rounded-2xl sm:rounded-3xl overflow-hidden bg-neutral-900 border border-neutral-800/90 shadow-xl">
+            <div className="relative w-full h-70 sm:h-85 rounded-2xl sm:rounded-3xl overflow-hidden bg-neutral-900 border border-neutral-800/90 shadow-xl">
               
               <Swiper
                 modules={[Autoplay, Navigation]}
@@ -283,7 +283,7 @@ export default function WhyWeStartedSection() {
                       className="w-full h-full object-cover select-none"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/40 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-linear-to-t from-neutral-950/40 via-transparent to-transparent pointer-events-none" />
                   </SwiperSlide>
                 ))}
               </Swiper>
