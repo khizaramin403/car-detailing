@@ -57,6 +57,8 @@ export default function Footer() {
                 <img
                   src="/logo.png"
                   alt="Dos Bros Auto Detailing"
+                  width="180"
+                  height="42"
                   className="h-9 xs:h-10 sm:h-11 w-auto max-w-[220px] xs:max-w-[260px] object-contain"
                   style={{
                     height: '42px',
@@ -117,10 +119,10 @@ export default function Footer() {
 
           {/* Column 2: Quick Links (Side-by-side with Services on mobile) */}
           <div className="col-span-1 lg:col-span-2 xl:col-span-2 space-y-3 sm:space-y-4">
-            <h4 className="text-white font-semibold text-xs sm:text-sm uppercase tracking-wider font-['Outfit',sans-serif] flex items-center gap-2">
+            <h3 className="text-white font-semibold text-xs sm:text-sm uppercase tracking-wider font-['Outfit',sans-serif] flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0"></span>
               Explore
-            </h4>
+            </h3>
             <ul className="space-y-2 text-xs sm:text-sm">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -139,10 +141,10 @@ export default function Footer() {
 
           {/* Column 3: Services (Side-by-side with Explore on mobile) */}
           <div className="col-span-1 lg:col-span-3 xl:col-span-3 space-y-3 sm:space-y-4">
-            <h4 className="text-white font-semibold text-xs sm:text-sm uppercase tracking-wider font-['Outfit',sans-serif] flex items-center gap-2">
+            <h3 className="text-white font-semibold text-xs sm:text-sm uppercase tracking-wider font-['Outfit',sans-serif] flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0"></span>
               Services
-            </h4>
+            </h3>
             <ul className="space-y-2 text-xs sm:text-sm">
               {services.map((item) => (
                 <li key={item.name}>
@@ -162,10 +164,10 @@ export default function Footer() {
 
           {/* Column 4: Contact & Hours (Full width below Explore & Services on mobile) */}
           <div className="col-span-2 lg:col-span-3 xl:col-span-3 space-y-3 sm:space-y-4 pt-2 sm:pt-0">
-            <h4 className="text-white font-semibold text-xs sm:text-sm uppercase tracking-wider font-['Outfit',sans-serif] flex items-center gap-2">
+            <h3 className="text-white font-semibold text-xs sm:text-sm uppercase tracking-wider font-['Outfit',sans-serif] flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0"></span>
               Contact & Hours
-            </h4>
+            </h3>
 
             <div className="space-y-2.5 text-xs sm:text-sm">
               {/* Phone */}

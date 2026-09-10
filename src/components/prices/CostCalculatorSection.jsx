@@ -638,6 +638,7 @@ export default function CostCalculatorSection() {
                     <div className="flex items-center gap-2">
                       <Checkbox
                         id="third-row-toggle"
+                        aria-label="Third row or extra cargo"
                         checked={thirdRowCargo}
                         onChange={(e) => setThirdRowCargo(e.target.checked)}
                       />
@@ -738,6 +739,8 @@ export default function CostCalculatorSection() {
 
                 <div className="relative">
                   <Select
+                    id="town-select"
+                    aria-label="Select your town"
                     showSearch
                     placeholder="Search or select your town..."
                     value={selectedTownName}

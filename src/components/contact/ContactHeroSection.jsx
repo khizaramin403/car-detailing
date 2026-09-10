@@ -28,6 +28,10 @@ export default function ContactHeroSection() {
               WebkitMaskImage: 'linear-gradient(to right, black 30%, rgba(0,0,0,0.85) 45%, rgba(0,0,0,0.3) 60%, transparent 75%)',
             }}
             loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            width="1920"
+            height="1072"
           />
 
           {/* Mobile / Tablet Vertical Fade: Car on top, dark neutral below */}
@@ -61,7 +65,7 @@ export default function ContactHeroSection() {
               </p>
 
               {/* Minimal Downward Indicator */}
-              <div className="pt-2 sm:pt-4 animate-bounce">
+              <div className="pt-2 sm:pt-4 animate-bounce will-change-transform">
                 <a
                   href="#contact-intro"
                   className="inline-flex items-center justify-center w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-neutral-800/90 hover:border-neutral-700 text-neutral-400 hover:text-white transition-all duration-300 hover:scale-105"

@@ -1,5 +1,5 @@
 import React from 'react';
-import heroBackground from '../../assets/Background_Herosection.jpeg';
+import heroBackground from '../../assets/Background_Herosection.webp';
 import {
   StarFilled,
   CalendarOutlined,
@@ -19,32 +19,32 @@ const servicesList = [
   {
     title: 'Interior Detailing',
     icon: <Armchair className="w-5 h-5 text-[#fb2c36]" />,
-    href: ''
+    href: '/services'
   },
   {
     title: 'Exterior & Hand Wash',
     icon: <Droplets className="w-5 h-5 text-[#fb2c36]" />,
-    href: ''
+    href: '/services'
   },
   {
     title: 'Full Detail Package',
     icon: <Sparkles className="w-5 h-5 text-[#fb2c36]" />,
-    href: ''
+    href: '/services'
   },
   {
     title: 'Truck & Farm Vehicles',
     icon: <Truck className="w-5 h-5 text-[#fb2c36]" />,
-    href: ''
+    href: '/services'
   },
   {
     title: 'Fleet & Commercial',
     icon: <Building2 className="w-5 h-5 text-[#fb2c36]" />,
-    href: ''
+    href: '/services'
   },
   {
     title: 'Boat & Pontoon Detailing',
     icon: <Ship className="w-5 h-5 text-[#fb2c36]" />,
-    href: ''
+    href: '/services'
   }
 ];
 
@@ -57,8 +57,12 @@ export default function HeroSection() {
         <img
           src={heroBackground.src || heroBackground}
           alt="Dos Bros Auto Detailing Morris MN"
-          className="w-full h-full object-cover object-center opacity-30 brightness-75 scale-105"
+          fetchPriority="high"
           loading="eager"
+          decoding="async"
+          width="1920"
+          height="1080"
+          className="w-full h-full object-cover object-center opacity-30 brightness-75 scale-105"
         />
 
 
@@ -134,9 +138,9 @@ export default function HeroSection() {
               {/* Card Header with Car Icon */}
               <div className="flex items-center gap-2.5 pb-3.5 mb-3 border-b border-neutral-800/80">
                 <CarOutlined className="text-white text-base text-red-500" />
-                <h3 className="text-sm sm:text-base font-semibold text-white font-['Outfit']">
+                <h2 className="text-sm sm:text-base font-semibold text-white font-['Outfit']">
                   Our Services Include:
-                </h3>
+                </h2>
               </div>
 
               {/* Interactive Services List */}

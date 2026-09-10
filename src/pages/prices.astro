@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import calculatorHeroImg from '../assets/prices/costcalculatorbg.webp';
 import CostCalculatorHeroSection from '../components/prices/CostCalculatorHeroSection.jsx';
 import CostCalculatorSection from '../components/prices/CostCalculatorSection.jsx';
 import HowQuoteIsBuiltSection from '../components/prices/HowQuoteIsBuiltSection.jsx';
@@ -15,15 +16,14 @@ import PricingCtaSection from '../components/prices/PricingCtaSection.jsx';
   description="Get a real starting price in about thirty seconds. Transparent mobile detailing pricing for Morris, MN and surrounding towns."
   showNav={true}
   showFooter={true}
+  preloadImage={calculatorHeroImg.src}
 >
-  <main>
-    <CostCalculatorHeroSection client:load />
-    <CostCalculatorSection client:load />
-    <HowQuoteIsBuiltSection client:visible />
-    <WhatCanMoveTheNumberSection client:visible />
-    <IsItWorthItSection client:visible />
-    <ServiceTimeSection client:visible />
-    <PricingFaqSection client:visible />
-    <PricingCtaSection client:visible />
-  </main>
+  <CostCalculatorHeroSection />
+  <CostCalculatorSection client:load />
+  <HowQuoteIsBuiltSection client:visible />
+  <WhatCanMoveTheNumberSection client:visible />
+  <IsItWorthItSection client:visible />
+  <ServiceTimeSection client:visible />
+  <PricingFaqSection client:visible />
+  <PricingCtaSection client:visible />
 </Layout>

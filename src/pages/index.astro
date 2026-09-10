@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import heroBackground from "../assets/Background_Herosection.webp";
 import HeroSection from "../components/home/HeroSection.jsx";
 import TrustBar from "../components/home/TrustBar.jsx";
 import ServicesSection from "../components/home/ServicesSection.jsx";
@@ -24,6 +25,7 @@ import FinalCtaSection from "../components/home/FinalCtaSection.jsx";
 	description="Professional mobile car detailing in Morris, Minnesota. Interior detailing, exterior hand wash, ceramic coating, truck & farm vehicles."
 	showNav={true}
 	showFooter={true}
+	preloadImage={heroBackground.src}
 >
 	<HeroSection />
 	<TrustBar />

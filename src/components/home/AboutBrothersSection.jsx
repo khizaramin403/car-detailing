@@ -1,5 +1,5 @@
 import React from 'react';
-import dosBrosImg from '../../assets/DosBros.png';
+import dosBrosImg from '../../assets/DosBros.webp';
 import { CalendarOutlined } from '@ant-design/icons';
 
 export default function AboutBrothersSection() {
@@ -80,6 +80,9 @@ export default function AboutBrothersSection() {
                   <img
                     src={imageSrc}
                     alt="Reyes and Mariano - Founders of Dos Bros Auto Detailing"
+                    width="800"
+                    height="1067"
+                    decoding="async"
                     className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
                     loading="lazy"
                   />

@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import serviceAreaHeroImg from '../assets/servicearea/servicearea.webp';
 import ServiceAreaHeroSection from '../components/service-areas/ServiceAreaHeroSection.jsx';
 import HowTravelWorksSection from '../components/service-areas/HowTravelWorksSection.jsx';
 import ServiceAreaSection from '../components/service-areas/ServiceAreaSection.jsx';
@@ -13,13 +14,12 @@ import ServiceAreaCtaSection from '../components/service-areas/ServiceAreaCtaSec
   description="Dos Bros Detailing is a mobile detailing service based in Morris, Minnesota. We bring detailing to your driveway, workplace, or farm site across Stevens County and west central Minnesota."
   showNav={true}
   showFooter={true}
+  preloadImage={serviceAreaHeroImg.src}
 >
-  <main>
-    <ServiceAreaHeroSection client:load />
-    <!-- <HowTravelWorksSection client:visible /> -->
-    <ServiceAreaSection client:visible />
-    <WhatWeBringSection client:visible />
-    <ServiceAreaFaqSection client:visible />
-    <ServiceAreaCtaSection client:visible />
-  </main>
+  <ServiceAreaHeroSection />
+  <!-- <HowTravelWorksSection client:visible /> -->
+  <ServiceAreaSection client:visible />
+  <WhatWeBringSection client:visible />
+  <ServiceAreaFaqSection client:visible />
+  <ServiceAreaCtaSection client:visible />
 </Layout>

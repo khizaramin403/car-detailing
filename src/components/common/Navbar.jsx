@@ -131,6 +131,8 @@ export default function Navbar() {
                 <img
                   src="/logo.png"
                   alt="Dos Bros Auto Detailing"
+                  width="180"
+                  height="42"
                   className="h-10.5 sm:h-12 md:h-13 w-auto max-w-60 sm:max-w-72.5 object-contain block transition-transform duration-200"
                   style={{
                     height: '42px',
@@ -227,6 +229,8 @@ export default function Navbar() {
                 <img
                   src="/logo.png"
                   alt="Dos Bros Auto Detailing"
+                  width="163"
+                  height="38"
                   style={{
                     height: '38px',
                     width: 'auto',

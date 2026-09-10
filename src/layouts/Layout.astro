@@ -10,6 +10,8 @@ interface Props {
 	description?: string;
 	showNav?: boolean;
 	showFooter?: boolean;
+	image?: string;
+	preloadImage?: string;
 }
 
 const {
@@ -17,7 +19,13 @@ const {
 	description = "Professional mobile auto detailing, interior cleaning, and paint protection in Morris, Minnesota.",
 	showNav = true,
 	showFooter = true,
+	image = "/logo.png",
+	preloadImage,
 } = Astro.props;
+
+const siteUrl = "https://dosbrosautodetailing.com";
+const canonicalURL = new URL(Astro.url.pathname, siteUrl).toString();
+const ogImageURL = new URL(image, siteUrl).toString();
 ---
 
 <!doctype html>
@@ -25,22 +33,106 @@ const {
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/public/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content={description} />
+
+		<!-- Primary Meta Tags -->
 		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalURL} />
+		{preloadImage && (
+			<link rel="preload" as="image" href={preloadImage} fetchpriority="high" />
+		)}
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImageURL} />
+		<meta property="og:site_name" content="Dos Bros Auto Detailing" />
+		<meta property="og:locale" content="en_US" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={ogImageURL} />
+
+		<!-- Schema.org LocalBusiness Structured Data (JSON-LD) for Rich Snippets -->
+		<script type="application/ld+json" is:inline set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "AutoRepair",
+			"additionalType": "https://en.wikipedia.org/wiki/Auto_detailing",
+			"name": "Dos Bros Auto Detailing",
+			"description": description,
+			"url": siteUrl,
+			"logo": `${siteUrl}/logo.png`,
+			"image": `${siteUrl}/logo.png`,
+			"telephone": "+1-555-839-2849",
+			"priceRange": "$$",
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Morris",
+				"addressRegion": "MN",
+				"postalCode": "56267",
+				"addressCountry": "US"
+			},
+			"geo": {
+				"@type": "GeoCoordinates",
+				"latitude": 45.5861,
+				"longitude": -95.9139
+			},
+			"areaServed": [
+				{ "@type": "City", "name": "Morris" },
+				{ "@type": "City", "name": "Alexandria" },
+				{ "@type": "City", "name": "Glenwood" },
+				{ "@type": "City", "name": "Starbuck" },
+				{ "@type": "City", "name": "Benson" },
+				{ "@type": "City", "name": "Hancock" },
+				{ "@type": "City", "name": "Chokio" }
+			],
+			"openingHoursSpecification": [
+				{
+					"@type": "OpeningHoursSpecification",
+					"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+					"opens": "08:00",
+					"closes": "19:00"
+				}
+			],
+			"aggregateRating": {
+				"@type": "AggregateRating",
+				"ratingValue": "5.0",
+				"reviewCount": "48"
+			}
+		})} />
 
 		<!-- Astro ClientRouter for instant SPA-like navigation without full page reload -->
 		<ClientRouter fallback="swap" />
 
-		<!-- Google Fonts for sleek automotive typography -->
+		<!-- Google Fonts for sleek automotive typography (Optimized Non-Render-Blocking) -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-			rel="stylesheet"
+			rel="preload"
+			as="style"
+			href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
 		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+			rel="stylesheet"
+			media="print"
+			onload="this.media='all'"
+		/>
+		<noscript>
+			<link
+				href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+				rel="stylesheet"
+			/>
+		</noscript>
 	</head>
 	<body
 		class="bg-neutral-950 text-neutral-100 min-h-screen flex flex-col font-['Plus_Jakarta_Sans',sans-serif] antialiased selection:bg-red-600 selection:text-white"

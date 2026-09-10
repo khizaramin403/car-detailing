@@ -63,9 +63,9 @@ export default function TrustBar() {
                 </div>
                 
                 {/* Title */}
-                <h4 className="text-sm sm:text-base font-bold text-white font-['Outfit'] group-hover:text-[#fb2c36] transition-colors flex items-center gap-1">
+                <h3 className="text-sm sm:text-base font-bold text-white font-['Outfit'] group-hover:text-[#fb2c36] transition-colors flex items-center gap-1">
                   {item.title}
-                </h4>
+                </h3>
 
                 {/* Subtitle */}
                 <p className="text-[11px] sm:text-xs text-neutral-400 mt-0.5 font-medium">
