@@ -29,8 +29,8 @@ export default function WhyWeStartedSection() {
     <section id="why-we-started" className="relative bg-neutral-950 py-16 sm:py-20 lg:py-28 overflow-hidden select-none border-t border-neutral-900">
       
       {/* Background Ambient Glow Accents */}
-      <div className="absolute top-1/3 left-10 w-[400px] h-[350px] bg-red-600/5 blur-[140px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-1/3 right-10 w-[400px] h-[350px] bg-amber-500/5 blur-[140px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/3 left-10 w-100 h-87.5 bg-red-600/5 blur-[140px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-1/3 right-10 w-100 h-87.5 bg-amber-500/5 blur-[140px] rounded-full pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
 
@@ -42,7 +42,7 @@ export default function WhyWeStartedSection() {
         <div className="hidden lg:grid lg:grid-cols-12 gap-6 xl:gap-8 items-center">
           
           {/* LEFT COLUMN: Image Slider 1 */}
-          <div className="lg:col-span-3 h-[460px] xl:h-[500px]">
+          <div className="lg:col-span-3 h-115 xl:h-125">
             <div className="relative w-full h-full rounded-3xl overflow-hidden bg-neutral-900 border border-neutral-800/90 shadow-2xl">
               
               <Swiper
@@ -75,7 +75,7 @@ export default function WhyWeStartedSection() {
                       className="w-full h-full object-cover select-none"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/40 via-transparent to-neutral-950/20 pointer-events-none" />
+                    <div className="absolute inset-0 bg-linear-to-t from-neutral-950/40 via-transparent to-neutral-950/20 pointer-events-none" />
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -113,7 +113,7 @@ export default function WhyWeStartedSection() {
 
             {/* H2 Heading */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
-              Why We Started <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">Dos Bros</span>
+              Why We Started <span className="text-transparent bg-clip-text bg-linear-to-r from-red-500 to-amber-500">Dos Bros</span>
             </h2>
 
             {/* Story Paragraphs */}
@@ -142,7 +142,7 @@ export default function WhyWeStartedSection() {
           </div>
 
           {/* RIGHT COLUMN: Image Slider 2 */}
-          <div className="lg:col-span-3 h-[460px] xl:h-[500px]">
+          <div className="lg:col-span-3 h-115 xl:h-125">
             <div className="relative w-full h-full rounded-3xl overflow-hidden bg-neutral-900 border border-neutral-800/90 shadow-2xl">
               
               <Swiper
@@ -175,7 +175,7 @@ export default function WhyWeStartedSection() {
                       className="w-full h-full object-cover select-none"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/40 via-transparent to-neutral-950/20 pointer-events-none" />
+                    <div className="absolute inset-0 bg-linear-to-t from-neutral-950/40 via-transparent to-neutral-950/20 pointer-events-none" />
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -221,7 +221,7 @@ export default function WhyWeStartedSection() {
 
             {/* H2 Heading */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
-              Why We Started <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">Dos Bros</span>
+              Why We Started <span className="text-transparent bg-clip-text bg-linear-to-r from-red-500 to-amber-500">Dos Bros</span>
             </h2>
 
             {/* Story Paragraphs */}
