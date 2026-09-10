@@ -141,8 +141,8 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9Y8GQyClTl_
         
         {/* Ambient Subtle Glows */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-[400px] h-[250px] bg-red-600/5 blur-[120px] rounded-full" />
-          <div className="absolute bottom-10 right-10 w-[350px] h-[200px] bg-amber-500/5 blur-[120px] rounded-full" />
+          <div className="absolute top-1/4 left-1/4 w-100 h-62.5 bg-red-600/5 blur-[120px] rounded-full" />
+          <div className="absolute bottom-10 right-10 w-87.5 h-50 bg-amber-500/5 blur-[120px] rounded-full" />
         </div>
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
@@ -163,7 +163,7 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9Y8GQyClTl_
 
                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white font-['Outfit'] tracking-tight leading-snug">
                   Get your free quote <br className="hidden sm:inline" />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
+                  <span className="text-transparent bg-clip-text bg-linear-to-r from-red-500 to-amber-500">
                     & lock in your detail
                   </span>
                 </h2>
@@ -350,7 +350,7 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9Y8GQyClTl_
                           </span>
                         }
                         rules={[{ required: true, message: 'Please enter your first name' }]}
-                        className="!mb-2.5"
+                        className="mb-2.5!"
                       >
                         <Input
                           placeholder="Your first name"
@@ -367,7 +367,7 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9Y8GQyClTl_
                           </span>
                         }
                         rules={[{ required: true, message: 'Please enter your last name' }]}
-                        className="!mb-2.5"
+                        className="mb-2.5!"
                       >
                         <Input
                           placeholder="Your last name"
@@ -389,7 +389,7 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9Y8GQyClTl_
                           </span>
                         }
                         rules={[{ required: true, message: 'Please enter your phone number' }]}
-                        className="!mb-2.5"
+                        className="mb-2.5!"
                       >
                         <Input
                           placeholder="(320) 000-0000"
@@ -406,7 +406,7 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9Y8GQyClTl_
                           </span>
                         }
                         rules={[{ required: true, message: 'Please tell us what town you are in' }]}
-                        className="!mb-2.5"
+                        className="mb-2.5!"
                       >
                         <Input
                           placeholder="e.g. Morris, Hancock, Glenwood..."
@@ -427,7 +427,7 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9Y8GQyClTl_
                             What do you drive?
                           </span>
                         }
-                        className="!mb-2.5"
+                        className="mb-2.5!"
                       >
                         <Input
                           placeholder="e.g. Car, SUV, Truck, etc."
@@ -443,7 +443,7 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9Y8GQyClTl_
                             Select Service
                           </span>
                         }
-                        className="!mb-2.5"
+                        className="mb-2.5!"
                       >
                         <Select
                           placeholder="Select service..."
@@ -470,7 +470,7 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9Y8GQyClTl_
                           Anything we should know? <span className="text-neutral-500">(Optional)</span>
                         </span>
                       }
-                      className="!mb-3.5"
+                      className="mb-3.5!"
                     >
                       <TextArea
                         rows={3}
@@ -483,7 +483,7 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9Y8GQyClTl_
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-xs font-semibold text-white bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-600 active:scale-[0.99] shadow-md shadow-red-600/20 transition-all duration-150 cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed border border-red-500/30"
+                      className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-xs font-semibold text-white bg-linear-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-600 active:scale-[0.99] shadow-md shadow-red-600/20 transition-all duration-150 cursor-pointer disabled:opacity-75 border border-red-500/30"
                     >
                       {isSubmitting ? (
                         <>

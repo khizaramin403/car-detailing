@@ -144,8 +144,8 @@ export default function FaqSection() {
       <section id="faq" className="relative bg-neutral-950 py-20 sm:py-24 lg:py-28 overflow-hidden select-none border-b border-neutral-800/80">
         
         {/* Ambient Background Glows */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-red-600/5 blur-[150px] rounded-full pointer-events-none" />
-        <div className="absolute bottom-10 right-10 w-[450px] h-[300px] bg-amber-500/5 blur-[130px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-162.5 h-87.5 bg-red-600/5 blur-[150px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-10 right-10 w-112.5 h-75 bg-amber-500/5 blur-[130px] rounded-full pointer-events-none" />
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           
@@ -158,7 +158,7 @@ export default function FaqSection() {
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
               Questions people <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-red-500 to-amber-500">
                 ask us
               </span>
             </h2>

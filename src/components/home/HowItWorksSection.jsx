@@ -49,7 +49,7 @@ const steps = [
 // Reusable Step Card Component for Consistent Height & Styling
 function StepCard({ item }) {
   return (
-    <div className="w-full h-full min-h-[380px] group relative rounded-2xl bg-neutral-900/60 hover:bg-neutral-900/90 border border-neutral-800/80 hover:border-red-500/40 p-6 sm:p-8 transition-all duration-300 flex flex-col justify-between shadow-lg hover:shadow-xl hover:shadow-red-600/10 backdrop-blur-sm">
+    <div className="w-full h-full min-h-95 group relative rounded-2xl bg-neutral-900/60 hover:bg-neutral-900/90 border border-neutral-800/80 hover:border-red-500/40 p-6 sm:p-8 transition-all duration-300 flex flex-col justify-between shadow-lg hover:shadow-xl hover:shadow-red-600/10 backdrop-blur-sm">
       {/* Step Number Watermark Accent */}
       <div className="absolute top-5 right-6 text-3xl sm:text-4xl font-black text-neutral-800 group-hover:text-red-950/60 transition-colors font-['Outfit'] select-none">
         {item.step}
@@ -88,8 +88,8 @@ export default function HowItWorksSection() {
     <section id="how-it-works" className="relative bg-neutral-950 py-20 sm:py-24 lg:py-28 overflow-hidden select-none border-b border-neutral-800/80">
       
       {/* Background Ambient Glow Accents */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-red-600/5 blur-[140px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-[400px] h-[300px] bg-amber-500/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-87.5 bg-red-600/5 blur-[140px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-100 h-75 bg-amber-500/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         
@@ -102,7 +102,7 @@ export default function HowItWorksSection() {
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
             How mobile detailing&nbsp;
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-red-500 to-amber-500">
               works
             </span>
           </h2>
@@ -131,10 +131,10 @@ export default function HowItWorksSection() {
             }}
             spaceBetween={16}
             slidesPerView={1}
-            className="!pb-0"
+            className="pb-0!"
           >
             {steps.map((item, index) => (
-              <SwiperSlide key={index} className="!h-auto flex">
+              <SwiperSlide key={index} className="h-auto! flex">
                 <StepCard item={item} />
               </SwiperSlide>
             ))}
@@ -182,7 +182,7 @@ export default function HowItWorksSection() {
           <div className="flex justify-center">
             <a
               href="#contact-booking"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 shadow-lg shadow-red-600/25 hover:-translate-y-0.5 transition-all duration-200 border border-red-500/40"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-linear-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 shadow-lg shadow-red-600/25 hover:-translate-y-0.5 transition-all duration-200 border border-red-500/40"
             >
               <CalendarOutlined className="text-sm" />
               <span>Get My Free Quote</span>

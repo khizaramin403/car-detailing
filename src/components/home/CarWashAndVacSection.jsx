@@ -55,7 +55,7 @@ export default function CarWashAndVacSection() {
     <section id="car-wash-and-vac" className="relative bg-neutral-950 py-16 sm:py-20 lg:py-24 border-b border-neutral-900 overflow-hidden select-none">
       
       {/* Background Ambient Glow Accents */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-red-600/5 blur-[140px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-87.5 bg-red-600/5 blur-[140px] rounded-full pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
         
@@ -68,7 +68,7 @@ export default function CarWashAndVacSection() {
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
             What Separates a Detail From a <br className="hidden sm:inline" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-red-500 to-amber-500">
               Car Wash and Vac
             </span>
           </h2>
@@ -127,10 +127,10 @@ export default function CarWashAndVacSection() {
             }}
             spaceBetween={16}
             slidesPerView={1}
-            className="!pb-0"
+            className="pb-0!"
           >
             {detailVsWashData.map((row, idx) => (
-              <SwiperSlide key={idx} className="!h-auto flex">
+              <SwiperSlide key={idx} className="h-auto! flex">
                 <div className="w-full p-5 rounded-2xl border border-neutral-800/90 bg-neutral-900/50 backdrop-blur-sm space-y-3.5 flex flex-col justify-between">
                   <div className="flex items-center justify-between gap-2 pb-2.5 border-b border-neutral-800/80">
                     <span className="text-sm font-bold text-white font-['Outfit']">
@@ -176,7 +176,7 @@ export default function CarWashAndVacSection() {
           <div className="rounded-2xl sm:rounded-3xl border border-neutral-800 bg-neutral-900/40 overflow-hidden flex flex-col justify-between shadow-lg">
             <div>
               {/* Question Header with Theme Red Background */}
-              <div className="bg-gradient-to-r from-red-600 to-red-700 px-6 py-4 sm:px-7 sm:py-5 border-b border-red-500/30 min-h-[72px] sm:min-h-[80px] flex items-center">
+              <div className="bg-linear-to-r from-red-600 to-red-700 px-6 py-4 sm:px-7 sm:py-5 border-b border-red-500/30 min-h-18 sm:min-h-20 flex items-center">
                 <h4 className="text-base sm:text-lg font-bold text-white font-['Outfit'] leading-snug">
                   Is it worth paying for something you could technically do yourself?
                 </h4>
@@ -195,7 +195,7 @@ export default function CarWashAndVacSection() {
           <div className="rounded-2xl sm:rounded-3xl border border-neutral-800 bg-neutral-900/40 overflow-hidden flex flex-col justify-between shadow-lg">
             <div>
               {/* Question Header with Theme Red Background */}
-              <div className="bg-gradient-to-r from-red-600 to-red-700 px-6 py-4 sm:px-7 sm:py-5 border-b border-red-500/30 min-h-[72px] sm:min-h-[80px] flex items-center">
+              <div className="bg-linear-to-r from-red-600 to-red-700 px-6 py-4 sm:px-7 sm:py-5 border-b border-red-500/30 min-h-18 sm:min-h-20 flex items-center">
                 <h4 className="text-base sm:text-lg font-bold text-white font-['Outfit'] leading-snug">
                   Is car detailing the same as a car wash?
                 </h4>

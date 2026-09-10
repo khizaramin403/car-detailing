@@ -9,8 +9,8 @@ export default function AboutBrothersSection() {
     <section id="about-brothers" className="relative bg-neutral-950 py-20 sm:py-24 lg:py-28 overflow-hidden select-none border-b border-neutral-800/80">
       
       {/* Background Ambient Glow Accents */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[350px] bg-red-600/5 blur-[140px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[350px] bg-amber-500/5 blur-[140px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-125 h-87.5 bg-red-600/5 blur-[140px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-125 h-87.5 bg-amber-500/5 blur-[140px] rounded-full pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         
@@ -29,7 +29,7 @@ export default function AboutBrothersSection() {
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
               Two brothers&nbsp;
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-red-500 to-amber-500">
                 from Morris
               </span>
             </h2>
@@ -56,7 +56,7 @@ export default function AboutBrothersSection() {
             <div className="pt-2 flex justify-center lg:justify-start">
               <a
                 href="#contact-booking"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 shadow-lg shadow-red-600/25 hover:-translate-y-0.5 transition-all duration-200 border border-red-500/40"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-linear-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 shadow-lg shadow-red-600/25 hover:-translate-y-0.5 transition-all duration-200 border border-red-500/40"
               >
                 <CalendarOutlined className="text-sm" />
                 <span>Book Reyes</span>
@@ -70,10 +70,10 @@ export default function AboutBrothersSection() {
             <div className="relative group w-full max-w-md lg:max-w-none h-full">
               
               {/* Sleek Gradient Ambient Aura */}
-              <div className="absolute -inset-1.5 bg-gradient-to-r from-red-600/30 via-amber-500/20 to-red-600/30 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 group-hover:blur-2xl transition duration-500" />
+              <div className="absolute -inset-1.5 bg-linear-to-r from-red-600/30 via-amber-500/20 to-red-600/30 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 group-hover:blur-2xl transition duration-500" />
 
               {/* Main Image Container Card */}
-              <div className="relative w-full h-[460px] sm:h-[520px] lg:h-[560px] rounded-3xl bg-neutral-900 border border-neutral-800/90 overflow-hidden shadow-2xl transition-all duration-500 group-hover:scale-[1.01] group-hover:border-red-500/40 flex flex-col">
+              <div className="relative w-full h-115 sm:h-130 lg:h-140 rounded-3xl bg-neutral-900 border border-neutral-800/90 overflow-hidden shadow-2xl transition-all duration-500 group-hover:scale-[1.01] group-hover:border-red-500/40 flex flex-col">
                 
                 {/* Image positioned top so faces are never cropped */}
                 <div className="w-full h-full flex-1 overflow-hidden bg-neutral-950 relative">
@@ -88,7 +88,7 @@ export default function AboutBrothersSection() {
                   />
                   
                   {/* Subtle Gradient Vignette at bottom */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/95 via-neutral-950/20 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-linear-to-t from-neutral-950/95 via-neutral-950/20 to-transparent pointer-events-none" />
                 </div>
 
                 {/* Bottom Glassmorphic Caption Badge */}
