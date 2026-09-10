@@ -150,9 +150,8 @@ export default function Footer() {
                 <li key={item.name}>
                   <a
                     href={item.href}
-                    className="text-neutral-400 hover:text-neutral-200 transition-colors duration-150 inline-flex items-center gap-1.5 group py-0.5"
+                    className="text-neutral-400 hover:text-neutral-200 transition-colors duration-150 inline-flex items-center group py-0.5"
                   >
-                    <span className="w-1 h-1 rounded-full bg-neutral-700 group-hover:bg-red-400 transition-colors shrink-0"></span>
                     <span className="group-hover:translate-x-0.5 transition-transform duration-150">
                       {item.name}
                     </span>

@@ -134,6 +134,50 @@ html {
   flex-shrink: 0 !important;
 }
 
+/* Reviews Swiper Pre-Hydration Stabilization */
+.reviews-swiper {
+  width: 100%;
+  overflow: hidden !important;
+}
+
+.reviews-swiper > .swiper-wrapper {
+  display: flex !important;
+  flex-direction: row !important;
+  box-sizing: border-box !important;
+}
+
+@media (min-width: 1280px) {
+  .reviews-swiper:not(.swiper-initialized) .swiper-slide {
+    width: calc((100% - 66px) / 4) !important;
+    margin-right: 22px !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .reviews-swiper:not(.swiper-initialized) .swiper-slide {
+    width: calc((100% - 40px) / 3) !important;
+    margin-right: 20px !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .reviews-swiper:not(.swiper-initialized) .swiper-slide {
+    width: calc((100% - 16px) / 2) !important;
+    margin-right: 16px !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+@media (max-width: 639px) {
+  .reviews-swiper:not(.swiper-initialized) .swiper-slide {
+    width: 100% !important;
+    margin-right: 0 !important;
+    flex-shrink: 0 !important;
+  }
+}
+
 /* Ant Design Custom Tabs Responsive Overrides (Ensures tabs NEVER stack vertically into columns) */
 .custom-pricing-tabs .ant-tabs-nav,
 .ant-tabs-nav {

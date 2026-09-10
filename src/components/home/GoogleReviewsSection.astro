@@ -1,5 +1,5 @@
 ---
-// Google Reviews Section powered by Trustindex
+import GoogleReviewsSlider from "./GoogleReviewsSlider.jsx";
 ---
 
 <section id="reviews" class="py-14 sm:py-18 lg:py-20 bg-neutral-950 text-white relative overflow-hidden border-t border-b border-neutral-900">
@@ -21,9 +21,7 @@
       </p>
     </div>
 
-    <!-- Trustindex Widget Container -->
-    <div class="w-full min-h-[160px] flex justify-center">
-      <script is:inline defer async src='https://cdn.trustindex.io/loader.js?b28d2f18056a848a560609ac2f1'></script>
-    </div>
+    <!-- Google Reviews Swiper Slider -->
+    <GoogleReviewsSlider client:visible />
   </div>
 </section>
