@@ -59,10 +59,10 @@ export default function WhatHappensNextSection() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
-            What Happens <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">After You Send It</span>
+            What Happens <span className="text-transparent bg-clip-text bg-linear-to-r from-red-500 to-amber-500">After You Send It</span>
           </h2>
 
-          <div className="w-8 h-0.5 bg-gradient-to-r from-red-500 to-amber-500 rounded-full mx-auto" />
+          <div className="w-8 h-0.5 bg-linear-to-r from-red-500 to-amber-500 rounded-full mx-auto" />
 
           <p className="text-xs sm:text-sm text-neutral-400 font-light leading-relaxed max-w-xl mx-auto pt-1">
             Nobody likes sending a form into a void, so here is exactly what happens.
@@ -137,13 +137,13 @@ export default function WhatHappensNextSection() {
                 spaceBetween: 20,
               },
             }}
-            className="what-happens-swiper !pb-0"
+            className="what-happens-swiper pb-0!"
           >
             {stepsData.map((item, index) => {
               const Icon = item.icon;
               return (
-                <SwiperSlide key={index} className="!h-auto flex">
-                  <div className="w-full h-full min-h-[220px] sm:min-h-[240px] group relative flex flex-col justify-between p-5 rounded-2xl bg-neutral-900/60 hover:bg-neutral-900/90 border border-neutral-800/80 hover:border-red-500/40 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-red-600/10 backdrop-blur-sm">
+                <SwiperSlide key={index} className="h-auto! flex">
+                  <div className="w-full h-full min-h-55 sm:min-h-60 group relative flex flex-col justify-between p-5 rounded-2xl bg-neutral-900/60 hover:bg-neutral-900/90 border border-neutral-800/80 hover:border-red-500/40 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-red-600/10 backdrop-blur-sm">
                     <div>
                       <div className="flex items-center justify-between mb-3.5">
                         <div className="w-9 h-9 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-center shrink-0 group-hover:border-red-500/40 text-red-500 transition-colors shadow-inner">

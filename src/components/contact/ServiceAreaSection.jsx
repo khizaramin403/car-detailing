@@ -49,8 +49,8 @@ export default function ServiceAreaSection() {
     <section id="service-area" className="relative bg-neutral-900/40 py-20 sm:py-24 lg:py-28 border-b border-neutral-800/80 overflow-hidden select-none">
       
       {/* Background Ambient Glow Accents */}
-      <div className="absolute top-1/4 right-1/4 w-[550px] h-[350px] bg-red-600/5 blur-[150px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[350px] bg-amber-500/5 blur-[140px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/4 right-1/4 w-137.5 h-87.5 bg-red-600/5 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-1/4 left-1/4 w-125 h-87.5 bg-amber-500/5 blur-[140px] rounded-full pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         
@@ -63,7 +63,7 @@ export default function ServiceAreaSection() {
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
             Towns we serve in <br className="hidden sm:inline" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-red-500 to-amber-500">
               West-Central Minnesota
             </span>
           </h2>
@@ -139,7 +139,7 @@ export default function ServiceAreaSection() {
           <div className="flex justify-center">
             <a
               href="#contact-booking"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 shadow-lg shadow-red-600/25 hover:-translate-y-0.5 transition-all duration-200 border border-red-500/40"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-linear-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 shadow-lg shadow-red-600/25 hover:-translate-y-0.5 transition-all duration-200 border border-red-500/40"
             >
               <CalendarOutlined className="text-sm" />
               <span>Get My Free Quote</span>

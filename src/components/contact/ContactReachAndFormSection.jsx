@@ -153,14 +153,14 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9Y8GQyClTl_
                 </div>
 
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
-                  Three Ways to <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">Get in Touch</span>
+                  Three Ways to <span className="text-transparent bg-clip-text bg-linear-to-r from-red-500 to-amber-500">Get in Touch</span>
                 </h2>
 
-                <div className="w-8 h-0.5 bg-gradient-to-r from-red-500 to-amber-500 rounded-full" />
+                <div className="w-8 h-0.5 bg-linear-to-r from-red-500 to-amber-500 rounded-full" />
               </div>
 
               {/* Minimal Streamlined List (No bulky boxes) */}
-              <div className="divide-y divide-neutral-900/90 border-y border-neutral-900/90">
+              <div className="divide-y border-y border-neutral-900/90">
 
                 {/* 1. Quote Form */}
                 <div className="py-3.5 space-y-1">
@@ -352,7 +352,7 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9Y8GQyClTl_
                           </span>
                         }
                         rules={[{ required: true, message: 'Please enter your first name' }]}
-                        className="!mb-2.5"
+                        className="mb-2.5!"
                       >
                         <Input
                           placeholder="Your first name"
@@ -369,7 +369,7 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9Y8GQyClTl_
                           </span>
                         }
                         rules={[{ required: true, message: 'Please enter your last name' }]}
-                        className="!mb-2.5"
+                        className="mb-2.5!"
                       >
                         <Input
                           placeholder="Your last name"
@@ -391,7 +391,7 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9Y8GQyClTl_
                           </span>
                         }
                         rules={[{ required: true, message: 'Please enter your phone number' }]}
-                        className="!mb-2.5"
+                        className="mb-2.5!"
                       >
                         <Input
                           placeholder="(320) 000-0000"
@@ -408,7 +408,7 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9Y8GQyClTl_
                           </span>
                         }
                         rules={[{ required: true, message: 'Please tell us what town you are in' }]}
-                        className="!mb-2.5"
+                        className="mb-2.5!"
                       >
                         <Input
                           placeholder="e.g. Morris, Hancock, Glenwood..."
@@ -429,7 +429,7 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9Y8GQyClTl_
                             What do you drive?
                           </span>
                         }
-                        className="!mb-2.5"
+                        className="mb-2.5!"
                       >
                         <Input
                           placeholder="e.g. Car, SUV, Truck, etc."
@@ -445,7 +445,7 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9Y8GQyClTl_
                             Select Service
                           </span>
                         }
-                        className="!mb-2.5"
+                        className="mb-2.5!"
                       >
                         <Select
                           placeholder="Select service..."
@@ -472,7 +472,7 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9Y8GQyClTl_
                           Anything we should know? <span className="text-neutral-500">(Optional)</span>
                         </span>
                       }
-                      className="!mb-3.5"
+                      className="mb-3.5!"
                     >
                       <TextArea
                         rows={3}
@@ -485,7 +485,7 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9Y8GQyClTl_
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-medium text-white bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-600 active:scale-[0.99] shadow-lg shadow-red-600/20 border border-red-500/30 transition-all duration-200 cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed"
+                      className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-medium text-white bg-linear-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-600 active:scale-[0.99] shadow-lg shadow-red-600/20 border border-red-500/30 transition-all duration-200 cursor-pointer disabled:opacity-75"
                     >
                       {isSubmitting ? (
                         <>

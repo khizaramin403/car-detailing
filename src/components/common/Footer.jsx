@@ -59,7 +59,7 @@ export default function Footer() {
                   alt="Dos Bros Auto Detailing"
                   width="180"
                   height="42"
-                  className="h-9 xs:h-10 sm:h-11 w-auto max-w-[220px] xs:max-w-[260px] object-contain"
+                  className="h-9 xs:h-10 sm:h-11 w-auto max-w-55 xs:max-w-[260px] object-contain"
                   style={{
                     height: '42px',
                     width: 'auto',

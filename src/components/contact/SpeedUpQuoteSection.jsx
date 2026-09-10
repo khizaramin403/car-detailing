@@ -46,12 +46,12 @@ export default function SpeedUpQuoteSection() {
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
             What to Tell Us for a{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-red-500 to-amber-500">
               Faster Answer
             </span>
           </h2>
 
-          <div className="w-8 h-0.5 bg-gradient-to-r from-red-500 to-amber-500 rounded-full mx-auto" />
+          <div className="w-8 h-0.5 bg-linear-to-r from-red-500 to-amber-500 rounded-full mx-auto" />
 
           <p className="text-xs sm:text-sm lg:text-[15px] text-neutral-300 font-light leading-relaxed max-w-2xl mx-auto pt-1">
             You do not need any of this to get a price, but the more you give us, the more accurate the first number is.

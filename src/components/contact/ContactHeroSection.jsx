@@ -13,7 +13,7 @@ export default function ContactHeroSection() {
           HERO UPPER SECTION
           Matches exact responsive height and layout of About & Service Area Hero
           ======================================================== */}
-      <div className="relative w-full h-[52dvh] sm:h-[62dvh] md:h-[calc(100dvh-92px)] min-h-[360px] sm:min-h-[420px] md:min-h-[480px] max-h-[740px] flex flex-col justify-between overflow-hidden">
+      <div className="relative w-full h-[52dvh] sm:h-[62dvh] md:h-[calc(100dvh-92px)] min-h-90 sm:min-h-105 md:min-h-120 max-h-185 flex flex-col justify-between overflow-hidden">
 
         {/* HERO BACKGROUND IMAGE
             contacthero.webp covers the hero background, with feathered mask
@@ -35,7 +35,7 @@ export default function ContactHeroSection() {
           />
 
           {/* Mobile / Tablet Vertical Fade: Car on top, dark neutral below */}
-          <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/15 via-neutral-950/75 to-neutral-950 lg:hidden" />
+          <div className="absolute inset-0 bg-linear-to-b from-neutral-950/15 via-neutral-950/75 to-neutral-950 lg:hidden" />
 
           {/* Subtle Ambient Glow */}
           <div className="absolute top-1/2 left-8 -translate-y-1/2 w-64 sm:w-80 h-64 sm:h-80 bg-red-600/10 blur-[130px] rounded-full pointer-events-none" />
@@ -53,11 +53,11 @@ export default function ContactHeroSection() {
 
               {/* H1: Sleek, Modern, Non-bulky */}
               <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-bold text-white font-['Outfit'] tracking-tight leading-[1.18]">
-                Contact <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">Dos Bros Detailing</span>
+                Contact <span className="text-transparent bg-clip-text bg-linear-to-r from-red-500 to-amber-500">Dos Bros Detailing</span>
               </h1>
 
               {/* Minimal Accent Line */}
-              <div className="w-10 h-0.5 bg-gradient-to-r from-red-500 via-red-500 to-amber-500 rounded-full" />
+              <div className="w-10 h-0.5 bg-linear-to-r from-red-500 via-red-500 to-amber-500 rounded-full" />
 
               {/* Subhead: Refined, Minimal & Legible */}
               <p className="text-xs sm:text-sm lg:text-base text-neutral-300 font-light leading-relaxed max-w-md">
