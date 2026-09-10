@@ -163,7 +163,7 @@ export default function GoogleReviewsSlider() {
         {/* Action Button & Carousel Controls */}
         <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
           <a
-            href="https://www.google.com/maps"
+            href="https://g.page/r/CUH6_paCx8kbEBM/review"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-neutral-800 hover:bg-neutral-700/80 text-neutral-200 hover:text-white text-xs sm:text-sm font-medium border border-neutral-700/60 transition-all duration-200"
