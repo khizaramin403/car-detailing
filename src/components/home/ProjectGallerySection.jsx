@@ -227,7 +227,7 @@ export default function ProjectGallerySection() {
       {/* Quick Footer Note */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 text-center pt-1">
         <p className="text-xs text-neutral-500 flex items-center justify-center gap-1.5">
-          <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+          {/* <Sparkles className="w-3.5 h-3.5 text-amber-500" /> */}
           <span>Click any vehicle card to view high-resolution detailing photo</span>
         </p>
       </div>

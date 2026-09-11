@@ -93,7 +93,7 @@ export default function Navbar() {
               className="flex items-center gap-1.5 text-neutral-300 hover:text-red-400 transition-colors font-medium shrink-0"
             >
               <PhoneOutlined className="text-red-500 text-xs" />
-              <span className="whitespace-nowrap">+1 (555) 839-2849</span>
+              <span className="whitespace-nowrap">+1 320-287-3573</span>
             </a>
 
             <a

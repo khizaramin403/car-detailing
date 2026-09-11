@@ -127,7 +127,7 @@ export default function WhyMobileSection() {
         {/* ========================================================================= */}
         {/* 3. Honest Limits Callout Card                                             */}
         {/* ========================================================================= */}
-        <div className="rounded-2xl sm:rounded-3xl border border-neutral-800 bg-neutral-900/30 p-5 sm:p-7 lg:p-8 space-y-4">
+        {/* <div className="rounded-2xl sm:rounded-3xl border border-neutral-800 bg-neutral-900/30 p-5 sm:p-7 lg:p-8 space-y-4">
           
           <div className="space-y-1.5">
             <span className="text-[10px] sm:text-[11px] font-semibold text-neutral-400 uppercase tracking-[0.18em] block">
@@ -138,7 +138,6 @@ export default function WhyMobileSection() {
             </h3>
           </div>
 
-          {/* 3 Limits Items */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 pt-1">
             
             <div className="p-3.5 sm:p-4 rounded-xl bg-neutral-950/70 border border-neutral-800/80 space-y-1.5">
@@ -173,13 +172,12 @@ export default function WhyMobileSection() {
 
           </div>
 
-          {/* Bottom Summary Line */}
           <div className="pt-2 border-t border-neutral-800/60 flex items-center gap-2 text-xs sm:text-sm text-neutral-300 font-normal">
             <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
             <span>For everything else, mobile is not a trade-off. It is just easier for you.</span>
           </div>
 
-        </div>
+        </div> */}
 
       </div>
     </section>

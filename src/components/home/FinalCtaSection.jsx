@@ -188,6 +188,7 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9Y8GQyClTl_
                     <span className="block text-[9px] text-neutral-500 uppercase tracking-wider">Call or Text</span>
                     <span className="block text-xs sm:text-sm font-semibold text-white group-hover:text-red-400 transition-colors">
                       (320) 287-3573
+                      
                     </span>
                   </div>
                   <span className="text-[10px] text-neutral-500 hidden xs:inline group-hover:text-neutral-300 transition-colors">
@@ -206,7 +207,7 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9Y8GQyClTl_
                   <div className="min-w-0 flex-1">
                     <span className="block text-[9px] text-neutral-500 uppercase tracking-wider">Email Us</span>
                     <span className="block text-xs font-semibold text-white truncate group-hover:text-red-400 transition-colors">
-                      dosbrosautodetailing@gmail.com
+                      ordonezreyes75@gmail.com
                     </span>
                   </div>
                 </a>
@@ -225,7 +226,7 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9Y8GQyClTl_
                 </div>
 
                 {/* Hours */}
-                <div className="flex items-center gap-2.5 p-2 rounded-lg bg-neutral-900/40 border border-neutral-800/60">
+                {/* <div className="flex items-center gap-2.5 p-2 rounded-lg bg-neutral-900/40 border border-neutral-800/60">
                   <div className="w-7 h-7 rounded-md bg-red-500/10 text-red-400 flex items-center justify-center shrink-0 group-hover:bg-red-500 group-hover:text-white transition-colors">
                     <Clock className="w-3.5 h-3.5 text-red-400" />
                   </div>
@@ -235,7 +236,7 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9Y8GQyClTl_
                       Mon – Sat: 8:00 AM – 7:00 PM
                     </span>
                   </div>
-                </div>
+                </div> */}
 
               </div>
 

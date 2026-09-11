@@ -46,7 +46,7 @@ export default function ContactReachAndFormSection() {
     }
   }, [form]);
 
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9Y8GQyClTl_F4FokgRqt97Ddp6lvYMbCO80XiLqBscVeC-lISAveoYFocsNW4FAqCMA/exec';
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9Y8GQyClTl_F4FokgRqt97Ddp6lvYMbCO80XiLqBscVeC-lISAveoYFocsNW4FAqCMA/exec';
 
   const handleSubmit = (values) => {
     setIsSubmitting(true);

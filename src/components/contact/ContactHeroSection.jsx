@@ -1,6 +1,6 @@
 import React from 'react';
 import contactHeroImg from '../../assets/contact/contacthero.webp';
-import { ArrowRight, ArrowDown } from 'lucide-react';
+import { ArrowRight, ArrowDown, ArrowLeft } from 'lucide-react';
 import { PhoneOutlined } from '@ant-design/icons';
 
 export default function ContactHeroSection() {
@@ -152,7 +152,7 @@ export default function ContactHeroSection() {
               className="group inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-medium text-white bg-neutral-900 hover:bg-neutral-800 border border-neutral-700/80 hover:border-red-500/50 shadow-sm transition-all duration-300 hover:-translate-y-0.5 max-w-full"
             >
               <span>Fill Out Quote Form</span>
-              <ArrowRight className="w-3.5 h-3.5 text-red-400 group-hover:translate-x-0.5 transition-transform" />
+              <ArrowDown className="w-3.5 h-3.5 text-red-400 group-hover:translate-x-0.5 transition-transform" />
             </a>
 
             <a
