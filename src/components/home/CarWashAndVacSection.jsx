@@ -63,7 +63,7 @@ export default function CarWashAndVacSection() {
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-900 border border-neutral-800 text-xs font-semibold text-neutral-300">
             <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-            <span>CAR WASH AND VAC</span>
+            <span>DETAILING VS CAR WASH</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
@@ -216,7 +216,7 @@ export default function CarWashAndVacSection() {
                   href="/contact"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-xs sm:text-sm font-semibold text-white bg-red-600 hover:bg-red-500 transition-colors cursor-pointer"
                 >
-                  <CalendarOutlined />
+                  {/* <CalendarOutlined /> */}
                   <span>Get My Free Quote</span>
                 </a>
 
