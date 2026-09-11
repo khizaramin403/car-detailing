@@ -6,7 +6,8 @@ import {
   PhoneOutlined,
   CalendarOutlined,
   EnvironmentOutlined,
-  ThunderboltOutlined
+  ThunderboltOutlined,
+  MailOutlined
 } from '@ant-design/icons';
 
 const navLinks = [
@@ -84,28 +85,24 @@ export default function Navbar() {
   return (
     <>
       {/* Top Notification / Info Bar */}
-      <div className="bg-neutral-950 text-neutral-400 text-xs border-b border-neutral-800/80 px-4 py-2 hidden md:block select-none">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-6">
-            <span className="flex items-center gap-1.5 text-neutral-300">
-              <EnvironmentOutlined className="text-red-500" />
-              <span>Mobile Detailing & Studio Workshop Available</span>
-            </span>
-            <span className="flex items-center gap-1.5 text-neutral-300">
-              <ThunderboltOutlined className="text-amber-400" />
-              <span>Certified Ceramic Pro & Paint Correction Specialists</span>
-            </span>
-          </div>
-          <div className="flex items-center space-x-4">
+      <div className="bg-neutral-950 text-neutral-400 text-[11px] sm:text-xs border-b border-neutral-800/80 py-1.5 sm:py-2 select-none">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between gap-2 sm:gap-4">
             <a
               href="tel:+15558392849"
-              className="flex items-center gap-1.5 text-neutral-300 hover:text-red-400 transition-colors font-medium"
+              className="flex items-center gap-1.5 text-neutral-300 hover:text-red-400 transition-colors font-medium shrink-0"
             >
-              <PhoneOutlined className="text-red-500" />
-              <span>+1 (555) 839-2849</span>
+              <PhoneOutlined className="text-red-500 text-xs" />
+              <span className="whitespace-nowrap">+1 (555) 839-2849</span>
             </a>
-            <span className="text-neutral-700">|</span>
-            <span className="text-emerald-400 font-medium">Mon - Sat: 8:00 AM - 7:00 PM</span>
+
+            <a
+              href="mailto:ordonezreyes75@gmail.com"
+              className="flex items-center gap-1.5 text-neutral-300 hover:text-red-400 transition-colors font-medium min-w-0"
+            >
+              <MailOutlined className="text-red-500 shrink-0 text-xs" />
+              <span className="truncate">ordonezreyes75@gmail.com</span>
+            </a>
           </div>
         </div>
       </div>
