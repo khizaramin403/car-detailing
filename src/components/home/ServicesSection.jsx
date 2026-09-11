@@ -33,44 +33,38 @@ const mainServices = [
     title: "Interior Detailing",
     icon: <Armchair className="w-6 h-6" color="#fb2c36" strokeWidth={2.2} />,
     tag: "Deep Cabin Refresh",
-    description: "Full vacuum, all surfaces wiped down, mats, cup holders, door panels, interior glass, and the cracks most people forget. Step up to Executive and you get steam cleaning, carpet and seat shampoo with extraction, stain treatment, and leather conditioning.",
-    href: "/services"
+    description: "Full vacuum, all surfaces wiped down, mats, cup holders, door panels, interior glass, and the cracks most people forget. Step up to Executive and you get steam cleaning, carpet and seat shampoo with extraction, stain treatment, and leather conditioning."
   },
   {
     title: "Exterior Detailing and Hand Car Wash",
     icon: <Droplets className="w-6 h-6" color="#fb2c36" strokeWidth={2.2} />,
     tag: "Paint & Wheel Care",
-    description: "Foam pre-soak, hand car wash, deep wheel and tire cleaning, bug and tar removal, tire shine, exterior glass, and spray wax protection. Executive adds iron remover, clay mitt decontamination, and detailed work on trim, grille, emblems, and door jambs.",
-    href: "/services"
+    description: "Foam pre-soak, hand car wash, deep wheel and tire cleaning, bug and tar removal, tire shine, exterior glass, and spray wax protection. Executive adds iron remover, clay mitt decontamination, and detailed work on trim, grille, emblems, and door jambs."
   },
   {
     title: "Full Detail",
     icon: <Sparkles className="w-6 h-6" color="#fb2c36" strokeWidth={2.2} />,
     tag: "Save $25 Bundled",
     badgeColor: "bg-red-500/10 text-red-400 border-red-500/30",
-    description: "Interior and exterior together. Bundled, so you save 25 dollars.",
-    href: "/services"
+    description: "Interior and exterior together. Bundled, so you save 25 dollars."
   },
   {
     title: "Truck and Farm Vehicle Detailing",
     icon: <Truck className="w-6 h-6" color="#fb2c36" strokeWidth={2.2} />,
     tag: "Heavy Duty & Dust",
-    description: "Built around what gravel roads, field dust, and daily work actually do to a cab.",
-    href: "/services"
+    description: "Built around what gravel roads, field dust, and daily work actually do to a cab."
   },
   {
     title: "Fleet and Commercial Detailing",
     icon: <Building2 className="w-6 h-6" color="#fb2c36" strokeWidth={2.2} />,
     tag: "On-Site Service",
-    description: "Recurring schedules for businesses running more than one vehicle. We come to your lot.",
-    href: "/services"
+    description: "Recurring schedules for businesses running more than one vehicle. We come to your lot."
   },
   {
     title: "Boat and Pontoon Detailing",
     icon: <Ship className="w-6 h-6" color="#fb2c36" strokeWidth={2.2} />,
     tag: "Lake Country Ready",
-    description: "Seasonal work for lake country. Sand, wet gear, and the smell that comes with both.",
-    href: "/services"
+    description: "Seasonal work for lake country. Sand, wet gear, and the smell that comes with both."
   }
 ];
 
@@ -230,17 +224,6 @@ export default function ServicesSection() {
                       </p>
                     </div>
                   </div>
-
-                  {/* Card Footer Link */}
-                  <a
-                    href={service.href}
-                    className="pt-4 border-t border-neutral-800/80 flex items-center justify-between text-xs font-semibold text-neutral-400 group-hover:text-white transition-colors mt-auto"
-                  >
-                    <span>Explore Package</span>
-                    <span className="text-neutral-500 group-hover:text-[#fb2c36] group-hover:translate-x-1 transition-all">
-                      →
-                    </span>
-                  </a>
                 </div>
               </SwiperSlide>
             ))}

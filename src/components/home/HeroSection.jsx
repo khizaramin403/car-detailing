@@ -18,33 +18,27 @@ import {
 const servicesList = [
   {
     title: 'Interior Detailing',
-    icon: <Armchair className="w-5 h-5 text-[#fb2c36]" />,
-    href: '/services'
+    icon: <Armchair className="w-5 h-5 text-[#fb2c36]" />
   },
   {
     title: 'Exterior & Hand Wash',
-    icon: <Droplets className="w-5 h-5 text-[#fb2c36]" />,
-    href: '/services'
+    icon: <Droplets className="w-5 h-5 text-[#fb2c36]" />
   },
   {
     title: 'Full Detail Package',
-    icon: <Sparkles className="w-5 h-5 text-[#fb2c36]" />,
-    href: '/services'
+    icon: <Sparkles className="w-5 h-5 text-[#fb2c36]" />
   },
   {
     title: 'Truck & Farm Vehicles',
-    icon: <Truck className="w-5 h-5 text-[#fb2c36]" />,
-    href: '/services'
+    icon: <Truck className="w-5 h-5 text-[#fb2c36]" />
   },
   {
     title: 'Fleet & Commercial',
-    icon: <Building2 className="w-5 h-5 text-[#fb2c36]" />,
-    href: '/services'
+    icon: <Building2 className="w-5 h-5 text-[#fb2c36]" />
   },
   {
     title: 'Boat & Pontoon Detailing',
-    icon: <Ship className="w-5 h-5 text-[#fb2c36]" />,
-    href: '/services'
+    icon: <Ship className="w-5 h-5 text-[#fb2c36]" />
   }
 ];
 
@@ -143,24 +137,20 @@ export default function HeroSection() {
                 </h2>
               </div>
 
-              {/* Interactive Services List */}
+              {/* Services List */}
               <div className="space-y-2.5">
                 {servicesList.map((service, index) => (
-                  <a
+                  <div
                     key={index}
-                    href={service.href}
-                    className="flex items-center gap-3 p-2.5 sm:p-3 rounded-xl bg-neutral-900/70 hover:bg-neutral-800 border border-neutral-800/80 hover:border-red-500/40 hover:shadow-lg hover:shadow-red-600/10 transition-all duration-200 group text-left block"
+                    className="flex items-center gap-3 p-2.5 sm:p-3 rounded-xl bg-neutral-900/70 border border-neutral-800/80 text-left cursor-default select-none"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-neutral-950 flex items-center justify-center shrink-0 border border-neutral-800 group-hover:border-red-500/30 transition-colors">
+                    <div className="w-8 h-8 rounded-lg bg-neutral-950 flex items-center justify-center shrink-0 border border-neutral-800">
                       {service.icon}
                     </div>
-                    <span className="text-xs sm:text-sm font-semibold text-neutral-200 group-hover:text-white transition-colors flex-1">
+                    <span className="text-xs sm:text-sm font-semibold text-neutral-200 flex-1">
                       {service.title}
                     </span>
-                    <span className="text-neutral-600 group-hover:text-red-400 group-hover:translate-x-1 transition-all text-xs">
-                      →
-                    </span>
-                  </a>
+                  </div>
                 ))}
               </div>
 
