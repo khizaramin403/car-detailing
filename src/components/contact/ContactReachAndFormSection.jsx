@@ -213,7 +213,7 @@ export default function ContactReachAndFormSection() {
                   </div>
                   <div className="pl-3.5 pt-0.5">
                     <a
-                      href="https://m.me/dosbrosautodetailing"
+                      href="https://www.facebook.com/DosBrosDetailingMN#"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 text-xs text-red-400 hover:text-red-300 font-normal transition-colors"
@@ -227,7 +227,7 @@ export default function ContactReachAndFormSection() {
               </div>
 
               {/* Informational Note & Operating Hours (Minimal & Uncluttered) */}
-              <div className="space-y-2 pt-0.5">
+              {/* <div className="space-y-2 pt-0.5">
                 <p className="text-xs text-neutral-400 font-light leading-relaxed">
                   We are usually reachable during the day, though if we are in the middle of a vehicle it might take us a bit to get back to you. We answer everything.
                 </p>
@@ -235,7 +235,7 @@ export default function ContactReachAndFormSection() {
                   <ClockCircleOutlined className="text-amber-400 text-xs shrink-0" />
                   <span>Hours: Sunday through Saturday, 8am to 6pm</span>
                 </div>
-              </div>
+              </div> */}
 
               {/* Social Channels (Google, Facebook, Instagram, TikTok) */}
               <div className="pt-2 space-y-2">
@@ -304,9 +304,9 @@ export default function ContactReachAndFormSection() {
                   <h2 className="text-lg sm:text-xl font-normal text-white font-['Outfit'] tracking-tight">
                     Get Your Free Quote
                   </h2>
-                  <p className="text-xs text-neutral-400 font-light leading-relaxed pt-1">
+                  {/* <p className="text-xs text-neutral-400 font-light leading-relaxed pt-1">
                     Fill this out and we will come back with a price. No obligation, no pressure, and nobody is going to keep calling you afterward.
-                  </p>
+                  </p> */}
                 </div>
 
                 {isSubmitted ? (

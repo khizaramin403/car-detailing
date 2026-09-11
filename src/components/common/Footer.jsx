@@ -194,17 +194,21 @@ export default function Footer() {
                 </div>
               </div>
 
-              {/* Operating Hours */}
-              <div className="flex items-start gap-2.5 px-2 py-1 text-neutral-400">
-                <div className="w-7 h-7 rounded-md bg-red-500/10 text-red-400 flex items-center justify-center shrink-0 ">
-                  <Clock className="w-4 h-4 shrink-0 mt-0.5" />
+              {/* Email */}
+              <a
+                href="mailto:ordonezreyes75@gmail.com"
+                className="group flex items-center gap-2.5 p-2 rounded-lg text-neutral-300 hover:text-white transition-colors"
+              >
+                <div className="w-7 h-7 rounded-md bg-red-500/10 text-red-400 flex items-center justify-center shrink-0 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                  <Mail className="w-3.5 h-3.5" />
                 </div>
-                
-                <div className="leading-snug">
-                  <span className="text-neutral-300 font-medium block">Mon - Sat: 8:00 AM - 7:00 PM</span>
-                  <span className="text-[11px] text-neutral-500">Sunday: By Appointment</span>
+                <div className="flex-1 min-w-0">
+                  <span className="block text-[10px] text-neutral-500 uppercase tracking-wider">Email Us</span>
+                  <span className="block text-xs sm:text-sm font-semibold text-white tracking-tight truncate group-hover:text-red-400 transition-colors">
+                    ordonezreyes75@gmail.com
+                  </span>
                 </div>
-              </div>
+              </a>
             </div>
 
             {/* Quick Action Button */}
