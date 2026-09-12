@@ -12,7 +12,7 @@ import {
   ClockCircleOutlined,
   LoadingOutlined
 } from '@ant-design/icons';
-import { ArrowRight } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 
 const { TextArea } = Input;
 
@@ -138,156 +138,129 @@ export default function ContactReachAndFormSection() {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+          {/* Centered Section Header */}
+          <div className="text-center mb-8 sm:mb-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-[10px] sm:text-[11px] font-normal text-neutral-300">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+              <span className="tracking-wide uppercase">How To Reach Us</span>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-start">
 
             {/* ========================================================================= */}
-            {/* LEFT COLUMN: SECTION 2: HOW TO REACH US                                   */}
+            {/* LEFT COLUMN: SLEEK MAP, CONTACT DETAILS & SOCIAL CHANNELS                 */}
             {/* ========================================================================= */}
             <div className="lg:col-span-5 xl:col-span-5 space-y-5">
 
-              {/* Header */}
-              <div className="space-y-2">
-                <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-neutral-900 border border-neutral-800 text-[10px] font-normal text-neutral-300">
-                  <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
-                  <span className="tracking-wide uppercase">How To Reach Us</span>
-                </div>
-
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-['Outfit'] tracking-tight leading-[1.15]">
-                  Three Ways to <span className="text-transparent bg-clip-text bg-linear-to-r from-red-500 to-amber-500">Get in Touch</span>
-                </h2>
-
-                <div className="w-8 h-0.5 bg-linear-to-r from-red-500 to-amber-500 rounded-full" />
+              {/* Minimal Sleek Responsive Google Map */}
+              <div className="w-full h-[260px] sm:h-[300px] lg:h-[290px] rounded-2xl overflow-hidden border border-neutral-800/90 shadow-xl bg-neutral-900 relative">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d714743.6334346599!2d-96.40757407354259!3d45.591201733580284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xade143f3c1c313bd%3A0x1bc9c78296fefa41!2sDos%20Bros%20Detailing!5e0!3m2!1sen!2s!4v1789153353385!5m2!1sen!2s"
+                  className="absolute inset-0 w-full h-full border-0"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="eager"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Dos Bros Detailing Morris Location Map"
+                />
               </div>
 
-              {/* Minimal Streamlined List (No bulky boxes) */}
-              <div className="divide-y border-y border-neutral-900/90">
-
-                {/* 1. Quote Form */}
-                <div className="py-3.5 space-y-1">
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <span className="text-sm font-medium text-white flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
-                      Quote form
-                    </span>
-                    <span className="text-[11px] text-neutral-400 font-light">
-                      Best for: Getting a price
+              {/* Sleek Minimal Contact & Location Details (No Heavy Card Box) */}
+              <div className="space-y-3.5 pt-1 text-xs sm:text-sm">
+                {/* Phone */}
+                <a
+                  href="tel:3202873573"
+                  className="group flex items-center gap-3 text-neutral-300 hover:text-white transition-colors"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-red-500/10 text-red-400 flex items-center justify-center shrink-0 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                    <Phone className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="block text-[10px] text-neutral-500 uppercase tracking-wider font-medium">Call or Text</span>
+                    <span className="text-xs sm:text-sm font-semibold text-white tracking-tight group-hover:text-red-400 transition-colors">
+                      (320) 287-3573
                     </span>
                   </div>
-                  <p className="text-xs text-neutral-400 font-light leading-relaxed pl-3.5">
-                    Fill in the form below. Takes about a minute. Add a photo if the inside is rough.
-                  </p>
+                </a>
+
+                {/* Email */}
+                <a
+                  href="mailto:ordonezreyes75@gmail.com"
+                  className="group flex items-center gap-3 text-neutral-300 hover:text-white transition-colors"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-red-500/10 text-red-400 flex items-center justify-center shrink-0 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                    <Mail className="w-4 h-4" />
+                  </div>
+                  <div className="min-w-0">
+                    <span className="block text-[10px] text-neutral-500 uppercase tracking-wider font-medium">Email Us</span>
+                    <span className="text-xs sm:text-sm font-semibold text-white tracking-tight truncate block group-hover:text-red-400 transition-colors">
+                      ordonezreyes75@gmail.com
+                    </span>
+                  </div>
+                </a>
+
+                {/* Location */}
+                <div className="flex items-center gap-3 text-neutral-400">
+                  <div className="w-8 h-8 rounded-lg bg-red-500/10 text-red-400 flex items-center justify-center shrink-0">
+                    <MapPin className="w-4 h-4" />
+                  </div>
+                  <div className="leading-snug">
+                    <span className="text-neutral-200 text-xs sm:text-sm font-medium block">Morris, MN 56267</span>
+                    <span className="text-[11px] text-neutral-500">Stevens County & Surrounding Cities</span>
+                  </div>
                 </div>
 
-                {/* 2. Phone or Text */}
-                <div className="py-3.5 space-y-1">
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <span className="text-sm font-medium text-white flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
-                      Phone or text
-                    </span>
-                    <span className="text-[11px] text-neutral-400 font-light">
-                      Best for: Quick questions
-                    </span>
-                  </div>
-                  <p className="text-xs text-neutral-400 font-light leading-relaxed pl-3.5">
+                {/* Social Channels */}
+                <div className="pt-3 border-t border-neutral-900/80 flex items-center justify-between">
+                  <span className="text-[11px] font-medium text-neutral-500 uppercase tracking-wider">
+                    Connect With Us
+                  </span>
+                  <div className="flex items-center gap-2">
+                    {/* Google */}
                     <a
-                      href="tel:3202873573"
-                      className="text-white hover:text-red-400 font-normal underline underline-offset-4 decoration-neutral-700 hover:decoration-red-500 transition-colors"
+                      href="https://www.google.com/search?q=dos+ros+detailing+morris&sca_esv=35cfe427b01f9ce2&sxsrf=APpeQnubABDyQlUKzeujqubn9MHryYxxZA%3A1789064331965&ei=i_SiauWyOr6Xi-gP5P6GqAo&biw=1366&bih=599&ved=2ahUKEwilpPL_z-SWAxW-ywIHHWS_AaUQ4dUDegQIBhAM&uact=5&oq=dos+ros+detailing+morris&gs_lp=Egxnd3Mtd2l6LXNlcnAiGGRvcyByb3MgZGV0YWlsaW5nIG1vcnJpczIIEAAYgAQYogQyBRAAGO8FMggQABiABBiiBDIIEAAYiQUYogQyCBAAGIAEGKIESLwPULMDWIcNcAF4AJABAJgBpwOgAfwOqgEFMy0yLjO4AQPIAQD4AQGYAgagAskPwgIKECMYsAIYsAMYJ8ICDRAAGIAEGIoFGEMYsAPCAgoQABiABBgNGLADwgILEAAYiQUYogQYsAPCAggQABjvBRiwA8ICBxAjGLACGCfCAgcQABiABBgNwgIGEAAYHhgNwgIFECEYnwWYAwDiAwUSATEgQIgGAZAGCJIHBzEuMy0yLjOgB6YcsgcFMy0yLjO4B7sPwgcFMi00LjLIByyACAE&sclient=gws-wiz-serp"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Google Review and Profile"
+                      className="w-8 h-8 rounded-lg bg-neutral-900 hover:bg-red-600/90 text-neutral-400 hover:text-white flex items-center justify-center transition-all duration-200 border border-neutral-800 hover:border-red-500 hover:scale-105"
                     >
-                      320-287-3573
+                      <GoogleOutlined className="text-xs" />
                     </a>
-                    . Text is often faster if we are mid-job with equipment running.
-                  </p>
-                </div>
 
-                {/* 3. Facebook Messenger */}
-                <div className="py-3.5 space-y-1">
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <span className="text-sm font-medium text-white flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
-                      Facebook Messenger
-                    </span>
-                    <span className="text-[11px] text-neutral-400 font-light">
-                      Best for: If that is where you already are
-                    </span>
-                  </div>
-                  <div className="pl-3.5 pt-0.5">
+                    {/* Facebook */}
                     <a
                       href="https://www.facebook.com/DosBrosDetailingMN#"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-xs text-red-400 hover:text-red-300 font-normal transition-colors"
+                      aria-label="Facebook Page"
+                      className="w-8 h-8 rounded-lg bg-neutral-900 hover:bg-red-600/90 text-neutral-400 hover:text-white flex items-center justify-center transition-all duration-200 border border-neutral-800 hover:border-red-500 hover:scale-105"
                     >
-                      <span>Message us on Facebook</span>
-                      <ArrowRight className="w-3 h-3" />
+                      <FacebookOutlined className="text-xs" />
+                    </a>
+
+                    {/* Instagram */}
+                    <a
+                      href="https://www.instagram.com/dosbrosmn"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram Profile"
+                      className="w-8 h-8 rounded-lg bg-neutral-900 hover:bg-red-600/90 text-neutral-400 hover:text-white flex items-center justify-center transition-all duration-200 border border-neutral-800 hover:border-red-500 hover:scale-105"
+                    >
+                      <InstagramOutlined className="text-xs" />
+                    </a>
+
+                    {/* TikTok */}
+                    <a
+                      href="https://www.tiktok.com/@dosbrosdetailing"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="TikTok Profile"
+                      className="w-8 h-8 rounded-lg bg-neutral-900 hover:bg-red-600/90 text-neutral-400 hover:text-white flex items-center justify-center transition-all duration-200 border border-neutral-800 hover:border-red-500 hover:scale-105"
+                    >
+                      <TikTokOutlined className="text-xs" />
                     </a>
                   </div>
-                </div>
-
-              </div>
-
-              {/* Informational Note & Operating Hours (Minimal & Uncluttered) */}
-              {/* <div className="space-y-2 pt-0.5">
-                <p className="text-xs text-neutral-400 font-light leading-relaxed">
-                  We are usually reachable during the day, though if we are in the middle of a vehicle it might take us a bit to get back to you. We answer everything.
-                </p>
-                <div className="flex items-center gap-2 text-xs text-neutral-300 font-light pt-0.5">
-                  <ClockCircleOutlined className="text-amber-400 text-xs shrink-0" />
-                  <span>Hours: Sunday through Saturday, 8am to 6pm</span>
-                </div>
-              </div> */}
-
-              {/* Social Channels (Google, Facebook, Instagram, TikTok) */}
-              <div className="pt-2 space-y-2">
-                <span className="block text-[11px] font-light text-neutral-500 uppercase tracking-wider">
-                  Connect With Us
-                </span>
-                <div className="flex items-center gap-2">
-
-                  {/* Google */}
-                  <a
-                    href="https://www.google.com/search?q=dos+ros+detailing+morris&sca_esv=35cfe427b01f9ce2&sxsrf=APpeQnubABDyQlUKzeujqubn9MHryYxxZA%3A1789064331965&ei=i_SiauWyOr6Xi-gP5P6GqAo&biw=1366&bih=599&ved=2ahUKEwilpPL_z-SWAxW-ywIHHWS_AaUQ4dUDegQIBhAM&uact=5&oq=dos+ros+detailing+morris&gs_lp=Egxnd3Mtd2l6LXNlcnAiGGRvcyByb3MgZGV0YWlsaW5nIG1vcnJpczIIEAAYgAQYogQyBRAAGO8FMggQABiABBiiBDIIEAAYiQUYogQyCBAAGIAEGKIESLwPULMDWIcNcAF4AJABAJgBpwOgAfwOqgEFMy0yLjO4AQPIAQD4AQGYAgagAskPwgIKECMYsAIYsAMYJ8ICDRAAGIAEGIoFGEMYsAPCAgoQABiABBgNGLADwgILEAAYiQUYogQYsAPCAggQABjvBRiwA8ICBxAjGLACGCfCAgcQABiABBgNwgIGEAAYHhgNwgIFECEYnwWYAwDiAwUSATEgQIgGAZAGCJIHBzEuMy0yLjOgB6YcsgcFMy0yLjO4B7sPwgcFMi00LjLIByyACAE&sclient=gws-wiz-serp"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Google Review and Profile"
-                    className="w-8 h-8 rounded-lg bg-neutral-900 hover:bg-neutral-800 text-neutral-400 hover:text-white flex items-center justify-center transition-colors border border-neutral-800 hover:border-neutral-700"
-                  >
-                    <GoogleOutlined className="text-xs" />
-                  </a>
-
-                  {/* Facebook */}
-                  <a
-                    href="https://www.facebook.com/DosBrosDetailingMN#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Facebook Page"
-                    className="w-8 h-8 rounded-lg bg-neutral-900 hover:bg-neutral-800 text-neutral-400 hover:text-white flex items-center justify-center transition-colors border border-neutral-800 hover:border-neutral-700"
-                  >
-                    <FacebookOutlined className="text-xs" />
-                  </a>
-
-                  {/* Instagram */}
-                  <a
-                    href="https://www.instagram.com/dosbrosmn"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Instagram Profile"
-                    className="w-8 h-8 rounded-lg bg-neutral-900 hover:bg-neutral-800 text-neutral-400 hover:text-white flex items-center justify-center transition-colors border border-neutral-800 hover:border-neutral-700"
-                  >
-                    <InstagramOutlined className="text-xs" />
-                  </a>
-
-                  {/* TikTok */}
-                  <a
-                    href="https://www.tiktok.com/@dosbrosdetailing"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="TikTok Profile"
-                    className="w-8 h-8 rounded-lg bg-neutral-900 hover:bg-neutral-800 text-neutral-400 hover:text-white flex items-center justify-center transition-colors border border-neutral-800 hover:border-neutral-700"
-                  >
-                    <TikTokOutlined className="text-xs" />
-                  </a>
-
                 </div>
               </div>
 
