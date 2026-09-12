@@ -390,11 +390,19 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9Y8GQyClTl_
                           </span>
                         }
                         rules={[{ required: true, message: 'Please enter your phone number' }]}
+                        normalize={(value) => (value ? value.replace(/\D/g, '') : '')}
                         className="mb-2.5!"
                       >
                         <Input
                           placeholder="(320) 000-0000"
                           className="bg-neutral-950/90"
+                          type="tel"
+                          inputMode="numeric"
+                          onKeyDown={(e) => {
+                            if (e.key.length === 1 && !/[0-9]/.test(e.key) && !e.ctrlKey && !e.metaKey) {
+                              e.preventDefault();
+                            }
+                          }}
                         />
                       </Form.Item>
 

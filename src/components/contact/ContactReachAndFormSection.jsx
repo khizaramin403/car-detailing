@@ -146,15 +146,15 @@ export default function ContactReachAndFormSection() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-stretch">
 
             {/* ========================================================================= */}
             {/* LEFT COLUMN: SLEEK MAP, CONTACT DETAILS & SOCIAL CHANNELS                 */}
             {/* ========================================================================= */}
-            <div className="lg:col-span-5 xl:col-span-5 space-y-5">
+            <div className="lg:col-span-5 xl:col-span-5 flex flex-col justify-between h-full space-y-4 sm:space-y-5">
 
-              {/* Minimal Sleek Responsive Google Map */}
-              <div className="w-full h-[260px] sm:h-[300px] lg:h-[290px] rounded-2xl overflow-hidden border border-neutral-800/90 shadow-xl bg-neutral-900 relative">
+              {/* Minimal Sleek Responsive Google Map (Fills height to match the Form) */}
+              <div className="w-full flex-1 min-h-[300px] sm:min-h-[340px] lg:min-h-[360px] rounded-2xl overflow-hidden border border-neutral-800/90 shadow-xl bg-neutral-900 relative">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d714743.6334346599!2d-96.40757407354259!3d45.591201733580284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xade143f3c1c313bd%3A0x1bc9c78296fefa41!2sDos%20Bros%20Detailing!5e0!3m2!1sen!2s!4v1789153353385!5m2!1sen!2s"
                   className="absolute inset-0 w-full h-full border-0"
@@ -166,57 +166,59 @@ export default function ContactReachAndFormSection() {
                 />
               </div>
 
-              {/* Sleek Minimal Contact & Location Details (No Heavy Card Box) */}
-              <div className="space-y-3.5 pt-1 text-xs sm:text-sm">
-                {/* Phone */}
-                <a
-                  href="tel:3202873573"
-                  className="group flex items-center gap-3 text-neutral-300 hover:text-white transition-colors"
-                >
-                  <div className="w-8 h-8 rounded-lg bg-red-500/10 text-red-400 flex items-center justify-center shrink-0 group-hover:bg-red-500 group-hover:text-white transition-colors">
-                    <Phone className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <span className="block text-[10px] text-neutral-500 uppercase tracking-wider font-medium">Call or Text</span>
-                    <span className="text-xs sm:text-sm font-semibold text-white tracking-tight group-hover:text-red-400 transition-colors">
-                      (320) 287-3573
-                    </span>
-                  </div>
-                </a>
+              {/* Sleek Minimal Contact & Location Details */}
+              <div className="shrink-0 space-y-3 pt-1 text-xs sm:text-sm">
+                
+                {/* Row 1: Call or Text & Email Us side-by-side */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
+                  {/* Phone */}
+                  <a
+                    href="tel:3202873573"
+                    className="group flex items-center gap-2.5 sm:gap-3 text-neutral-300 hover:text-white transition-colors min-w-0"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-red-500/10 text-red-400 flex items-center justify-center shrink-0 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                      <Phone className="w-4 h-4" />
+                    </div>
+                    <div className="min-w-0">
+                      <span className="block text-[10px] text-neutral-500 uppercase tracking-wider font-medium">Call or Text</span>
+                      <span className="text-xs sm:text-[13px] font-semibold text-white tracking-tight group-hover:text-red-400 transition-colors">
+                        (320) 287-3573
+                      </span>
+                    </div>
+                  </a>
 
-                {/* Email */}
-                <a
-                  href="mailto:ordonezreyes75@gmail.com"
-                  className="group flex items-center gap-3 text-neutral-300 hover:text-white transition-colors"
-                >
-                  <div className="w-8 h-8 rounded-lg bg-red-500/10 text-red-400 flex items-center justify-center shrink-0 group-hover:bg-red-500 group-hover:text-white transition-colors">
-                    <Mail className="w-4 h-4" />
-                  </div>
-                  <div className="min-w-0">
-                    <span className="block text-[10px] text-neutral-500 uppercase tracking-wider font-medium">Email Us</span>
-                    <span className="text-xs sm:text-sm font-semibold text-white tracking-tight truncate block group-hover:text-red-400 transition-colors">
-                      ordonezreyes75@gmail.com
-                    </span>
-                  </div>
-                </a>
-
-                {/* Location */}
-                <div className="flex items-center gap-3 text-neutral-400">
-                  <div className="w-8 h-8 rounded-lg bg-red-500/10 text-red-400 flex items-center justify-center shrink-0">
-                    <MapPin className="w-4 h-4" />
-                  </div>
-                  <div className="leading-snug">
-                    <span className="text-neutral-200 text-xs sm:text-sm font-medium block">Morris, MN 56267</span>
-                    <span className="text-[11px] text-neutral-500">Stevens County & Surrounding Cities</span>
-                  </div>
+                  {/* Email */}
+                  <a
+                    href="mailto:ordonezreyes75@gmail.com"
+                    className="group flex items-center gap-2.5 sm:gap-3 text-neutral-300 hover:text-white transition-colors min-w-0"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-red-500/10 text-red-400 flex items-center justify-center shrink-0 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                      <Mail className="w-4 h-4" />
+                    </div>
+                    <div className="min-w-0">
+                      <span className="block text-[10px] text-neutral-500 uppercase tracking-wider font-medium">Email Us</span>
+                      <span className="text-xs sm:text-[13px] font-semibold text-white tracking-tight truncate block group-hover:text-red-400 transition-colors" title="ordonezreyes75@gmail.com">
+                        ordonezreyes75@gmail.com
+                      </span>
+                    </div>
+                  </a>
                 </div>
 
-                {/* Social Channels */}
-                <div className="pt-3 border-t border-neutral-900/80 flex items-center justify-between">
-                  <span className="text-[11px] font-medium text-neutral-500 uppercase tracking-wider">
-                    Connect With Us
-                  </span>
-                  <div className="flex items-center gap-2">
+                {/* Row 2: Address (Left) & Social Icons (Right) */}
+                <div className="pt-2.5 border-t border-neutral-900/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-3">
+                  {/* Location */}
+                  <div className="flex items-center gap-2.5 sm:gap-3 text-neutral-400 min-w-0">
+                    <div className="w-8 h-8 rounded-lg bg-red-500/10 text-red-400 flex items-center justify-center shrink-0">
+                      <MapPin className="w-4 h-4" />
+                    </div>
+                    <div className="leading-tight min-w-0">
+                      <span className="text-neutral-200 text-xs sm:text-[13px] font-medium block truncate">Morris, MN 56267</span>
+                      <span className="text-[10px] sm:text-[11px] text-neutral-500 block truncate">Stevens County & Surrounding</span>
+                    </div>
+                  </div>
+
+                  {/* Social Channels */}
+                  <div className="flex items-center gap-2 shrink-0 sm:justify-end">
                     {/* Google */}
                     <a
                       href="https://www.google.com/search?q=dos+ros+detailing+morris&sca_esv=35cfe427b01f9ce2&sxsrf=APpeQnubABDyQlUKzeujqubn9MHryYxxZA%3A1789064331965&ei=i_SiauWyOr6Xi-gP5P6GqAo&biw=1366&bih=599&ved=2ahUKEwilpPL_z-SWAxW-ywIHHWS_AaUQ4dUDegQIBhAM&uact=5&oq=dos+ros+detailing+morris&gs_lp=Egxnd3Mtd2l6LXNlcnAiGGRvcyByb3MgZGV0YWlsaW5nIG1vcnJpczIIEAAYgAQYogQyBRAAGO8FMggQABiABBiiBDIIEAAYiQUYogQyCBAAGIAEGKIESLwPULMDWIcNcAF4AJABAJgBpwOgAfwOqgEFMy0yLjO4AQPIAQD4AQGYAgagAskPwgIKECMYsAIYsAMYJ8ICDRAAGIAEGIoFGEMYsAPCAgoQABiABBgNGLADwgILEAAYiQUYogQYsAPCAggQABjvBRiwA8ICBxAjGLACGCfCAgcQABiABBgNwgIGEAAYHhgNwgIFECEYnwWYAwDiAwUSATEgQIgGAZAGCJIHBzEuMy0yLjOgB6YcsgcFMy0yLjO4B7sPwgcFMi00LjLIByyACAE&sclient=gws-wiz-serp"
@@ -364,11 +366,19 @@ export default function ContactReachAndFormSection() {
                           </span>
                         }
                         rules={[{ required: true, message: 'Please enter your phone number' }]}
+                        normalize={(value) => (value ? value.replace(/\D/g, '') : '')}
                         className="mb-2.5!"
                       >
                         <Input
                           placeholder="(320) 000-0000"
                           className="bg-neutral-950/90"
+                          type="tel"
+                          inputMode="numeric"
+                          onKeyDown={(e) => {
+                            if (e.key.length === 1 && !/[0-9]/.test(e.key) && !e.ctrlKey && !e.metaKey) {
+                              e.preventDefault();
+                            }
+                          }}
                         />
                       </Form.Item>
 
