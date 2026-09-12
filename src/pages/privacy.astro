@@ -1,0 +1,16 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PrivacyContentSection from "../components/legal/PrivacyContentSection.jsx";
+
+const title = "Privacy Policy | Dos Bros Auto Detailing";
+const description = "Learn how Dos Bros Auto Detailing collects, protects, and handles your contact and vehicle information when requesting mobile detailing quotes in Morris, MN.";
+---
+
+<Layout
+  title={title}
+  description={description}
+  showNav={true}
+  showFooter={true}
+>
+  <PrivacyContentSection client:load />
+</Layout>

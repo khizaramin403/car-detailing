@@ -1,0 +1,16 @@
+---
+import Layout from "../layouts/Layout.astro";
+import DisclaimerContentSection from "../components/legal/DisclaimerContentSection.jsx";
+
+const title = "Service Disclaimer & Disclosures | Dos Bros Auto Detailing";
+const description = "Understand the realistic scope, paint correction boundaries, stain removal limitations, and mobile detailing disclosures for Dos Bros Auto Detailing in Morris, MN.";
+---
+
+<Layout
+  title={title}
+  description={description}
+  showNav={true}
+  showFooter={true}
+>
+  <DisclaimerContentSection client:load />
+</Layout>

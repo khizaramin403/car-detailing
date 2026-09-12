@@ -225,28 +225,47 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom Bar: Copyright, Guarantee & Legal */}
-        <div className="pt-6 sm:pt-8 flex items-center justify-center gap-4 text-center md:text-left text-xs text-neutral-500">
+        {/* Bottom Bar: Copyright & Legal / Feedback Links */}
+        <div className="pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
           
           {/* Copyright */}
-          <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 ">
+          <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-center md:text-left">
             <p>© {currentYear} Dos Bros Auto Detailing. All rights reserved.</p>
             <span className="hidden sm:inline text-neutral-700">•</span>
             <span className="text-neutral-400">Morris, Minnesota</span>
           </div>
 
-          {/* Trust Guarantees */}
-          {/* <div className="flex items-center flex-wrap justify-center gap-3 sm:gap-4 text-[11px] text-neutral-400">
-            <span className="inline-flex items-center gap-1.5">
-              <ShieldCheck className="w-3.5 h-3.5 text-red-400" />
-              <span>100% Satisfaction Guarantee</span>
-            </span>
-            <span className="text-neutral-700">•</span>
-            <span className="inline-flex items-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-              <span>Premium Eco-Safe Products</span>
-            </span>
-          </div> */}
+          {/* Legal & Feedback Links */}
+          <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-5 gap-y-2 text-xs">
+            <a
+              href="/terms"
+              className="text-neutral-500 hover:text-neutral-300 hover:underline underline-offset-4 transition-colors"
+            >
+              Terms of Use
+            </a>
+            <span className="text-neutral-800">•</span>
+            <a
+              href="/privacy"
+              className="text-neutral-500 hover:text-neutral-300 hover:underline underline-offset-4 transition-colors"
+            >
+              Privacy Policy
+            </a>
+            <span className="text-neutral-800">•</span>
+            <a
+              href="/disclaimer"
+              className="text-neutral-500 hover:text-neutral-300 hover:underline underline-offset-4 transition-colors"
+            >
+              Disclaimer
+            </a>
+            <span className="text-neutral-800">•</span>
+            <a
+              href="/feedback"
+              className="text-neutral-400 hover:text-red-400 hover:underline underline-offset-4 transition-colors font-medium flex items-center gap-1.5"
+            >
+              <span>Feedback</span>
+              {/* <span className="inline-block w-1.5 h-1.5 rounded-full bg-red-500/80"></span> */}
+            </a>
+          </div>
 
         </div>
       </div>

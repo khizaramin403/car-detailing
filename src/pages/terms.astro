@@ -1,0 +1,16 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TermsContentSection from "../components/legal/TermsContentSection.jsx";
+
+const title = "Terms of Use & Service Agreement | Dos Bros Auto Detailing";
+const description = "Read the official service terms, mobile detailing policies, booking guidelines, and customer guarantees for Dos Bros Auto Detailing in Morris, MN.";
+---
+
+<Layout
+  title={title}
+  description={description}
+  showNav={true}
+  showFooter={true}
+>
+  <TermsContentSection client:load />
+</Layout>

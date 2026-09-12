@@ -1,0 +1,16 @@
+---
+import Layout from "../layouts/Layout.astro";
+import FeedbackFormSection from "../components/feedback/FeedbackFormSection.jsx";
+
+const title = "Client Feedback & Reviews | Dos Bros Auto Detailing";
+const description = "Share your mobile detailing experience with Dos Bros Auto Detailing in Morris, MN. Help founders Reyes and Mariano keep delivering top-tier service.";
+---
+
+<Layout
+  title={title}
+  description={description}
+  showNav={true}
+  showFooter={true}
+>
+  <FeedbackFormSection client:load />
+</Layout>
